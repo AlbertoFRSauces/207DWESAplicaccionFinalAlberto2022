@@ -1,0 +1,600 @@
+/*test @import url(//db.onlinewebfonts.com/c/3a47f5f06b5484abfeee9eac90348a9c?family=Gotham);*/
+@font-face {font-family: "Gotham-Medium";
+            src: url("3a47f5f06b5484abfeee9eac90348a9c.eot"); /* IE9*/
+            src: url("3a47f5f06b5484abfeee9eac90348a9c.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+                url("3a47f5f06b5484abfeee9eac90348a9c.woff2") format("woff2"), /* chrome、firefox */
+                url("3a47f5f06b5484abfeee9eac90348a9c.woff") format("woff"), /* chrome、firefox */
+                url("3a47f5f06b5484abfeee9eac90348a9c.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+                url("3a47f5f06b5484abfeee9eac90348a9c.svg#Gotham-Medium") format("svg"); /* iOS 4.1- */
+}
+*{
+    box-sizing: border-box;
+    margin: 0px; 
+    padding: 0px;
+}
+body{
+    font-family:calibri, arial, sans-serif;
+    background-repeat:no-repeat;
+    background-color:#EEEEEE;
+    padding-bottom: 50px;
+    height: 100%;
+}
+.titulopagina{
+    font-family: "Gotham-Medium";
+    font-size:17px;
+    text-align:center;
+    background-color:#252525;
+    color:white;
+    padding-bottom:15px;
+    text-transform:uppercase;
+}
+.tituloaplicacion{
+    font-family: "Gotham-Medium";
+    font-size:19px;
+    text-align:center;
+    background-color:#D90000;
+    color:white;
+    padding-top:15px;
+    padding-bottom:15px;
+    text-transform:uppercase;
+}
+/* IMAGENES */
+.imagegithub{
+    margin-right:5px;
+    float: right;
+    width: 43px;
+    height: 43px;
+}
+.imageplay{
+    margin-right: 3px;
+    float: right;
+    width: 40px;
+    height: 40px;
+}
+.imagecodigo{
+    margin-right: 3px;
+    float: right;
+    width: 34px;
+    height: 34px;
+}
+.imageatras{
+    margin-left:5px;
+    float: left;
+    width: 43px;
+    height: 43px;
+}
+.cajaimagen{
+    width: 33px;
+    height: 43px;
+}
+.imagenwip{
+    margin:auto auto;
+    display:block;
+}
+
+/* FOOTER */
+.piepagina{
+    font-family: "Gotham-Medium";
+    font-size: 14px;
+    background-color:#DDDDDD;
+    position: fixed;
+    bottom: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    right: 0px;
+    left: 0px;
+}
+.piepagina p{
+    color:#33333D;
+    text-align:center;
+    margin-left: 31px;
+}
+.piepagina p:first-of-type{
+    margin-top: 6px;
+}
+
+/*CONTENIDO DEL LOGIN.PHP CON DOS BOTONES*/
+#formulariologin{
+    width: 500px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15px;
+}
+fieldset{
+    border: 2px solid black;
+    padding: 15px;
+}
+#formulariologin ul li{
+    list-style:none;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#CodUsuario{
+    width: 251px;
+}
+#Password{
+    width: 239px;
+}
+fieldset p:first-child{
+    font-size: 190%;
+    padding-left: 15px;
+    padding-bottom: 15px;
+}
+.entrar{
+    width: 128px;
+    font-size: 100%;
+    padding: 5px;
+    margin: 3px;
+    text-align: center;
+    background-color: #252525;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.entrar:hover{
+    background-color: white;
+    color: #252525;
+}
+.volver{
+    width: 128px;
+    font-size: 100%;
+    padding: 5px;
+    margin: 3px;
+    text-align: center;
+    background-color: #252525;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.volver:hover{
+    background-color: white;
+    color: #252525;
+}
+.registrarse{
+    width: 128px;
+    font-size: 100%;
+    padding: 5px;
+    margin: 3px;
+    text-align: center;
+    background-color: #252525;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.registrarse:hover{
+    background-color: white;
+    color: #252525;
+}
+
+/*CONTENIDO DEL FORMULARIO EDITAR Y BOTONES ACEPTAR Y CANCELAR*/
+.formularioeditar{
+    margin-top: 15px;
+    margin-bottom: 70px;
+}
+.fieldsetEditar{
+    border: 2px solid black;
+    width: 700px;
+    height: 300px;
+    margin: auto;
+}
+.botonaceptar{
+    width: 200px;
+    height: 25px;
+    background-color: #00f200;
+    margin: 5px;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: bold;
+}
+.botonaceptar:hover{
+    background-color: white;
+    color: #00f200;
+}
+.botoncancelar{
+    width: 200px;
+    height: 25px;
+    background-color: #ff1b22;
+    margin: 5px;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: bold;
+}
+.botoncancelar:hover{
+    background-color: white;
+    color: #ff1b22;
+}
+
+/*CONTENIDO DEL PROGRAMA.PHP CON DOS BOTONES*/
+.cerrarsesion{
+    width: 225px;
+    font-size: 105%;
+    padding: 12px;
+    text-align: center;
+    background-color: #252525;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 10px;
+}
+.cerrarsesion:hover{
+    background-color: white;
+    color: #252525;
+}
+.editarperfil{
+    width: 225px;
+    font-size: 105%;
+    padding: 12px;
+    text-align: center;
+    background-color: #252525;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: bold;
+}
+.editarperfil:hover{
+    background-color: white;
+    color: #252525;
+}
+.detalle{
+    width: 225px;
+    font-size: 105%;
+    padding: 12px;
+    text-align: center;
+    background-color: #252525;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: bold;
+    
+}
+.detalle:hover{
+    background-color: white;
+    color: #252525;
+}
+.mtoDepartamentos{
+    width: 225px;
+    font-size: 105%;
+    padding: 12px;
+    text-align: center;
+    background-color: #252525;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 10px;
+}
+.mtoDepartamentos:hover{
+    background-color: white;
+    color: #252525;
+}
+.container{
+    position: relative;
+    height: auto;
+    width: 100%;
+}
+.formularioPrograma{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.usuario{
+    text-align: center;
+}
+.conexiones{
+    text-align: center;
+}
+.ultimaConexion{
+    text-align: center;
+}
+
+/*CONTENIDO DEL DETALLE.PHP CON DOS BOTONES*/
+
+.cajas{
+    background-color: #9999cc;
+    border: 1px solid black;
+}
+.tablavariable{
+    margin: 0 auto;
+    padding: 0;
+    border-collapse: collapse;
+}
+.titulovariable{
+    text-align: center;
+    padding-bottom: 10px;
+}
+.volverdetalle{
+    width: 150px;
+    font-size: 105%;
+    padding: 10px;
+    text-align: center;
+    background-color: #252525;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.volverdetalle:hover{
+    background-color: white;
+    color: #252525;
+}
+.buttonback{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    padding: 5px;
+}
+td{
+    border: 1px solid black;
+    margin: 0;
+}
+/*CONTENIDO DEL ERROR.PHP CON UNA TABLA Y UN BOTON*/
+.tituloerror{
+    text-align: center;
+    color: red;
+    font-size: 35px;
+}
+.tablaerror{
+    border: 2px solid black;
+    border-collapse: collapse;
+    margin: auto;
+    width: 100%;
+    max-width: 1200px;
+    font-size: 20px;
+}
+.tablaerror th{
+    padding: 8px;
+
+}
+
+/*CONTENIDO DEL REGISTRO.PHP CON DOS BOTONES*/
+.formRegistro{
+    margin-top: 15px;
+    margin-bottom: 70px;
+}
+.formRegistro fieldset{
+    border: 2px solid black;
+    width: 375px;
+    margin:auto;
+    background-color:#EEEEEE;
+}
+.formRegistro ul{
+    list-style: none;
+}
+.formRegistro ul li{
+    padding-left: 15px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.tituloRegistros{
+    margin-left: 13px; 
+}
+.tituloRegistros fieldset p:first-child{
+    font-size: 190%;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+}
+.errores{
+    height: 14px;
+}
+.crear{
+    width: 128px;
+    font-size: 100%;
+    padding: 5px;
+    margin: 3px;
+    text-align: center;
+    background-color: #252525;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.crear:hover{
+    background-color: white;
+    color: #252525;
+}
+.cancelar{
+    width: 128px;
+    font-size: 100%;
+    padding: 5px;
+    margin: 3px;
+    text-align: center;
+    background-color: #252525;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.cancelar:hover{
+    background-color: white;
+    color: #252525;
+}
+#CodUsuarioReg{
+    width: 300px;
+}
+#DescUsuario{
+    width: 300px;
+}
+#PasswordReg{
+    width: 300px;
+}
+#RepetirPassword{
+    width: 300px;
+}
+.mensajeError{
+    margin-top: 10px;
+    color: #D90000;
+    text-align: center;
+}
+
+/*CONTENIDO DEL EDITARPERFIL.PHP CON CUATRO BOTONES*/
+.formMiCuenta{
+    margin-top: 15px;
+    margin-bottom: 70px;
+}
+.formMiCuenta fieldset{
+    border: 2px solid black;
+    width: 375px;
+    margin:auto;
+    background-color:#EEEEEE;
+}
+.formMiCuenta ul{
+    list-style: none;
+}
+.formMiCuenta ul li{
+    padding-left: 15px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.tituloMiCuenta{
+    margin-left: 13px; 
+}
+.formMiCuenta span{
+    font-size: 90%;
+    color: red;
+}
+.formMiCuenta fieldset p:first-child{
+    font-size: 190%;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+}
+.cambiarpassword{
+    width: 315px;
+    font-size: 90%;
+    padding: 4px;
+    margin: 3px;
+    text-align: center;
+    background-color: #252525;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.cambiarpassword:hover{
+    background-color: white;
+    color: #252525;
+}
+.aceptar{
+    width: 115px;
+    font-size: 100%;
+    padding: 5px;
+    margin: 3px;
+    text-align: center;
+    background-color: #252525;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.aceptar:hover{
+    background-color: white;
+    color: #252525;
+}
+.cancelarperfil{
+    width: 115px;
+    font-size: 100%;
+    padding: 5px;
+    margin: 3px;
+    text-align: center;
+    background-color: #252525;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.cancelarperfil:hover{
+    background-color: white;
+    color: #252525;
+}
+.eliminarcuenta{
+    width: 160px;
+    font-size: 100%;
+    padding: 5px;
+    margin: 3px;
+    text-align: center;
+    background-color: red;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.eliminarcuenta:hover{
+    background-color: white;
+    color: #252525;
+}
+#DescUsuario2{
+    width: 218px;
+}
+#NumConexiones2{
+    width: 168px;
+}
+#FechaHoraUltimaConexion2{
+    width: 151px;
+}
+#Password2{
+    width: 240px;
+}
+#ImagenUsuario2{
+    width: 254px;
+}
+
+/*CONTENIDO DEL CAMBIARPASSWORD.PHP CON DOS BOTONES*/
+.formCambiarPassword{
+    margin-top: 15px;
+    margin-bottom: 70px;
+}
+.formCambiarPassword fieldset{
+    border: 2px solid black;
+    width: 450px;
+    margin:auto;
+    background-color:#EEEEEE;
+}
+.formCambiarPassword ul{
+    list-style: none;
+}
+.formCambiarPassword ul li{
+    padding-left: 15px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.tituloCambiarPassword{
+    margin-left: 13px; 
+}
+.formCambiarPassword span{
+    font-size: 90%;
+    color: red;
+}
+.formCambiarPassword fieldset p:first-child{
+    font-size: 190%;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+}
+#PasswordActual{
+    width: 251px;
+}
+#PasswordNueva{
+    width: 251px;
+}
+#RepetirPasswordNueva{
+    width: 199px;
+}
