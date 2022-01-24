@@ -157,5 +157,21 @@ class UsuarioPDO implements UsuarioDB{
             return false;
         }
     }
+    /**
+     * Metodo borrarUsuario()
+     * 
+     * Metodo que nos permite eliminar un usuario
+     * 
+     * @param object $oUsuario Objeto usuario
+     * @return PDOStatement El resultado de la consulta ejecutada
+     */
+    public static function borrarUsuario($oUsuario){
+        //Consulta SQL para borrar el usuario
+        $consultaEliminarUsuario = <<<CONSULTA
+            DELETE FROM T01_Usuario WHERE T01_CodUsuario="{$oUsuario->getCodUsuario()}";
+        CONSULTA;
+        
+        return DBPDO::ejecutarConsulta($consultaEliminarUsuario);
+    }
 }
 ?>
