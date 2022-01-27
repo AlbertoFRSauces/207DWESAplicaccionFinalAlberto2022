@@ -13,7 +13,7 @@
  * Clase que usaremos para crear un objeto de la clase Error
  * 
  * @author Alberto Fernandez Ramirez
- * @package LoginLogout
+ * @package AppFinal
  * @since 13/01/2022
  * @copyright Copyright (c) 2022, Alberto Fernandez Ramirez
  * @version 1.0 Realizacion de AppError

@@ -13,7 +13,7 @@
  * Interfaz que implementaremos en la clase DBPDO
  * 
  * @author Alberto Fernandez Ramirez
- * @package LoginLogout
+ * @package AppFinal
  * @since 12/01/2022
  * @copyright Copyright (c) 2022, Alberto Fernandez Ramirez
  * @version 1.0 Realizacion de DB

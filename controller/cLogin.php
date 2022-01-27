@@ -1,7 +1,7 @@
 <?php
 /*
  * 
- * @package: LoginLogout
+ * @package: AppFinal
  * @author: Alberto Fernandez Ramirez
  * @since: 25/11/2021
  * @version: 1.0 Realizacion de cLogin

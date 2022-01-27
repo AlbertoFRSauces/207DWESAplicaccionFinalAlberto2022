@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <language>es-ES</language>
+        <title>Proyecto Final Alberto Fernandez Ramirez</title>
+        <copyright>Alberto Fernandez Ramirez</copyright>
+        <link>https://daw207.ieslossauces.es/207DWESAplicaccionFinalAlberto2022</link>
+        <description>Sitio Web de Alberto Fernandez Ramirez de DWES</description>
+        <copyright>2022 Alberto Fernandez Ramirez. All rights reserved.</copyright>
+        <lastBuildDate>Wed, 26 Abr 2022 08:30:00 +0100</lastBuildDate>
+        <skipHours>
+            <hour>0</hour>
+            <hour>1</hour>
+            <hour>2</hour>
+            <hour>3</hour>
+            <hour>4</hour>
+            <hour>5</hour>
+            <hour>6</hour>
+            <hour>7</hour>
+            <hour>8</hour>
+            <hour>14</hour>
+            <hour>15</hour>
+            <hour>16</hour>
+            <hour>17</hour>
+            <hour>18</hour>
+            <hour>19</hour>
+            <hour>20</hour>
+            <hour>21</hour>
+            <hour>22</hour>
+            <hour>23</hour>
+        </skipHours>
+        <skipDays> 
+            <day>Saturday</day>
+            <day>Sunday</day>
+        </skipDays>
+        <item>
+            <title>Configuracion de inicio publico</title>
+            <link>https://daw207.ieslossauces.es/207DWESAplicaccionFinalAlberto2022/index.php</link>
+            <description>Se ha realizado la configuracion de inicio publico con contenido para todos los clientes que entren a la web</description>
+        </item>
+    </channel>
+</rss>

@@ -1,6 +1,6 @@
-<article class="titulopagina">
-    <h2>Error</h2>
-</article>
+<header class="tituloaplicacion">
+    <h1 class="tituloh1"><img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/logotipo.png" class="imagelogo" alt="IconoWebImitada" /></h1><h2 class="tituloh2">Error</h2>
+</header>
 <form class="buttonback">
     <input type="submit" value="VOLVER" name="volvererror" class="volverdetalle"/>
 </form>

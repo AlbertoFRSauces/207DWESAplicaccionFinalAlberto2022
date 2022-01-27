@@ -4,7 +4,7 @@
  * 
  * Controlador que permite controlar la accion que se realiza cuando se pulse el boton cancelar o crear
  * 
- * @package: LoginLogout
+ * @package: AppFinal
  * @author: Alberto Fernandez Ramirez
  * @since: 17/01/2022
  * @version: 1.0 Realizacion de cRegistro

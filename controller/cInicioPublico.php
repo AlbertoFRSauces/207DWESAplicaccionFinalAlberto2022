@@ -1,7 +1,7 @@
 <?php
 /*
  * 
- * @package: LoginLogout
+ * @package: AppFinal
  * @author: Alberto Fernandez Ramirez
  * @since: 13/01/2022
  * @version: 1.0 Realizacion de cInicioPublico

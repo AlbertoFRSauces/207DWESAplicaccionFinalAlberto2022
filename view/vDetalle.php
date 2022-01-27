@@ -1,9 +1,6 @@
-<article class="titulopagina">
-    <h2>Detalle</h2>
-</article>
-<form class="buttonback">
-    <input type="submit" value="Volver" name="volver" class="volverdetalle"/>
-</form>
+<header class="tituloaplicacion">
+    <p class="tituloh1"><img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/logotipo.png" class="imagelogo" alt="IconoWebImitada" /></p><p class="tituloh2">Detalle</p>
+</header>
 <!–– Muestra del contenido de la variable $_SESSION con foreach()––>
 <?php if (!empty($_SESSION)) { ?>
     <h2 class="titulovariable">$_SESSION</h2>
@@ -11,7 +8,7 @@
         <?php foreach ($_SESSION as $clave => $valor) { ?>
             <tr>
                 <td><strong><?php echo $clave ?></strong></td>
-                <td><?php print_r($valor) ?></td>
+                <td><pre><?php print_r($valor) ?></pre></td>
             </tr>
             <?php
         }
@@ -61,4 +58,6 @@
 <?php
 phpinfo();
 ?>
-
+<form class="buttonback">
+    <input type="submit" value="Volver" name="volver" class="volverdetalle"/>
+</form>

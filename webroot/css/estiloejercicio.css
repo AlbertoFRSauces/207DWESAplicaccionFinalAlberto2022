@@ -15,35 +15,80 @@
 body{
     font-family:calibri, arial, sans-serif;
     background-repeat:no-repeat;
-    background-color:#EEEEEE;
+    background-color:#ffffff;
     padding-bottom: 50px;
     height: 100%;
-}
-.titulopagina{
-    font-family: "Gotham-Medium";
-    font-size:17px;
-    text-align:center;
-    background-color:#252525;
-    color:white;
-    padding-bottom:15px;
-    text-transform:uppercase;
+    width: 100%;
 }
 .tituloaplicacion{
+    margin-bottom: 40px;
+}
+.tituloh1{
     font-family: "Gotham-Medium";
-    font-size:19px;
-    text-align:center;
-    background-color:#D90000;
-    color:white;
-    padding-top:15px;
-    padding-bottom:15px;
-    text-transform:uppercase;
+    font-size:26px;
+    background-color:#ffffff;
+    color: #2b2e33;
+    padding-top: 15px;
+    padding-left: 15px;
+}
+.tituloh2{
+    font-family: "Gotham-Medium";
+    font-size:23px;
+    background-color:#ffffff;
+    color: #2b2e33;
+    padding-top: 15px;
+    padding-right: 15px;
+    float: right;
+}
+.tituloh1, .tituloh2 {
+    display: inline;
 }
 /* IMAGENES */
+.imagencaja{
+    width: 240px;
+    height: 340px;
+}
+.imagencaja:hover {
+    -webkit-transition: all 0.9s ease;
+    -moz-transition: all 0.9s ease;
+    -o-transition: all 0.9s ease;
+    -ms-transition: all 0.9s ease;
+    -webkit-transform:scale(1.2);
+    -moz-transform:scale(1.2);
+    -ms-transform:scale(1.2);
+    -o-transform:scale(1.2);
+    transform:scale(1.2);
+    border: 1px solid #181b21;
+    border-radius: 15px;
+}
 .imagegithub{
-    margin-right:5px;
-    float: right;
-    width: 43px;
-    height: 43px;
+    width: 31px;
+    height: 31px;
+}
+.imagelogo{
+    margin-top: 15px;
+    width: 380;
+    height: 55px;
+}
+.imagerss{
+    margin-right: 8px;
+    width: 31px;
+    height: 31px;
+}
+.imagecv{
+    margin-right: 8px;
+    width: 29px;
+    height: 29px;
+}
+.imagewebimitada{
+    margin-right: 8px;
+    width: 29px;
+    height: 29px;
+}
+.imagephpdoc{
+    margin-right: 5px;
+    width: 33px;
+    height: 33px;
 }
 .imageplay{
     margin-right: 3px;
@@ -63,10 +108,6 @@ body{
     width: 43px;
     height: 43px;
 }
-.cajaimagen{
-    width: 33px;
-    height: 43px;
-}
 .imagenwip{
     margin:auto auto;
     display:block;
@@ -75,102 +116,263 @@ body{
 /* FOOTER */
 .piepagina{
     font-family: "Gotham-Medium";
-    font-size: 14px;
-    background-color:#DDDDDD;
+    font-size: 13.5px;
     position: fixed;
     bottom: 0;
     padding-top: 8px;
-    padding-bottom: 8px;
     right: 0px;
     left: 0px;
 }
 .piepagina p{
-    color:#33333D;
+    color:#595b5e;
     text-align:center;
-    margin-left: 31px;
+    margin-bottom: 8px;
 }
-.piepagina p:first-of-type{
-    margin-top: 6px;
+.miweb{
+    color:#595b5e;
 }
-
+.miweb:hover{
+    transition: color 0.4s linear 0s;
+    color: #181b21;
+}
+/* CONTENIDO INICIO PUBLIC */
+/*.containerIndex{
+    position: relative;
+    height: auto;
+    width: 100%;
+}
+*/
+.formularioIndex{
+    width: 730px;
+    margin: auto;
+}
+.iniciarsesion{
+    font-family: "Gotham-Medium";
+    width: 225px;
+    font-size: 90%;
+    padding: 12px;
+    text-align: center;
+    background-color: #181b21;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 15px;
+    border-radius: 32px;
+    border: none;
+    display: inline-flex;
+    opacity: 0.92;
+}
+.registrarsepublico{
+    font-family: "Gotham-Medium";
+    width: 225px;
+    font-size: 90%;
+    padding: 12px;
+    text-align: center;
+    background-color: #181b21;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 15px;
+    border-radius: 32px;
+    border: none;
+    display: inline-flex;
+    opacity: 0.92;
+}
+.salir{
+    font-family: "Gotham-Medium";
+    width: 225px;
+    font-size: 90%;
+    padding: 12px;
+    text-align: center;
+    background-color: #181b21;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 15px;
+    border-radius: 32px;
+    border: none;
+    display: inline-flex;
+    opacity: 0.92;
+}
+button{
+    border: 0;
+    width: 50px;
+    height: 35px;
+    margin: 5px;
+}
+.cajapublica{
+    max-width: calc(100vw - 48px);
+    min-width: 188px;
+    width: 235px;
+    height: 375px;
+    border-radius: 15px;
+    border: 1px solid #181b21;
+    padding-bottom: 10px;
+    display: inline-flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 20px 0 0;
+    margin-left: 23px;
+    margin-bottom: 30px;
+    vertical-align: top;
+    background-color: #181b21;
+    overflow:hidden;
+}
+.cajapublica:hover{
+    overflow:visible;
+}
+.descripcioncaja p{
+    padding-top: 10px;
+    text-align: center;
+    font-family: "Gotham-Medium";
+    font-size: 13px;
+    color: #ffffff;
+    
+}
 /*CONTENIDO DEL LOGIN.PHP CON DOS BOTONES*/
 #formulariologin{
-    width: 500px;
+    width: 290px;
     margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 15px;
 }
 fieldset{
-    border: 2px solid black;
-    padding: 15px;
+    background-color: transparent;
+    border-color: transparent;
 }
 #formulariologin ul li{
     list-style:none;
-    padding-left: 15px;
-    padding-bottom: 15px;
+    padding-left: 20px;
     padding-right: 15px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+.pUsuario{
+    font-family: "Gotham-Medium";
+    font-size: 15px;
+    width: 250px;
+    color: #717276;
+}
+.pPassword{
+    font-family: "Gotham-Medium";
+    font-size: 15px;
+    width: 250px;
+    color: #717276;
+}
 #CodUsuario{
-    width: 251px;
+    font-family: "Gotham-Medium";
+    width: 250px;
+    font-size: 90%;
+    padding: 10px;
+    background-color: #e7e7e7;
+    color: #3b3e43;
+    margin-top: 10px;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
 }
 #Password{
-    width: 239px;
-}
-fieldset p:first-child{
-    font-size: 190%;
-    padding-left: 15px;
-    padding-bottom: 15px;
+    font-family: "Gotham-Medium";
+    width: 250px;
+    font-size: 90%;
+    padding: 10px;
+    background-color: #e7e7e7;
+    color: #3b3e43;
+    margin-top: 10px;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
 }
 .entrar{
-    width: 128px;
-    font-size: 100%;
-    padding: 5px;
-    margin: 3px;
+    font-family: "Gotham-Medium";
+    width: 250px;
+    font-size: 90%;
+    padding: 10px;
     text-align: center;
-    background-color: #252525;
+    background-color: #3d69e1;
     color: white;
     text-transform: uppercase;
     cursor: pointer;
+    margin-top: 10px;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
 }
 .entrar:hover{
-    background-color: white;
-    color: #252525;
+    transition: background-color 0.3s linear 0s;
+    background-color: #3457b2;
 }
 .volver{
-    width: 128px;
-    font-size: 100%;
-    padding: 5px;
-    margin: 3px;
+    font-family: "Gotham-Medium";
+    width: 250px;
+    font-size: 90%;
+    padding: 10px;
     text-align: center;
-    background-color: #252525;
-    color: white;
+    background-color: #ffffff;
+    color: #181b21;
     text-transform: uppercase;
     cursor: pointer;
+    margin-top: 10px;
+    border-radius: 32px;
+    opacity: 0.92;
+    border-color: #181b21;
+    border-width: 3px;
 }
 .volver:hover{
-    background-color: white;
-    color: #252525;
+    transition: background-color 0.3s linear 0s, color 0.3s linear 0s;
+    background-color: black;
+    color: #ffffff;
 }
 .registrarse{
-    width: 128px;
-    font-size: 100%;
-    padding: 5px;
-    margin: 3px;
+    font-family: "Gotham-Medium";
+    width: 250px;
+    font-size: 90%;
+    padding: 10px;
     text-align: center;
-    background-color: #252525;
-    color: white;
+    background-color: #ffffff;
+    color: #181b21;
     text-transform: uppercase;
     cursor: pointer;
+    border-radius: 32px;
+    opacity: 0.92;
+    border-color: #181b21;
+    border-width: 3px;
 }
 .registrarse:hover{
-    background-color: white;
-    color: #252525;
+    transition: background-color 0.3s linear 0s, color 0.3s linear 0s;
+    background-color: black;
+    color: #ffffff;
+}
+.tituloiniciarsesion{
+    color: #181b21;
+    font-size: 210%;
+    padding-left: 20px;
+    padding-bottom: 15px;
+}
+.linebreak{
+    font-family: "Gotham-Medium";
+    color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    margin: 20px auto;
+    white-space: nowrap;
+}
+.linebreak::after, .linebreak::before {
+    content: "";
+    display: inline-block;
+    width: 90px;
+    height: 1px;
+    margin: 0 8px;
+    background-color: grey;
 }
 
 /*CONTENIDO DEL FORMULARIO EDITAR Y BOTONES ACEPTAR Y CANCELAR*/
@@ -217,67 +419,114 @@ fieldset p:first-child{
 
 /*CONTENIDO DEL PROGRAMA.PHP CON DOS BOTONES*/
 .cerrarsesion{
-    width: 225px;
-    font-size: 105%;
-    padding: 12px;
+    font-family: "Gotham-Medium";
+    width: 210px;
+    font-size: 90%;
+    padding: 10px;
     text-align: center;
-    background-color: #252525;
-    color: white;
+    background-color: #ffffff;
+    color: #181b21;
     text-transform: uppercase;
     cursor: pointer;
-    font-weight: bold;
-    margin: 10px;
+    margin-top: 15px;
+    margin-right: 10px;
+    border-radius: 32px;
+    opacity: 0.92;
+    border-color: #181b21;
+    border-width: 3px;
 }
 .cerrarsesion:hover{
-    background-color: white;
-    color: #252525;
+    transition: background-color 0.3s linear 0s, color 0.3s linear 0s;
+    background-color: black;
+    color: #ffffff;
 }
 .editarperfil{
-    width: 225px;
-    font-size: 105%;
-    padding: 12px;
+    font-family: "Gotham-Medium";
+    width: 210px;
+    font-size: 90%;
+    padding: 10px;
     text-align: center;
-    background-color: #252525;
-    color: white;
+    background-color: #ffffff;
+    color: #181b21;
     text-transform: uppercase;
     cursor: pointer;
-    font-weight: bold;
+    margin-top: 15px;
+    margin-right: 10px;
+    border-radius: 32px;
+    opacity: 0.92;
+    border-color: #181b21;
+    border-width: 3px;
 }
 .editarperfil:hover{
-    background-color: white;
-    color: #252525;
+    transition: background-color 0.3s linear 0s, color 0.3s linear 0s;
+    background-color: black;
+    color: #ffffff;
 }
 .detalle{
-    width: 225px;
-    font-size: 105%;
-    padding: 12px;
+    font-family: "Gotham-Medium";
+    width: 210px;
+    font-size: 90%;
+    padding: 10px;
     text-align: center;
-    background-color: #252525;
-    color: white;
+    background-color: #ffffff;
+    color: #181b21;
     text-transform: uppercase;
     cursor: pointer;
-    font-weight: bold;
-    
+    margin-top: 15px;
+    margin-right: 10px;
+    border-radius: 32px;
+    opacity: 0.92;
+    border-color: #181b21;
+    border-width: 3px;
 }
 .detalle:hover{
-    background-color: white;
-    color: #252525;
+    transition: background-color 0.3s linear 0s, color 0.3s linear 0s;
+    background-color: black;
+    color: #ffffff;
 }
 .mtoDepartamentos{
-    width: 225px;
-    font-size: 105%;
-    padding: 12px;
+    font-family: "Gotham-Medium";
+    width: 210px;
+    font-size: 90%;
+    padding: 10px;
     text-align: center;
-    background-color: #252525;
-    color: white;
+    background-color: #ffffff;
+    color: #181b21;
     text-transform: uppercase;
     cursor: pointer;
-    font-weight: bold;
-    margin: 10px;
+    margin-top: 15px;
+    margin-right: 10px;
+    border-radius: 32px;
+    opacity: 0.92;
+    border-color: #181b21;
+    border-width: 3px;
 }
 .mtoDepartamentos:hover{
-    background-color: white;
-    color: #252525;
+    transition: background-color 0.3s linear 0s, color 0.3s linear 0s;
+    background-color: black;
+    color: #ffffff;
+}
+.rest{
+    font-family: "Gotham-Medium";
+    width: 210px;
+    font-size: 90%;
+    padding: 10px;
+    text-align: center;
+    background-color: #ffffff;
+    color: #181b21;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-right: 10px;
+    border-radius: 32px;
+    opacity: 0.92;
+    border-color: #181b21;
+    border-width: 3px;
+}
+.rest:hover{
+    transition: background-color 0.3s linear 0s, color 0.3s linear 0s;
+    background-color: black;
+    color: #ffffff;
 }
 .container{
     position: relative;
@@ -292,12 +541,15 @@ fieldset p:first-child{
 }
 .usuario{
     text-align: center;
+    color: #181b21;
 }
 .conexiones{
     text-align: center;
+    color: #181b21;
 }
 .ultimaConexion{
     text-align: center;
+    color: #181b21;
 }
 
 /*CONTENIDO DEL DETALLE.PHP CON DOS BOTONES*/
@@ -316,24 +568,35 @@ fieldset p:first-child{
     padding-bottom: 10px;
 }
 .volverdetalle{
-    width: 150px;
-    font-size: 105%;
+    font-family: "Gotham-Medium";
+    width: 200px;
+    font-size: 90%;
     padding: 10px;
     text-align: center;
-    background-color: #252525;
-    color: white;
+    background-color: #ffffff;
+    color: #181b21;
     text-transform: uppercase;
     cursor: pointer;
+    margin-top: 15px;
+    border-radius: 32px;
+    opacity: 0.92;
+    border-color: #181b21;
+    border-width: 3px;
+    float: right;
+    position: fixed;
+    top: 0;
+    margin-top: 50px;
 }
 .volverdetalle:hover{
-    background-color: white;
-    color: #252525;
+    transition: background-color 0.3s linear 0s, color 0.3s linear 0s;
+    background-color: black;
+    color: #ffffff;
 }
 .buttonback{
     display: flex;
     flex-direction: row;
     justify-content:flex-end;
-    padding: 5px;
+    padding: 10px;
 }
 td{
     border: 1px solid black;
@@ -355,246 +618,489 @@ td{
 }
 .tablaerror th{
     padding: 8px;
-
 }
 
 /*CONTENIDO DEL REGISTRO.PHP CON DOS BOTONES*/
+.pDescripcion{
+    font-family: "Gotham-Medium";
+    font-size: 15px;
+    width: 250px;
+    color: #717276;
+}
+.pPassword{
+    font-family: "Gotham-Medium";
+    font-size: 15px;
+    width: 250px;
+    color: #717276;
+}
 .formRegistro{
-    margin-top: 15px;
     margin-bottom: 70px;
 }
 .formRegistro fieldset{
-    border: 2px solid black;
+    border: transparent;
+    background-color: transparent;
     width: 375px;
     margin:auto;
-    background-color:#EEEEEE;
-}
-.formRegistro ul{
-    list-style: none;
 }
 .formRegistro ul li{
     padding-left: 15px;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     padding-right: 15px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    list-style: none;
 }
 .tituloRegistros{
-    margin-left: 13px; 
-}
-.tituloRegistros fieldset p:first-child{
-    font-size: 190%;
-    padding-top: 15px;
-    padding-left: 15px;
+    color: #181b21;
+    font-size: 210%;
+    padding-left: 35px;
     padding-bottom: 15px;
 }
 .errores{
-    height: 14px;
+    height: 13px;
+    font-family: "Gotham-Medium";
 }
 .crear{
-    width: 128px;
-    font-size: 100%;
-    padding: 5px;
-    margin: 3px;
+    font-family: "Gotham-Medium";
+    width: 300px;
+    font-size: 90%;
+    padding: 10px;
     text-align: center;
-    background-color: #252525;
+    background-color: #3d69e1;
     color: white;
     text-transform: uppercase;
     cursor: pointer;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
 }
 .crear:hover{
-    background-color: white;
-    color: #252525;
+    transition: background-color 0.3s linear 0s;
+    background-color: #3457b2;
 }
 .cancelar{
-    width: 128px;
-    font-size: 100%;
-    padding: 5px;
-    margin: 3px;
+    font-family: "Gotham-Medium";
+    width: 300px;
+    font-size: 90%;
+    padding: 10px;
     text-align: center;
-    background-color: #252525;
-    color: white;
+    background-color: #ffffff;
+    color: #181b21;
     text-transform: uppercase;
     cursor: pointer;
+    border-radius: 32px;
+    opacity: 0.92;
+    border-color: #181b21;
+    border-width: 3px;
 }
 .cancelar:hover{
-    background-color: white;
-    color: #252525;
+    transition: background-color 0.3s linear 0s, color 0.3s linear 0s;
+    background-color: black;
+    color: #ffffff;
 }
 #CodUsuarioReg{
+    font-family: "Gotham-Medium";
     width: 300px;
+    font-size: 90%;
+    padding: 10px;
+    background-color: #e7e7e7;
+    color: #3b3e43;
+    margin-top: 10px;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
 }
 #DescUsuario{
+    font-family: "Gotham-Medium";
     width: 300px;
+    font-size: 90%;
+    padding: 10px;
+    background-color: #e7e7e7;
+    color: #3b3e43;
+    margin-top: 10px;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
 }
 #PasswordReg{
+    font-family: "Gotham-Medium";
     width: 300px;
+    font-size: 90%;
+    padding: 10px;
+    background-color: #e7e7e7;
+    color: #3b3e43;
+    margin-top: 10px;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
 }
 #RepetirPassword{
+    font-family: "Gotham-Medium";
     width: 300px;
+    font-size: 90%;
+    padding: 10px;
+    background-color: #e7e7e7;
+    color: #3b3e43;
+    margin-top: 10px;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
 }
 .mensajeError{
     margin-top: 10px;
     color: #D90000;
     text-align: center;
+    font-size: 13px;
+    font-family: "Gotham-Medium";
 }
 
 /*CONTENIDO DEL EDITARPERFIL.PHP CON CUATRO BOTONES*/
+
 .formMiCuenta{
     margin-top: 15px;
     margin-bottom: 70px;
 }
 .formMiCuenta fieldset{
-    border: 2px solid black;
+    border: transparent;
+    background-color: transparent;
     width: 375px;
     margin:auto;
-    background-color:#EEEEEE;
-}
-.formMiCuenta ul{
-    list-style: none;
 }
 .formMiCuenta ul li{
     padding-left: 15px;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     padding-right: 15px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    list-style: none;
 }
 .tituloMiCuenta{
-    margin-left: 13px; 
-}
-.formMiCuenta span{
-    font-size: 90%;
-    color: red;
-}
-.formMiCuenta fieldset p:first-child{
-    font-size: 190%;
-    padding-top: 15px;
-    padding-left: 15px;
+    color: #181b21;
+    font-size: 210%;
+    padding-left: 35px;
     padding-bottom: 15px;
 }
 .cambiarpassword{
-    width: 315px;
+    font-family: "Gotham-Medium";
+    width: 300px;
     font-size: 90%;
-    padding: 4px;
-    margin: 3px;
+    padding: 10px;
     text-align: center;
-    background-color: #252525;
-    color: white;
+    background-color: #ffffff;
+    color: #181b21;
     text-transform: uppercase;
     cursor: pointer;
+    border-radius: 32px;
+    opacity: 0.92;
+    border-color: #181b21;
+    border-width: 3px;
 }
 .cambiarpassword:hover{
-    background-color: white;
-    color: #252525;
+    transition: background-color 0.3s linear 0s, color 0.3s linear 0s;
+    background-color: black;
+    color: #ffffff;
 }
 .aceptar{
-    width: 115px;
-    font-size: 100%;
-    padding: 5px;
-    margin: 3px;
+    font-family: "Gotham-Medium";
+    width: 300px;
+    font-size: 90%;
+    padding: 10px;
     text-align: center;
-    background-color: #252525;
+    background-color: #3d69e1;
     color: white;
     text-transform: uppercase;
     cursor: pointer;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
 }
 .aceptar:hover{
-    background-color: white;
-    color: #252525;
+    transition: background-color 0.3s linear 0s;
+    background-color: #3457b2;
 }
 .cancelarperfil{
-    width: 115px;
-    font-size: 100%;
-    padding: 5px;
-    margin: 3px;
+    font-family: "Gotham-Medium";
+    width: 300px;
+    font-size: 90%;
+    padding: 10px;
     text-align: center;
-    background-color: #252525;
-    color: white;
+    background-color: #ffffff;
+    color: #181b21;
     text-transform: uppercase;
     cursor: pointer;
+    margin-top: 10px;
+    border-radius: 32px;
+    opacity: 0.92;
+    border-color: #181b21;
+    border-width: 3px;
 }
 .cancelarperfil:hover{
-    background-color: white;
-    color: #252525;
+    transition: background-color 0.3s linear 0s, color 0.3s linear 0s;
+    background-color: black;
+    color: #ffffff;
 }
 .eliminarcuenta{
-    width: 160px;
-    font-size: 100%;
-    padding: 5px;
-    margin: 3px;
+    font-family: "Gotham-Medium";
+    width: 300px;
+    font-size: 90%;
+    padding: 10px;
     text-align: center;
     background-color: red;
     color: white;
     text-transform: uppercase;
     cursor: pointer;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
+    margin-top: 10px;
 }
 .eliminarcuenta:hover{
-    background-color: white;
-    color: #252525;
+    transition: background-color 0.3s linear 0s;
+    background-color: #851C00;
+}
+#CodUsuario2{
+    font-family: "Gotham-Medium";
+    width: 300px;
+    font-size: 90%;
+    padding: 10px;
+    background-color: #e7e7e7;
+    color: #3b3e43;
+    margin-top: 10px;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
 }
 #DescUsuario2{
-    width: 218px;
+    font-family: "Gotham-Medium";
+    width: 300px;
+    font-size: 90%;
+    padding: 10px;
+    background-color: #e7e7e7;
+    color: #3b3e43;
+    margin-top: 10px;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
 }
 #NumConexiones2{
-    width: 168px;
+    font-family: "Gotham-Medium";
+    width: 300px;
+    font-size: 90%;
+    padding: 10px;
+    background-color: #e7e7e7;
+    color: #3b3e43;
+    margin-top: 10px;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
 }
 #FechaHoraUltimaConexion2{
-    width: 151px;
+    font-family: "Gotham-Medium";
+    width: 300px;
+    font-size: 90%;
+    padding: 10px;
+    background-color: #e7e7e7;
+    color: #3b3e43;
+    margin-top: 10px;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
 }
 #Password2{
-    width: 240px;
+    font-family: "Gotham-Medium";
+    width: 300px;
+    font-size: 90%;
+    padding: 10px;
+    background-color: #e7e7e7;
+    color: #3b3e43;
+    margin-top: 10px;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
 }
 #ImagenUsuario2{
     width: 254px;
 }
+.tituloMiCuentaEliminar{
+    color: #181b21;
+    font-size: 170%;
+    padding-left: 35px;
+    padding-bottom: 15px;
+    padding-right: 35px;
+    text-align: center;
+}
 
 /*CONTENIDO DEL CAMBIARPASSWORD.PHP CON DOS BOTONES*/
 .formCambiarPassword{
-    margin-top: 15px;
     margin-bottom: 70px;
 }
 .formCambiarPassword fieldset{
-    border: 2px solid black;
-    width: 450px;
+    border: transparent;
+    background-color: transparent;
+    width: 375px;
     margin:auto;
-    background-color:#EEEEEE;
-}
-.formCambiarPassword ul{
-    list-style: none;
 }
 .formCambiarPassword ul li{
     padding-left: 15px;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     padding-right: 15px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    list-style: none;
 }
 .tituloCambiarPassword{
-    margin-left: 13px; 
+    color: #181b21;
+    font-size: 210%;
+    padding-left: 35px;
+    padding-bottom: 15px; 
 }
 .formCambiarPassword span{
     font-size: 90%;
     color: red;
 }
-.formCambiarPassword fieldset p:first-child{
-    font-size: 190%;
-    padding-top: 15px;
-    padding-left: 15px;
-    padding-bottom: 15px;
-}
 #PasswordActual{
-    width: 251px;
+    font-family: "Gotham-Medium";
+    width: 300px;
+    font-size: 90%;
+    padding: 10px;
+    background-color: #e7e7e7;
+    color: #3b3e43;
+    margin-top: 10px;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
 }
 #PasswordNueva{
-    width: 251px;
+    font-family: "Gotham-Medium";
+    width: 300px;
+    font-size: 90%;
+    padding: 10px;
+    background-color: #e7e7e7;
+    color: #3b3e43;
+    margin-top: 10px;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
 }
 #RepetirPasswordNueva{
-    width: 199px;
+    font-family: "Gotham-Medium";
+    width: 300px;
+    font-size: 90%;
+    padding: 10px;
+    background-color: #e7e7e7;
+    color: #3b3e43;
+    margin-top: 10px;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
+}
+
+/*CONTENIDO DEL vREST.PHP*/
+#formularioconversor{
+    width: 450px;
+    margin: auto;
+}
+#formularioconversor fieldset{
+    background-color: transparent;
+    border-color: transparent;
+}
+#formularioconversor fieldset ul li{
+    list-style:none;
+    padding-left: 20px;
+    padding-right: 15px;
+    
+}
+#formularioconversor fieldset ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+.pDivisa{
+    font-family: "Gotham-Medium";
+    font-size: 15px;
+    color: #717276;
+}
+.pPasar{
+    font-family: "Gotham-Medium";
+    font-size: 15px;
+    color: #717276;
+}
+#CodDivisa{
+    font-family: "Gotham-Medium";
+    width: 158px;
+    font-size: 90%;
+    padding: 10px;
+    background-color: #e7e7e7;
+    color: #3b3e43;
+    margin-top: 10px;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
+}
+#CodPasar{
+    font-family: "Gotham-Medium";
+    width: 158px;
+    font-size: 90%;
+    padding: 10px;
+    background-color: #e7e7e7;
+    color: #3b3e43;
+    margin-top: 10px;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
+}
+.convertir{
+    font-family: "Gotham-Medium";
+    width: 200px;
+    font-size: 80%;
+    padding: 10px;
+    text-align: center;
+    background-color: #3d69e1;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 192px;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
+}
+.convertir:hover{
+    transition: background-color 0.3s linear 0s;
+    background-color: #3457b2;
+}
+#Cantidad{
+    font-family: "Gotham-Medium";
+    width: 200px;
+    font-size: 90%;
+    padding: 10px;
+    background-color: #e7e7e7;
+    color: #3b3e43;
+    margin-top: 10px;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
+}
+#Resultado{
+    font-family: "Gotham-Medium";
+    width: 200px;
+    font-size: 90%;
+    padding: 10px;
+    background-color: #e7e7e7;
+    color: #3b3e43;
+    margin-top: 10px;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
+}
+#imageinfo{
+    margin-left: 3px;
+    width: 20px;
+    height: 19px;
+    margin-bottom: -6px;
 }

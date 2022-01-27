@@ -7,6 +7,7 @@
     require_once 'model/UsuarioPDO.php';
     require_once 'model/DBPDO.php';
     require_once 'model/AppError.php';
+    require_once 'model/REST.php';
     
     define("OBLIGATORIO", 1);
     
@@ -20,7 +21,8 @@
         "registro" => "controller/cRegistro.php",
         "micuenta" => "controller/cMiCuenta.php",
         "cambiarpassword" => "controller/cCambiarPassword.php",
-        "borrarcuenta" => "controller/cBorrarCuenta.php"
+        "borrarcuenta" => "controller/cBorrarCuenta.php",
+        "rest" => "controller/cREST.php"
     ];
     $vistas = [
         "layout" => "view/layout.php",
@@ -33,6 +35,7 @@
         "registro" => "view/vRegistro.php",
         "micuenta" => "view/vMiCuenta.php",
         "cambiarpassword" => "view/vCambiarPassword.php",
-        "borrarcuenta" => "view/vBorrarCuenta.php"
+        "borrarcuenta" => "view/vBorrarCuenta.php",
+        "rest" => "view/vREST.php"
     ]
 ?>

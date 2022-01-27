@@ -1,7 +1,7 @@
 <?php
 /*
  * 
- * @package: LoginLogout
+ * @package: AppFinal
  * @author: Alberto Fernandez Ramirez
  * @since: 25/11/2021
  * @version: 1.0 Realizacion de cInicio
@@ -29,8 +29,16 @@ if(isset($_REQUEST['mtodepartamentos'])){ //Si el usuario pulsa el boton de mtod
 }
 
 if(isset($_REQUEST['detalle'])){ //Si el usuario logeado pulsa el boton de detalle
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso']; //Asigno a la pagina anterior la pagina en curso
     $_SESSION['paginaEnCurso'] = 'detalle'; //Asigno a la pagina en curso la pagina de detalle
     header('Location: index.php'); //Redirecciono a detalle
+    exit;
+}
+
+if(isset($_REQUEST['rest'])){ //Si el usuario pulsa el boton de rest, mando al usuario a la pagina de rest
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso']; //Guardo la pagina actual en paginaAnterior para recordarla
+    $_SESSION['paginaEnCurso'] = 'rest'; //Asigno a la pagina en curso la pagina de rest
+    header('Location: index.php'); //Redireciono de nuevo a rest
     exit;
 }
 
