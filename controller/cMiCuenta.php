@@ -4,7 +4,7 @@
  * 
  * Controlador que permite controlar la accion que se realiza cuando se pulse el boton de aceptar, cancelar, eliminarcuenta o cambiarpassword
  * 
- * @package: LoginLogout
+ * @package: AppFinal
  * @author: Alberto Fernandez Ramirez
  * @since: 18/01/2022
  * @version: 1.0 Realizacion de cMiCuenta
@@ -18,14 +18,14 @@ if(isset($_REQUEST['cancelar'])){ //Si el usuario pulsa el boton de cancelar, ma
 }
 
 if(isset($_REQUEST['eliminarcuenta'])){ //Si el usuario pulsa el boton de eliminar cuenta, mando al usuario a la pagina de eliminar cuenta
-    $_SESSION['paginaAnterior'] = 'micuenta'; //Guardo la pagina actual en paginaAnterior para recordarla
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso']; //Guardo la pagina actual en paginaAnterior para recordarla
     $_SESSION['paginaEnCurso'] = 'borrarcuenta'; //Asigno a la pagina en curso la pagina de eliminar cuenta
     header('Location: index.php'); //Redireciono de nuevo a eliminar cuenta
     exit;
 }
 
 if(isset($_REQUEST['cambiarpassword'])){ //Si el usuario pulsa el boton de cambiar password, mando al usuario a la pagina de cambiar password
-    $_SESSION['paginaAnterior'] = 'micuenta'; //Guardo la pagina actual en paginaAnterior para recordarla
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso']; //Guardo la pagina actual en paginaAnterior para recordarla
     $_SESSION['paginaEnCurso'] = 'cambiarpassword'; //Asigno a la pagina en curso la pagina de cambiar password
     header('Location: index.php'); //Redireciono de nuevo a cambiar password
     exit;

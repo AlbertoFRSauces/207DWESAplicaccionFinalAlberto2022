@@ -13,7 +13,7 @@
  * Clase que podremos utilizar para crear un objeto Usuario
  * 
  * @author Alberto Fernandez Ramirez
- * @package LoginLogout
+ * @package AppFinal
  * @since 21/12/2021
  * @copyright Copyright (c) 2021, Alberto Fernandez Ramirez
  * @version 1.0 Realizacion de Usuario

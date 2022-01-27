@@ -1,6 +1,6 @@
-<article class="titulopagina">
-    <h2>Inicio Privado</h2>
-</article>
+<header class="tituloaplicacion">
+    <p class="tituloh1"><img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/logotipo.png" class="imagelogo" alt="IconoWebImitada" /></p><p class="tituloh2">Inicio Privado</p>
+</header>
     <h1 class="usuario"><?php echo "Bienvenid@ " . $sDescUsuario ?></h1>
     <h3 class="conexiones"><?php echo "Esta es la " . $iNumConexiones . " vez que te conectas!" ?></h3>
     <h3 class="conexiones"><?php 
@@ -13,4 +13,5 @@
     <input type="submit" value="EDITAR PERFIL" name="editarperfil" class="editarperfil"/>
     <input type="submit" value="MTO DEPARTAMENTOS" name="mtodepartamentos" class="mtoDepartamentos"/>
     <input type="submit" value="DETALLE" name="detalle" class="detalle"/>
+    <input type="submit" value="REST" name="rest" class="rest"/>
 </form>

@@ -4,7 +4,7 @@
  * 
  * Controlador que permite controlar la accion que se realiza cuando se pulse el boton de aceptar o cancelar
  * 
- * @package: LoginLogout
+ * @package: AppFinal
  * @author: Alberto Fernandez Ramirez
  * @since: 18/01/2022
  * @version: 1.0 Realizacion de cCambiarPassword
@@ -12,7 +12,7 @@
  */
 
 if(isset($_REQUEST['cancelar'])){ //Si el usuario pulsa el boton de cancelar, mando al usuario a la pagina de micuenta
-    $_SESSION['paginaEnCurso'] = 'micuenta'; //Asigno a la pagina en curso la pagina micuenta
+    $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior']; //Asigno a la pagina en curso la pagina micuenta
     header('Location: index.php'); //Redireciono de nuevo a micuenta
     exit;
 }
