@@ -22,6 +22,7 @@ body{
 }
 .tituloaplicacion{
     margin-bottom: 40px;
+    min-width: 525px;
 }
 .tituloh1{
     font-family: "Gotham-Medium";
@@ -44,22 +45,9 @@ body{
     display: inline;
 }
 /* IMAGENES */
-.imagencaja{
-    width: 240px;
-    height: 340px;
-}
-.imagencaja:hover {
-    -webkit-transition: all 0.9s ease;
-    -moz-transition: all 0.9s ease;
-    -o-transition: all 0.9s ease;
-    -ms-transition: all 0.9s ease;
-    -webkit-transform:scale(1.2);
-    -moz-transform:scale(1.2);
-    -ms-transform:scale(1.2);
-    -o-transform:scale(1.2);
-    transform:scale(1.2);
-    border: 1px solid #181b21;
-    border-radius: 15px;
+.imagencajaimg{
+    width: 400px;
+    height: 400px;
 }
 .imagegithub{
     width: 31px;
@@ -69,11 +57,18 @@ body{
     margin-top: 15px;
     width: 380;
     height: 55px;
+    float: left;
+    padding-left: 20px;
 }
 .imagerss{
     margin-right: 8px;
     width: 31px;
     height: 31px;
+}
+.imagetecnologias{
+    margin-right: 8px;
+    width: 29px;
+    height: 29px;
 }
 .imagecv{
     margin-right: 8px;
@@ -136,15 +131,12 @@ body{
     color: #181b21;
 }
 /* CONTENIDO INICIO PUBLIC */
-/*.containerIndex{
-    position: relative;
-    height: auto;
-    width: 100%;
-}
-*/
 .formularioIndex{
-    width: 730px;
-    margin: auto;
+    width: 230px;
+    margin: 0;
+    float: right;
+    margin-top: 50px;
+    margin-right: -165px;
 }
 .iniciarsesion{
     font-family: "Gotham-Medium";
@@ -156,90 +148,94 @@ body{
     color: white;
     text-transform: uppercase;
     cursor: pointer;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-right: 15px;
     border-radius: 32px;
     border: none;
-    display: inline-flex;
-    opacity: 0.92;
+    opacity: 0.88;
 }
-.registrarsepublico{
-    font-family: "Gotham-Medium";
-    width: 225px;
-    font-size: 90%;
-    padding: 12px;
-    text-align: center;
-    background-color: #181b21;
-    color: white;
-    text-transform: uppercase;
+@media (max-width: 671px) {
+    .formularioIndex {
+        margin-top: 10px;
+        margin-right: 8px;
+    }
+}
+@media (max-width: 533px) {
+    .formularioIndex {
+        margin-top: 10px;
+        margin-right: 8px;
+    }
+}
+.tecnologias{
+    background-color: transparent;
+    border: none;
     cursor: pointer;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-right: 15px;
-    border-radius: 32px;
-    border: none;
-    display: inline-flex;
-    opacity: 0.92;
 }
-.salir{
-    font-family: "Gotham-Medium";
-    width: 225px;
-    font-size: 90%;
-    padding: 12px;
+.conjuntocajas{
     text-align: center;
-    background-color: #181b21;
-    color: white;
-    text-transform: uppercase;
-    cursor: pointer;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-right: 15px;
-    border-radius: 32px;
-    border: none;
-    display: inline-flex;
-    opacity: 0.92;
-}
-button{
-    border: 0;
-    width: 50px;
-    height: 35px;
-    margin: 5px;
+    margin-top: 90px;
+    margin-bottom: 50px;
 }
 .cajapublica{
-    max-width: calc(100vw - 48px);
+    max-width: 400px;
     min-width: 188px;
-    width: 235px;
-    height: 375px;
-    border-radius: 15px;
-    border: 1px solid #181b21;
-    padding-bottom: 10px;
+    max-height: 400px;
+    min-height: 188px;
+    width: auto;
+    height: auto;
     display: inline-flex;
-    align-items: center;
     flex-direction: column;
     justify-content: flex-end;
-    margin: 20px 0 0;
-    margin-left: 23px;
-    margin-bottom: 30px;
+    margin 0px auto;
+    margin-right: 25px;
+    margin-left: 25px;
+    margin-bottom: 50px;
     vertical-align: top;
-    background-color: #181b21;
     overflow:hidden;
 }
-.cajapublica:hover{
-    overflow:visible;
+.verdocumento{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Gotham-Medium";
+    margin-bottom: 25px;
+    position: absolute;
+    width: 400px;
+    height: 90px;
+    visibility: hidden;
+    opacity: 0;
+    background-color: white;
+    box-shadow: 0 0 8px #B0B0B0;
+    cursor: pointer;
+}
+.cajapublica:hover > .verdocumento{
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.2s, opacity 0.2s linear;
+}
+.verdocumento p{
+    font-size: 20px;
+}
+.ainicio{
+    text-decoration: none;
+    color: #080808;
 }
 .descripcioncaja p{
     padding-top: 10px;
-    text-align: center;
     font-family: "Gotham-Medium";
-    font-size: 13px;
-    color: #ffffff;
+    font-size: 15px;
+    color: #080808;
+    text-align: left;
+    cursor: pointer;
     
+}
+.descripcioncaja:hover p{
+    color: #ed4e3b;
 }
 /*CONTENIDO DEL LOGIN.PHP CON DOS BOTONES*/
 #formulariologin{
     width: 290px;
     margin: auto;
+    margin-bottom: 70px;
+    margin-top: 60px;
 }
 fieldset{
     background-color: transparent;
@@ -451,7 +447,6 @@ fieldset{
     text-transform: uppercase;
     cursor: pointer;
     margin-top: 15px;
-    margin-right: 10px;
     border-radius: 32px;
     opacity: 0.92;
     border-color: #181b21;
@@ -473,7 +468,6 @@ fieldset{
     text-transform: uppercase;
     cursor: pointer;
     margin-top: 15px;
-    margin-right: 10px;
     border-radius: 32px;
     opacity: 0.92;
     border-color: #181b21;
@@ -495,7 +489,6 @@ fieldset{
     text-transform: uppercase;
     cursor: pointer;
     margin-top: 15px;
-    margin-right: 10px;
     border-radius: 32px;
     opacity: 0.92;
     border-color: #181b21;
@@ -517,7 +510,6 @@ fieldset{
     text-transform: uppercase;
     cursor: pointer;
     margin-top: 15px;
-    margin-right: 10px;
     border-radius: 32px;
     opacity: 0.92;
     border-color: #181b21;
@@ -533,15 +525,29 @@ fieldset{
     height: auto;
     width: 100%;
 }
-.formularioPrograma{
+.formularioPrograma1{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.formularioPrograma2{
+    width: 230px;
+    margin: 0;
+    float: right;
+    margin-top: 35px;
+    margin-right: -182px;
+}
+@media (max-width: 669px) {
+    .formularioPrograma2 {
+        margin-top: -5px;
+        margin-right: -8px;
+    }
 }
 .usuario{
     text-align: center;
     color: #181b21;
+    margin-top: 70px;
 }
 .conexiones{
     text-align: center;
@@ -566,6 +572,7 @@ fieldset{
 .titulovariable{
     text-align: center;
     padding-bottom: 10px;
+    padding-top: 10px;
 }
 .volverdetalle{
     font-family: "Gotham-Medium";
@@ -635,6 +642,7 @@ td{
 }
 .formRegistro{
     margin-bottom: 70px;
+    margin-top: 60px;
 }
 .formRegistro fieldset{
     border: transparent;
@@ -757,9 +765,8 @@ td{
 }
 
 /*CONTENIDO DEL EDITARPERFIL.PHP CON CUATRO BOTONES*/
-
 .formMiCuenta{
-    margin-top: 15px;
+    margin-top: 60px;
     margin-bottom: 70px;
 }
 .formMiCuenta fieldset{
@@ -936,6 +943,7 @@ td{
 
 /*CONTENIDO DEL CAMBIARPASSWORD.PHP CON DOS BOTONES*/
 .formCambiarPassword{
+    margin-top: 60px;
     margin-bottom: 70px;
 }
 .formCambiarPassword fieldset{
@@ -1001,10 +1009,11 @@ td{
     opacity: 0.92;
 }
 
-/*CONTENIDO DEL vREST.PHP*/
+/*CONTENIDO DEL vREST.PHP para el valor de moneda*/
 #formularioconversor{
     width: 450px;
     margin: auto;
+    margin-top: 50px;
 }
 #formularioconversor fieldset{
     background-color: transparent;
@@ -1098,9 +1107,155 @@ td{
     border: none;
     opacity: 0.92;
 }
-#imageinfo{
+.imageinfo{
     margin-left: 3px;
     width: 20px;
     height: 19px;
     margin-bottom: -6px;
+}
+
+/*CONTENIDO DEL vREST.PHP para tiempo de provincia*/
+#formularioprovincia{
+    padding-top: 10px;
+    width: 450px;
+    margin: auto;
+}
+#formularioprovincia fieldset{
+    background-color: transparent;
+    border-color: transparent;
+}
+#formularioprovincia fieldset ul li{
+    list-style:none;
+    padding-left: 20px;
+    padding-right: 15px;
+}
+#formularioprovincia fieldset ul{
+    display: flex;
+    flex-flow: row;
+}
+.pProvincia{
+    font-family: "Gotham-Medium";
+    font-size: 15px;
+    color: #717276;
+}
+#CodProvincia{
+    font-family: "Gotham-Medium";
+    width: 168px;
+    font-size: 90%;
+    padding: 10px;
+    background-color: #e7e7e7;
+    color: #3b3e43;
+    margin-top: 10px;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
+    content:initial;
+}
+.buscar{
+    font-family: "Gotham-Medium";
+    width: 200px;
+    font-size: 80%;
+    padding: 10px;
+    text-align: center;
+    background-color: #3d69e1;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 28px;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
+    margin-left: -10px;
+}
+.buscar:hover{
+    transition: background-color 0.3s linear 0s;
+    background-color: #3457b2;
+}
+.mensajeErrorRest{
+    margin-top: 10px;
+    color: #D90000;
+    text-align: center;
+    font-size: 13px;
+    font-family: "Gotham-Medium";
+    max-width: 160px;
+}
+.mostrarTiempo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+.tituloRest{
+    font-family: "Gotham-Medium";
+    width: 400px;
+    font-size: 15px;
+    color: #67676b;
+}
+.mensajeRest{
+    font-family: "Gotham-Medium";
+    width: 400px;
+    font-size: 15px;
+    color: #1c1f25;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+.pInformacion{
+    font-family: "Gotham-Medium";
+    font-size: 17px;
+    color: #5e6065;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+}
+.vercomousar{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Gotham-Medium";
+    font-size: 14px;
+    width: 390px;
+    height: 120px;
+    visibility: hidden;
+    opacity: 0;
+    background-color: white;
+    box-shadow: 0 0 8px #B0B0B0;
+    border-radius: 12px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 100;
+    margin-top: -142px;
+    margin-bottom: 100px;
+    padding: 20px;
+}
+.imageninformacion:hover .vercomousar{
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.2s, opacity 0.2s linear;
+}
+.vercomousar2{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Gotham-Medium";
+    font-size: 14px;
+    width: 390px;
+    height: 90px;
+    visibility: hidden;
+    opacity: 0;
+    background-color: white;
+    box-shadow: 0 0 8px #B0B0B0;
+    border-radius: 12px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 100;
+    margin-top: -112px;
+    margin-bottom: 100px;
+    padding: 20px;
+}
+
+.imageninformacion:hover .vercomousar2{
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.2s, opacity 0.2s linear;
 }

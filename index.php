@@ -11,6 +11,11 @@ require_once 'config/configDBPDO.php'; //Incluyo la configuracion de la base de 
 
 session_start(); //Creo o recupero la sesion
 
+if(isset($_REQUEST['tecnologias'])){ // Si desde el footer pulso el boton de tecnologias
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = 'tecnologias';
+}
+
 if(!isset($_SESSION['paginaEnCurso'])){ //Si no hay una pagina en curso
     $_SESSION['paginaEnCurso'] = 'iniciopublico'; //Asigno a la pagina en curso la pagina de inicio publico
 }

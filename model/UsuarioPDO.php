@@ -62,6 +62,7 @@ class UsuarioPDO implements UsuarioDB{
     public static function registrarUltimaConexion($oUsuario) {
         $oUsuario->setNumConexiones($oUsuario->getNumConexiones()+1);
         $oUsuario->setFechaHoraUltimaConexionAnterior($oUsuario->getFechaHoraUltimaConexion());
+        $oUsuario->setFechaHoraUltimaConexion(time());
         
         //Consulta SQL para actualizar la ultima conexion del usuario y las conexiones
         $consultaActualizacionFechaUltimaConexion = <<<CONSULTA

@@ -55,9 +55,11 @@
 }
 ?>
 <h2 class="titulovariable">PHPINFO</h2>
+<div>
 <?php
 phpinfo();
 ?>
+</div>
 <form class="buttonback">
     <input type="submit" value="Volver" name="volver" class="volverdetalle"/>
 </form>

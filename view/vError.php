@@ -1,5 +1,5 @@
 <header class="tituloaplicacion">
-    <h1 class="tituloh1"><img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/logotipo.png" class="imagelogo" alt="IconoWebImitada" /></h1><h2 class="tituloh2">Error</h2>
+    <p class="tituloh1"><img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/logotipo.png" class="imagelogo" alt="IconoWebImitada" /></p><p class="tituloh2">Error</p>
 </header>
 <form class="buttonback">
     <input type="submit" value="VOLVER" name="volvererror" class="volverdetalle"/>
