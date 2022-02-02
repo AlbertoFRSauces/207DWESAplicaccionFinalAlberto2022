@@ -11,6 +11,7 @@
         echo "La ultima vez que te conectastes fue " . date('d/m/Y H:i:s', $sFechaHoraUltimaConexionAnterior);     
     }?>
 </h3>
+<div id="div1"></div>
 <form class="formularioPrograma1" method="post">
     <input type="submit" value="EDITAR PERFIL" name="editarperfil" class="editarperfil"/>
     <input type="submit" value="DETALLE" name="detalle" class="detalle"/>

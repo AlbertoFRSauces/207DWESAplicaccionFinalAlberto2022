@@ -51,7 +51,7 @@ body{
 }
 .imagegithub{
     width: 31px;
-    height: 31px;
+    height: 29px;
 }
 .imagelogo{
     margin-top: 15px;
@@ -82,8 +82,8 @@ body{
 }
 .imagephpdoc{
     margin-right: 5px;
-    width: 33px;
-    height: 33px;
+    width: 35px;
+    height: 37px;
 }
 .imageplay{
     margin-right: 3px;
@@ -118,6 +118,11 @@ body{
     right: 0px;
     left: 0px;
 }
+.divTecnologias{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .piepagina p{
     color:#595b5e;
     text-align:center;
@@ -130,6 +135,7 @@ body{
     transition: color 0.4s linear 0s;
     color: #181b21;
 }
+
 /* CONTENIDO INICIO PUBLIC */
 .formularioIndex{
     width: 230px;
@@ -230,6 +236,12 @@ body{
 .descripcioncaja:hover p{
     color: #ed4e3b;
 }
+#div1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /*CONTENIDO DEL LOGIN.PHP CON DOS BOTONES*/
 #formulariologin{
     width: 290px;

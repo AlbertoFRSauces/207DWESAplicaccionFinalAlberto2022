@@ -16,7 +16,7 @@
                     <div class="imageninformacion">
                         <label for="miDivisa"><p class="pDivisa">Divisa*<a href="https://www.exchangerate-api.com/docs/standard-requests" target="_blank"><img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/i.png" class="imageinfo" alt="IconoInfo" title="Documentacion api conversor moneda"/></a></p></label>
                         <div class="vercomousar">
-                            <p>Ejemplos de codigos de moneda disponibles: EUR: Euro, USD: Dolar, FJD: Dólar fiyiano, FKP: Libra malvinense ,GBP: Libra esterlina, JPY: Yen, LBP: Libra libanesa, MXN: Peso Mexicano, GIP: Libra de Gibraltar, CZK: Corona Checa, CNY: Yuan Chino, UYU: Peso Uruguayo, HUF: Forinto</p>
+                            <p>Ejemplos de codigos de moneda disponibles: EUR: Euro, USD: Dolar, FJD: Dólar fiyiano, FKP: Libra malvinense ,GBP: Libra esterlina, JPY: Yen, LBP: Libra libanesa, MXN: Peso Mexicano, GIP: Libra de Gibraltar, CZK: Corona Checa, CNY: Yuan Chino, UYU: Peso Uruguayo, etc...</p>
                         </div>
                         <input name="miDivisa" id="CodDivisa" type="text" value="<?php echo isset($_REQUEST['miDivisa']) ? $_REQUEST['miDivisa'] : null; ?>" placeholder="Codigo de Moneda">
                         <p class="mensajeErrorRest"><?php echo $aErrores['miDivisa'] ?></p>
@@ -61,7 +61,7 @@
                     <div class="imageninformacion">
                         <label for="buscarInput"><p class="pProvincia">Código Provincia*<a href="https://www.el-tiempo.net/api" target="_blank"><img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/i.png" class="imageinfo" alt="IconoInfo" title="Documentacion api el tiempo"/></a></p></label>
                         <div class="vercomousar2">
-                            <p>Ejemplos de codigos de provincia disponibles: 01: Álava, 02: Albacete, 03: Alicante, 04: Almería, 05: Ávila, 06: Badajoz, 07: Islas Baleares, 08: Barcelona, 09: Burgos, 10: Cáceres, 11: Cádiz</p>
+                            <p>Ejemplos de codigos de provincia disponibles: 01: Álava, 02: Albacete, 03: Alicante, 04: Almería, 05: Ávila, 06: Badajoz, 07: Islas Baleares, 08: Barcelona, 09: Burgos, 10: Cáceres, etc...</p>
                         </div>
                         <input name="buscarInput" id="CodProvincia" type="text" value="<?php echo isset($_REQUEST['buscarInput']) ? $_REQUEST['buscarInput'] : null; ?>" placeholder="Código de Provincia">
                         <p class="mensajeErrorRest"><?php echo $aErroresTiempo['eBuscarInput'] ?></p>

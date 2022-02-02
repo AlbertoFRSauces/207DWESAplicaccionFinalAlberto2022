@@ -1,4 +1,23 @@
 <?php
+    /**
+     * configDBPDO
+     *
+     * Fichero de configuracion configDBPDO
+     *
+     * PHP version 7.4
+     */
+
+    /**
+     * configDBPDO
+     * 
+     * Fichero usado para la configuracion con la base de datos configDBPDO
+     * 
+     * @author Alberto Fernandez Ramirez
+     * @package AppFinal
+     * @since 13/01/2022
+     * @copyright Copyright (c) 2022, Alberto Fernandez Ramirez
+     * @version 1.0 Realizacion de configDBPDO
+    */
     //CONFIGURACION DE DESARROLLO DE CASA
     
     define('HOST', 'mysql:host=192.168.1.107;dbname=DB207DWESProyectoTema5');//Direccion IP del host y nombre de la base de datos

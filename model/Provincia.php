@@ -1,15 +1,22 @@
 <?php
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Class Provincia
+ *
+ * Fichero con la clase Provincia que nos servira para crear un objeto Provincia
+ *
+ * PHP version 7.4
  */
 
 /**
- * Description of Provincia
- *
- * @author alber
+ * Clase Provincia
+ * 
+ * Clase que usaremos para crear un objeto Provincia
+ * 
+ * @author Alberto Fernandez Ramirez
+ * @package AppFinal
+ * @since 31/01/2022
+ * @copyright Copyright (c) 2022, Alberto Fernandez Ramirez
+ * @version 1.0 Realizacion de Provincia
  */
 class Provincia{
     private $provincia;
