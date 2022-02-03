@@ -5,7 +5,7 @@ Desarrollo de la aplicación final del Curso.
 
 **Fecha Inicio Proyecto: 24/01/2022**
 
-**Ultima Actualización: 27/01/2022**
+**Ultima Actualización: 03/02/2022**
 
 ## Descripción 
 Desarrollo de la aplicación final del Curso.
@@ -23,10 +23,12 @@ Desarrollo de la aplicación final del Curso.
 - Usar y gestionar transcciones
 - Gestionar errores con la base de datos con ventana de error
 - Uso de una API REST de conversor de moneda
+- Uso de una API REST de tiempo de provincia
 
 ## Front end
 - HTML
 - CSS
+- JavaScript
 
 ## Back end
 - PHP 7.4

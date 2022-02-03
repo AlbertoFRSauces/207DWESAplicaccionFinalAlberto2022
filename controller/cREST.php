@@ -17,15 +17,17 @@ if(isset($_REQUEST['volver'])){ //Si el usuario pulsa el boton de volver, le man
 
 $aErrores = [ //Array de errores
     'miDivisa' => null,
-    'otraDivisa' => null
+    'otraDivisa' => null,
+    'errorServidor' => null
 ];
 
 $entradaOK = true; //Variable de entrada correcta inicializada a true
-$fDevolucion = 0; //Variable de el resultado
+
+$iDevolucion = 0; //Variable para almacenar el resultado de la conversion
 
 if(isset($_REQUEST['convertir'])){ //Si el usuario pulsa el boton de convertir valido los datos pasados por teclado
-    $aErrores['miDivisa'] = validacionFormularios::comprobarAlfabetico($_REQUEST['MiDivisa'], 3, 3, OBLIGATORIO); //Valido los datos pasados por teclado de mi divisa
-    $aErrores['otraDivisa'] = validacionFormularios::comprobarAlfabetico($_REQUEST['OtraDivisa'], 3, 3, OBLIGATORIO); //Valido los datos pasados por teclado de pasar a
+    $aErrores['miDivisa'] = validacionFormularios::comprobarAlfabetico($_REQUEST['miDivisa'], 3, 3, OBLIGATORIO); //Valido los datos pasados por teclado de mi divisa
+    $aErrores['otraDivisa'] = validacionFormularios::comprobarAlfabetico($_REQUEST['otraDivisa'], 3, 3, OBLIGATORIO); //Valido los datos pasados por teclado de pasar a
     
     //Comprobar si algun campo del array de errores ha sido rellenado
     foreach ($aErrores as $campo => $error) {//recorro el array errores
@@ -39,7 +41,45 @@ if(isset($_REQUEST['convertir'])){ //Si el usuario pulsa el boton de convertir v
 }
 
 if($entradaOK){ //Si la entrada ha sido correcta
-    $fDevolucion = REST::conversorMoneda($_REQUEST['MiDivisa'], $_REQUEST['OtraDivisa']); //Convierto la moneda con el metodo conversorMoneda
+    $iDevolucion = REST::conversorMoneda($_REQUEST['miDivisa'], $_REQUEST['otraDivisa']); //Convierto la moneda con el metodo conversorMoneda
+    
+    if($iDevolucion == 0){
+        $aErrores['otraDivisa'] = "Las divisas no son correctas"; //Si la devolucion es 0 es que la divisa no existe y no es correcta
+    }
+}
+
+//API Tiempo de provincia
+
+$bEntradaOK = true; //Variable de entrada correcta inicializada a true
+
+$aErroresTiempo = [ //Array de errores
+    'eBuscarInput' => null,
+    'eResultado' => null
+];
+
+if (isset($_REQUEST['buscar'])) {
+    $aErroresTiempo['eBuscarInput'] = validacionFormularios::comprobarEntero($_REQUEST['buscarInput'], 52, 1, OBLIGATORIO); //Valido los datos pasados por teclado de el codigo de provincia
+
+    if ($aErroresTiempo['eBuscarInput'] != null) { //Si ha habido fallos en el array
+        $_REQUEST['buscarInput'] = ""; //Limpio el campo del formulario
+        $bEntradaOK = false; //Le doy el valor false a bEntradaOK
+    }
+}else { //Si el usuario no le ha dado al boton de buscar
+    $bEntradaOK = false;
+}
+if ($bEntradaOK) {//utilizacion de la web service cuando bEntrada=true
+    $oResultadoProv= REST::provincia($_REQUEST['buscarInput']); //Obtengo los datos del tiempo de la provincia introducida con el metodo provincia
+    
+    if ($oResultadoProv == null){ //Si el resultado a devolver esta vacio
+      $aErroresTiempo["eResultado"] = "Provincia no encontrada.";
+    }else{
+        $nombreProvincia = $oResultadoProv->getProvincia(); //Obtengo la provincia del Objeto provincia
+        $idProvincia = $oResultadoProv->getIdProvincia(); //Obtengo la id del Objeto provincia
+        $descripcionProvincia = $oResultadoProv->getDescripcion(); //Obtengo la descripcion del Objeto provincia
+        $tiempoProvincia = $oResultadoProv->getTiempo(); //Obtengo el tiempo del Objeto provincia
+        $temmaximaProvincia = $oResultadoProv->getTemperaturaMax(); //Obtengo la temperatura maxima del Objeto provincia
+        $temminimaProvincia = $oResultadoProv->getTemperaturaMin(); //Obtengo la temperatura minima del Objeto provincia
+    }
 }
 
 require_once $vistas['layout']; //Cargo la pagina de REST

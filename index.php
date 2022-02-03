@@ -15,5 +15,10 @@ if(!isset($_SESSION['paginaEnCurso'])){ //Si no hay una pagina en curso
     $_SESSION['paginaEnCurso'] = 'iniciopublico'; //Asigno a la pagina en curso la pagina de inicio publico
 }
 
+if(isset($_REQUEST['tecnologias'])){ // Si desde el footer pulso el boton de tecnologias
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = 'tecnologias';
+}
+
 require_once $controladores[$_SESSION['paginaEnCurso']]; //Cargo la pagina en curso
 ?>
