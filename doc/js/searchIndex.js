@@ -3,22 +3,22 @@ Search.appendIndex(
                 {
             "fqsen": "\\OBLIGATORIO",
             "name": "OBLIGATORIO",
-            "summary": "configAPP",
+            "summary": "",
             "url": "namespaces/default.html#constant_OBLIGATORIO"
         },                {
             "fqsen": "\\HOST",
             "name": "HOST",
-            "summary": "configAPP",
+            "summary": "configDBPDO",
             "url": "namespaces/default.html#constant_HOST"
         },                {
             "fqsen": "\\USER",
             "name": "USER",
-            "summary": "configAPP",
+            "summary": "",
             "url": "namespaces/default.html#constant_USER"
         },                {
             "fqsen": "\\PASSWORD",
             "name": "PASSWORD",
-            "summary": "configAPP",
+            "summary": "",
             "url": "namespaces/default.html#constant_PASSWORD"
         },                {
             "fqsen": "\\validacionFormularios",

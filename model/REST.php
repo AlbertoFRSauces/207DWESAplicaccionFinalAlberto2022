@@ -43,10 +43,10 @@ class REST {
             }
         }
         if (isset($JSONDecodificado['result']) == "error") { //Si la respuesta ha sido incorrecta
-            return $iDevolucion;
+            return $iDevolucion; //Devuelvo el resultado con el valor a 0
         }
 
-        return $iDevolucion; //Devuelvo el resultado
+        return $iDevolucion; //Devuelvo el resultado con el valor correcto
     }
 
     /**
@@ -59,9 +59,13 @@ class REST {
      */
     public static function provincia($codProvincia) {
         $oProvincia = null; //Inicializo a null el objeto provincia
-
-        $sResultadoRawData = @file_get_contents("https://www.el-tiempo.net/api/json/v2/provincias/{$codProvincia}"); //La respuesta de la api en formato json
-
+        $sResultadoRawData = false; //Inicializo a false el string que contendra el json
+        $aHeaders = get_headers("https://www.el-tiempo.net/api/json/v2/provincias/{$codProvincia}");   //get_header devuelve un array con las respuestas a una petición HTTP.Lo guardo en la variable headers
+        $numHeaders = substr($aHeaders[0], 9, 3);      //substr devuelve una cadena, entonces quiero que recorra la posicion 0 del array aheaders
+        if ($numHeaders == "200") {
+            $sResultadoRawData = @file_get_contents("https://www.el-tiempo.net/api/json/v2/provincias/{$codProvincia}");
+        }
+        
         if ($sResultadoRawData) {
             $aJson = json_decode($sResultadoRawData, true); //Decodificamos el json y lo guardamos en un array
 
@@ -75,6 +79,6 @@ class REST {
             );
         }
 
-        return $oProvincia; //Devuelvo el resultado
+        return $oProvincia; //Devuelvo el resultado, si devuelve null es que no lo ha encontrado
     }
 }

@@ -54,17 +54,69 @@
     <form name="formulario" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="form" id="formularioprovincia">
         <fieldset>
             <p class="tituloiniciarsesion">Tiempo de provincia<p>
-                <p class="pInformacion">Permite obtener el tiempo actual de la provincia. El formato del campo es con el codigo de la provincia, el cual esta formado por dos numeros. Ejemplo: 49.</p>
+                <p class="pInformacion">Permite obtener el tiempo actual de la provincia. El formato del campo es una lista desplegable con las provincias en la cual hay que elegir una. La informacion se trata con codigos de provincia.</p>
             <ul>
                 <!--Campo buscarInput OBLIGATORIO-->
                 <li>
                     <div class="imageninformacion">
                         <label for="buscarInput"><p class="pProvincia">Código Provincia*<a href="https://www.el-tiempo.net/api" target="_blank"><img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/i.png" class="imageinfo" alt="IconoInfo" title="Documentacion api el tiempo"/></a></p></label>
-                        <div class="vercomousar2">
-                            <p>Ejemplos de codigos de provincia disponibles: 01: Álava, 02: Albacete, 03: Alicante, 04: Almería, 05: Ávila, 06: Badajoz, 07: Islas Baleares, 08: Barcelona, 09: Burgos, 10: Cáceres, etc...</p>
-                        </div>
-                        <input name="buscarInput" id="CodProvincia" type="text" value="<?php echo isset($_REQUEST['buscarInput']) ? $_REQUEST['buscarInput'] : null; ?>" placeholder="Código de Provincia">
+                        <select required name="buscarInput" id="CodProvincia">
+                            <option value="">Elige Provincia</option>
+                            <option value="01">Álava/Araba</option>
+                            <option value="02">Albacete</option>
+                            <option value="03">Alicante</option>
+                            <option value="04">Almería</option>
+                            <option value="33">Asturias</option>
+                            <option value="05">Ávila</option>
+                            <option value="06">Badajoz</option>
+                            <option value="08">Barcelona</option>
+                            <option value="09">Burgos</option>
+                            <option value="48">Bizkaia</option>
+                            <option value="10">Cáceres</option>
+                            <option value="11">Cádiz</option>
+                            <option value="12">Castellón</option>
+                            <option value="39">Cantabria</option>
+                            <option value="13">Ciudad Real</option>
+                            <option value="14">Córdoba</option>
+                            <option value="51">Ceuta</option>
+                            <option value="16">Cuenca</option>
+                            <option value="17">Gerona/Girona</option>
+                            <option value="18">Granada</option>
+                            <option value="19">Guadalajara</option>
+                            <option value="20">Guipúzcoa/Gipuzkoa</option>
+                            <option value="21">Huelva</option>
+                            <option value="22">Huesca</option>
+                            <option value="23">Jaén</option>
+                            <option value="15">La Coruña/A Coruña</option>
+                            <option value="26">La Rioja</option>
+                            <option value="35">Las Palmas</option>
+                            <option value="24">León</option>
+                            <option value="25">Lérida/Lleida</option>
+                            <option value="27">Lugo</option>
+                            <option value="28">Madrid</option>
+                            <option value="29">Málaga</option>
+                            <option value="52">Melilla</option>
+                            <option value="30">Murcia</option>
+                            <option value="31">Navarra</option>
+                            <option value="32">Orense/Ourense</option>
+                            <option value="34">Palencia</option>
+                            <option value="36">Pontevedra</option>
+                            <option value="37">Salamanca</option>
+                            <option value="40">Segovia</option>
+                            <option value="41">Sevilla</option>
+                            <option value="42">Soria</option>
+                            <option value="43">Tarragona</option>
+                            <option value="38">Tenerife</option>
+                            <option value="44">Teruel</option>
+                            <option value="45">Toledo</option>
+                            <option value="46">Valencia</option>
+                            <option value="47">Valladolid</option>
+                            <option value="51">Vizcaya/Bizkaia</option>
+                            <option value="49">Zamora</option>
+                            <option value="50">Zaragoza</option>
+                        </select>
                         <p class="mensajeErrorRest"><?php echo $aErroresTiempo['eBuscarInput'] ?></p>
+                        <p class="mensajeErrorRest"><?php echo $aErroresTiempo['eResultado'] ?></p>
                     </div>
                 </li>
                 <!--Campo Boton BUSCAR-->

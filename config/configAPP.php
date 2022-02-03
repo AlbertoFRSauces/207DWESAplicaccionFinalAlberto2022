@@ -31,17 +31,6 @@
     require_once 'model/Departamento.php';
     require_once 'model/DepartamentoPDO.php';
     
-    /**
-     * configAPP
-     * 
-     * Fichero que usaremos para configurar la aplicacion configAPP
-     * 
-     * @author Alberto Fernandez Ramirez
-     * @package AppFinal
-     * @since 13/01/2022
-     * @copyright Copyright (c) 2022, Alberto Fernandez Ramirez
-     * @version 1.0 Realizacion de configAPP
-    */
     define("OBLIGATORIO", 1);
     
     $controladores = [

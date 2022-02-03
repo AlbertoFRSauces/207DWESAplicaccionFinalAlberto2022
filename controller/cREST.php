@@ -48,7 +48,7 @@ if($entradaOK){ //Si la entrada ha sido correcta
     }
 }
 
-//----------------------------------------------------------------------------------------------------------------------------------------------
+//API Tiempo de provincia
 
 $bEntradaOK = true; //Variable de entrada correcta inicializada a true
 
@@ -69,17 +69,17 @@ if (isset($_REQUEST['buscar'])) {
 }
 if ($bEntradaOK) {//utilizacion de la web service cuando bEntrada=true
     $oResultadoProv= REST::provincia($_REQUEST['buscarInput']); //Obtengo los datos del tiempo de la provincia introducida con el metodo provincia
-  
-    $nombreProvincia = $oResultadoProv->getProvincia(); //Obtengo la provincia del Objeto provincia
-    $idProvincia = $oResultadoProv->getIdProvincia(); //Obtengo la id del Objeto provincia
-    $descripcionProvincia = $oResultadoProv->getDescripcion(); //Obtengo la descripcion del Objeto provincia
-    $tiempoProvincia = $oResultadoProv->getTiempo(); //Obtengo el tiempo del Objeto provincia
-    $temmaximaProvincia = $oResultadoProv->getTemperaturaMax(); //Obtengo la temperatura maxima del Objeto provincia
-    $temminimaProvincia = $oResultadoProv->getTemperaturaMin(); //Obtengo la temperatura minima del Objeto provincia
-  
-  if ($oResultadoProv == null){ //Si el resultado a devolver esta vacio
+    
+    if ($oResultadoProv == null){ //Si el resultado a devolver esta vacio
       $aErroresTiempo["eResultado"] = "Provincia no encontrada.";
-  }
+    }else{
+        $nombreProvincia = $oResultadoProv->getProvincia(); //Obtengo la provincia del Objeto provincia
+        $idProvincia = $oResultadoProv->getIdProvincia(); //Obtengo la id del Objeto provincia
+        $descripcionProvincia = $oResultadoProv->getDescripcion(); //Obtengo la descripcion del Objeto provincia
+        $tiempoProvincia = $oResultadoProv->getTiempo(); //Obtengo el tiempo del Objeto provincia
+        $temmaximaProvincia = $oResultadoProv->getTemperaturaMax(); //Obtengo la temperatura maxima del Objeto provincia
+        $temminimaProvincia = $oResultadoProv->getTemperaturaMin(); //Obtengo la temperatura minima del Objeto provincia
+    }
 }
 
 require_once $vistas['layout']; //Cargo la pagina de REST
