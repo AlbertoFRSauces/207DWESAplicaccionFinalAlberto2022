@@ -56,17 +56,17 @@ class Usuario{
      */
     private $fechaHoraUltimaConexionAnterior;
     /**
-     * Imagen del usuario
-     * 
-     * @var string 
-     */
-    private $imagenUsuario;
-    /**
      * Tipo de perfil del usuario
      * 
      * @var string 
      */
     private $perfil;
+    /**
+     * Imagen del usuario
+     * 
+     * @var string 
+     */
+    private $imagenUsuario;
     
     /**
      * Metodo magico __construct()
@@ -79,18 +79,18 @@ class Usuario{
      * @param int $numConexiones Numero de conexiones del usuario
      * @param int $fechaHoraUltimaConexion Fecha y hora de la ultima conexion del usuario
      * @param int $fechaHoraUltimaConexionAnterior Anterior del usuario
-     * @param String $imagenUsuario Imagen del usuario
      * @param String $perfil Tipo de perfil del usuario
+     * @param String $imagenUsuario Imagen del usuario
      */
-    function __construct($codUsuario,$password,$descUsuario,$numConexiones,$fechaHoraUltimaConexion,$fechaHoraUltimaConexionAnterior,$imagenUsuario,$perfil) {
+    function __construct($codUsuario,$password,$descUsuario,$numConexiones,$fechaHoraUltimaConexion,$fechaHoraUltimaConexionAnterior,$perfil,$imagenUsuario) {
         $this->codUsuario = $codUsuario;
         $this->password = $password;
         $this->descUsuario = $descUsuario;
         $this->numConexiones = $numConexiones;
         $this->fechaHoraUltimaConexion = $fechaHoraUltimaConexion;
         $this->fechaHoraUltimaConexionAnterior = $fechaHoraUltimaConexionAnterior;
-        $this->imagenUsuario = $imagenUsuario;
         $this->perfil = $perfil;
+        $this->imagenUsuario = $imagenUsuario;
     }
     
     /**
@@ -154,16 +154,6 @@ class Usuario{
         return $this->fechaHoraUltimaConexionAnterior;
     }
     /**
-     * Metodo getImagenUsuario()
-     * 
-     * Metodo get que devuelve la imagen del usuario
-     * 
-     * @return String imagen del usuario
-     */
-    function getImagenUsuario(){
-        return $this->imagenUsuario;
-    }
-    /**
      * Metodo getPerfil()
      * 
      * Metodo get que devuelve el perfil del usuario
@@ -173,7 +163,16 @@ class Usuario{
     function getPerfil() {
         return $this->perfil;
     }
-    
+    /**
+     * Metodo getImagenUsuario()
+     * 
+     * Metodo get que devuelve la imagen del usuario
+     * 
+     * @return String imagen del usuario
+     */
+    function getImagenUsuario(){
+        return $this->imagenUsuario;
+    }
     /**
      * Metodo setCodUsuario()
      * 
@@ -235,16 +234,6 @@ class Usuario{
         $this->fechaHoraUltimaConexionAnterior = $fechaHoraUltimaConexionAnterior;
     }
     /**
-     * Metodo imagenUsuario()
-     * 
-     * Metodo set que cambia el valor del atributo $imagenUsuario
-     * 
-     * @param String $imagenUsuario Nueva imagen del usuario
-     */
-    function imagenUsuario($imagenUsuario){
-        $this->imagenUsuario = $imagenUsuario;
-    }
-    /**
      * Metodo setPerfil()
      * 
      * Metodo set que cambia el valor del atributo $perfil
@@ -253,6 +242,16 @@ class Usuario{
      */
     function setPerfil($perfil) {
         $this->perfil = $perfil;
+    }
+    /**
+     * Metodo setImagenUsuario()
+     * 
+     * Metodo set que cambia el valor del atributo $imagenUsuario
+     * 
+     * @param String $imagenUsuario Nueva imagen del usuario
+     */
+    function setImagenUsuario($imagenUsuario){
+        $this->imagenUsuario = $imagenUsuario;
     }
 }
 ?>

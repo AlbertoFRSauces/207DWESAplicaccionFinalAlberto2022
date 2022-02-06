@@ -21,6 +21,13 @@
                     <p class="mensajeError"><?php echo $aErrores['descUsuario'] ?></p>
                 </div>
             </li>
+            <!--Campo Perfil OBLIGATORIO-->
+            <li>
+                <div>
+                    <label for="Perfil"><p class="pDescripcion">Tipo de perfil</p></label>
+                    <input name="Perfil" id="NumConexiones2" type="text" value="<?php echo $perfilMiCuenta ?>" readonly disabled>
+                </div>
+            </li>
             <!--Campo Numero Conexiones OBLIGATORIO-->
             <li>
                 <div>

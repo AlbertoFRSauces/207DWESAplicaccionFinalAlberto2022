@@ -82,4 +82,15 @@
             <a href="../207DWESAplicaccionFinalAlberto2022/webroot/css/pdf/201127ModeloFisicoDeDatos20-21.pdf" target="_blank" class="ainicio"><p>Ver documento</p></a>
         </div>
     </div>
+    <div class="cajapublica">
+        <div class="imagencaja">
+            <a href="../207DWESAplicaccionFinalAlberto2022/webroot/css/pdf/usodesession.pdf" target="_blank"><img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/usosession.PNG" class="imagencajaimg" alt="IconoAtras" title="Uso de $_SESSION"/></a>
+        </div>
+        <div class="descripcioncaja">
+            <a href="../207DWESAplicaccionFinalAlberto2022/webroot/css/pdf/usodesession.pdf" target="_blank" class="ainicio"><p>Uso de $_SESSION</p></a>
+        </div>
+        <div class="verdocumento">
+            <a href="../207DWESAplicaccionFinalAlberto2022/webroot/css/pdf/usodesession.pdf" target="_blank" class="ainicio"><p>Ver documento</p></a>
+        </div>
+    </div>
 </div>

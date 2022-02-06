@@ -31,6 +31,14 @@ if(isset($_REQUEST['cambiarpassword'])){ //Si el usuario pulsa el boton de cambi
     exit;
 }
 
+$usuarioMiCuenta = $_SESSION['usuario207DWESLoginLogoutMulticapaPOO']->getCodUsuario(); //Variable que contiene el codigo del usuario loggeado
+$descripcionMiCuenta = $_SESSION['usuario207DWESLoginLogoutMulticapaPOO']->getDescUsuario(); //Variable que contiene la descripcion del usuario loggeado
+$conexionesMiCuenta = $_SESSION['usuario207DWESLoginLogoutMulticapaPOO']->getNumConexiones(); //Variable que contiene el numero total de conexiones del usuario loggeado
+$ultimaconexionMiCuenta = $_SESSION['usuario207DWESLoginLogoutMulticapaPOO']->getFechaHoraUltimaConexion(); //Variable que contiene la fecha y hora de la ultima conexion del usuario loggeado
+$passwordMiCuenta = $_SESSION['usuario207DWESLoginLogoutMulticapaPOO']->getPassword(); //Variable que contiene la password del usuario loggeado
+$perfilMiCuenta = $_SESSION['usuario207DWESLoginLogoutMulticapaPOO']->getPerfil(); //Variable que contiene el perfil del usuario loggeado
+$imagenMiCuenta = $_SESSION['usuario207DWESLoginLogoutMulticapaPOO']->getImagenUsuario(); //Variable que contiene la imagen del usuario loggeado
+
 $aErrores = [
     'descUsuario' => null
 ];
@@ -38,7 +46,7 @@ $aErrores = [
 $entradaOK = true;//Variable de entrada correcta inicializada a true
 
 if(isset($_REQUEST['aceptar'])){ //Si el usuario pulsa el boton de aceptar, mando al usuario a la pagina de inicio privado
-    $aErrores['descUsuario'] = validacionFormularios::comprobarAlfabetico($_REQUEST['DescUsuario'], 200, 1, OBLIGATORIO);
+    $aErrores['descUsuario'] = validacionFormularios::comprobarAlfabetico($_REQUEST['DescUsuario'], 200, 1, OBLIGATORIO); //Validacion del campo descripcion
     
     //Comprobar si algun campo del array de errores ha sido rellenado
     foreach ($aErrores as $campo => $error) {//recorro el array errores
@@ -52,17 +60,12 @@ if(isset($_REQUEST['aceptar'])){ //Si el usuario pulsa el boton de aceptar, mand
 }
 
 if($entradaOK){
-    $_SESSION['usuario207DWESLoginLogoutMulticapaPOO'] = UsuarioPDO::modificarUsuario($_SESSION['usuario207DWESLoginLogoutMulticapaPOO'], $_REQUEST['DescUsuario']); //Modifico el usuario en la base de datos
+    $_SESSION['usuario207DWESLoginLogoutMulticapaPOO'] = UsuarioPDO::modificarUsuario($_SESSION['usuario207DWESLoginLogoutMulticapaPOO'], $_REQUEST['DescUsuario']); //Modifico el usuario y la imagen en la base de datos
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = 'inicioprivado'; //Asigno a la pagina en curso la pagina de inicio privado
     header('Location: index.php'); //Redireciono de nuevo a inicio privado
     exit;
 }
-
-$usuarioMiCuenta = $_SESSION['usuario207DWESLoginLogoutMulticapaPOO']->getCodUsuario(); //Variable que contiene el codigo del usuario loggeado
-$descripcionMiCuenta = $_SESSION['usuario207DWESLoginLogoutMulticapaPOO']->getDescUsuario(); //Variable que contiene la descripcion del usuario loggeado
-$conexionesMiCuenta = $_SESSION['usuario207DWESLoginLogoutMulticapaPOO']->getNumConexiones(); //Variable que contiene el numero total de conexiones del usuario loggeado
-$ultimaconexionMiCuenta = $_SESSION['usuario207DWESLoginLogoutMulticapaPOO']->getFechaHoraUltimaConexion(); //Variable que contiene la fecha y hora de la ultima conexion del usuario loggeado
-$passwordMiCuenta = $_SESSION['usuario207DWESLoginLogoutMulticapaPOO']->getPassword(); //Variable que contiene la password del usuario loggeado
 
 require_once $vistas['layout']; //Cargo la pagina de miCuenta
 ?>
