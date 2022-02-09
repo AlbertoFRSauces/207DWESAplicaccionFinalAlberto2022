@@ -81,4 +81,60 @@ class REST {
 
         return $oProvincia; //Devuelvo el resultado, si devuelve null es que no lo ha encontrado
     }
+    /**
+     * Metodo buscarDepartamento()
+     * 
+     * Metodo que permite buscar un departamento mediante un codigo de departamento
+     * 
+     * @param string $codDepartamento Codigo del departamento
+     * @return \Departamento Un objeto Departamento
+     */
+    public static function buscarDepartamento($codDepartamento){
+        $resultadoAPI = @file_get_contents("http://daw207.ieslossauces.es/207DWESAplicaccionFinalAlberto2022/api/buscarDepartamento.php?codDepartamento={$codDepartamento}"); //La respuesta de la api en formato json
+        
+        if($resultadoAPI){
+            $JSONDecodificado = json_decode($resultadoAPI, true); //Almaceno la informacion decodificada obtenida de la url como un array
+            
+            if($JSONDecodificado['result'] == 'success'){
+                return new Departamento(
+                    $JSONDecodificado['codDepartamento'],
+                    $JSONDecodificado['descDepartamento'],
+                    $JSONDecodificado['fechaCreacionDepartamento'],
+                    $JSONDecodificado['volumenDeNegocio'],
+                    $JSONDecodificado['fechaBajaDepartamento']
+                );
+            }
+            if($JSONDecodificado['result'] == 'unsuccessful'){
+                return $JSONDecodificado['mensajeError'];
+            }
+        }
+    }
+    /**
+     * Metodo buscarDepartamentoAjeno()
+     * 
+     * Metodo que permite buscar un departamento mediante un codigo de departamento
+     * 
+     * @param string $codDepartamentoAjeno Codigo del departamento
+     * @return \Departamento Un objeto Departamento
+     */
+    public static function buscarDepartamentoAjeno($codDepartamentoAjeno){
+        $resultadoAPI = @file_get_contents("https://daw208.ieslossauces.es/208DWESProyectoFinal/api/consultaDepartamentoPorCodigo.php?codDepartamento={$codDepartamentoAjeno}"); //La respuesta de la api en formato json
+        
+        if($resultadoAPI){
+            $JSONDecodificado = json_decode($resultadoAPI, true); //Almaceno la informacion decodificada obtenida de la url como un array
+            
+            if(isset($JSONDecodificado['departamento'])){
+                return new Departamento(
+                    $JSONDecodificado['departamento']['codDepartamento'],
+                    $JSONDecodificado['departamento']['descDepartamento'],
+                    $JSONDecodificado['departamento']['fechaCreacionDepartamento'],
+                    $JSONDecodificado['departamento']['volumenDeNegocio'],
+                    $JSONDecodificado['departamento']['fechaBajaDepartamento']
+                );
+            }else{
+                return $JSONDecodificado['error'];
+            }
+        }
+    }
 }
+?>

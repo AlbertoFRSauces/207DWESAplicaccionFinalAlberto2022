@@ -49,7 +49,8 @@
         "altadepartamento" => "controller/cAltaDepartamento.php",
         "eliminardepartamento" => "controller/cEliminarDepartamento.php",
         "mtodepartamentos" => "controller/cMtoDepartamentos.php",
-        "consultarmodificardepartamento" => "controller/cConsultarModificarDepartamento.php"
+        "consultarmodificardepartamento" => "controller/cConsultarModificarDepartamento.php",
+        "infoapirest" => "controller/cInfoApiRest.php"
     ];
     $vistas = [
         "layout" => "view/layout.php",
@@ -68,6 +69,7 @@
         "altadepartamento" => "view/vAltaDepartamento.php",
         "eliminardepartamento" => "view/vEliminarDepartamento.php",
         "mtodepartamentos" => "view/vMtoDepartamentos.php",
-        "consultarmodificardepartamento" => "view/vConsultarModificarDepartamento.php"
+        "consultarmodificardepartamento" => "view/vConsultarModificarDepartamento.php",
+        "infoapirest" => "view/vInfoApiRest.php"
     ]
 ?>

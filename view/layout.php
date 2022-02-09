@@ -37,8 +37,8 @@
                 function crearImagen(numero) {
                     var img = document.createElement("img");
                     img.setAttribute("src",`../207DWESAplicaccionFinalAlberto2022/webroot/css/img/reloj/${numero}.png`);
-                    img.width="50";
-                    img.height="50";
+                    img.width="25";
+                    img.height="25";
                     img.alt = `${numero}`;
                     var src = document.getElementById("div1");
                     src.appendChild(img);

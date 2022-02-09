@@ -57,5 +57,17 @@
             <description>Se ha realizado la configuracion de las tecnologias que se usan en la pagina web con el contenido de las que se estan usando</description>
             <pubDate>Thu, 3 Feb 2022</pubDate>
         </item>
+        <item>
+            <title>Creacion de API REST Propio</title>
+            <link>https://daw207.ieslossauces.es/207DWESAplicaccionFinalAlberto2022/index.php</link>
+            <description>Se ha realizado la creacion de un API REST propio que permite buscar departamentos por codigo de departamento</description>
+            <pubDate>Tue, 8 Feb 2022</pubDate>
+        </item>
+        <item>
+            <title>Uso de API REST Ajeno</title>
+            <link>https://daw207.ieslossauces.es/207DWESAplicaccionFinalAlberto2022/index.php</link>
+            <description>Se ha realizado el uso de un API REST ajeno que permite buscar departamentos por codigo de departamento</description>
+            <pubDate>Tue, 8 Feb 2022</pubDate>
+        </item>
     </channel>
 </rss>

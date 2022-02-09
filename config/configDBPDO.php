@@ -24,7 +24,6 @@
     define('USER', 'User207DWESProyectoTema5');//Nombre del usuario de la base de datos
     define('PASSWORD', 'P@ssw0rd');//Contraseña del usuario de la base de datos
     
-
     //CONFIGURACION DE DESARROLLO DE CLASE
     /*
     define('HOST', 'mysql:host=daw207.sauces.local;dbname=DB207DWESProyectoTema5');//Direccion IP del host y nombre de la base de datos

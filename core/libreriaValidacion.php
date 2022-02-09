@@ -481,38 +481,5 @@ class validacionFormularios {  //ELIMINA EL METODO VALIDATEDATE Y LO INCLUYE EN 
         }
         return $mensajeError; 
     }
-    
-    /**
-     * Basada en validarAlfanumerico, esta función comprueba si el nombre de un
-     * archivo tiene una extensión válida entre un array de extensiones admitidas.
-     * 
-     * @author Isabel Martínez Guerra.
-     * @version 1.0 Creada la función.
-     * @since 2021-12-13
-     * @param string $nombreArchivo Cadena con el nombre del archivo que se va a comprobar.
-     * @param array $aExtensiones Array con las posibles extensiones que puede tener el archivo.
-     * @param int $maxTamanio Tamaño máximo del nombre del archivo (contando la extensión y el punto).
-     * @param int $minTamanio Tamaño mínimo del nombre del archivo (contando la extensión y el punto).
-     * @param boolean $obligatorio Valor booleano indicado mediante 1, si es obligatorio o 0 si no lo es.
-     * @return null|string Devuelve null si es correcto o un mensaje de error en caso de que lo haya.
-     */
-    public static function validarNombreArchivo($nombreArchivo, $aExtensiones, $maxTamanio = 150, $minTamanio = 4, $obligatorio = 0) {
-        // Validación del texto del nombre del archivo.
-        $mensajeError = self::comprobarAlfaNumerico($nombreArchivo, $maxTamanio, $minTamanio, $obligatorio);
-
-        /* Si el nombre de archivo no está vacío (es decir, se ha enviado uno),
-         * comprueba si la extensión está entre las admitidas.
-         * En el caso que el campo fuese obligatorio, ya se habría validado en la
-         * función comprobarAlfaNumerico.
-         */
-        if(!empty($nombreArchivo)){
-            $sExtension = substr($nombreArchivo, strpos($nombreArchivo, '.') + 1);
-            if (!in_array($sExtension, $aExtensiones)) {
-                $mensajeError = "El archivo no tiene una extensión válida. Sólo se admite ".implode(', ', $aExtensiones).".";
-            }
-        }
-        return $mensajeError;
-    }
 }
-
 ?>

@@ -121,14 +121,15 @@ class UsuarioPDO implements UsuarioDB{
      * @param string $descUsuario La nueva descripcion
      * @return boolean|object Un objeto usuario si el usuario existe y se puede cambiar, de lo contrario un boolean a false
      */
-    public static function modificarUsuario($oUsuario, $descUsuario){
+    public static function modificarUsuario($oUsuario, $descUsuario, $imagenUsuario = ''){
+        $oUsuario->setDescUsuario($descUsuario);
+        $oUsuario->setImagenUsuario($imagenUsuario);
+
         //Consulta SQL para modificar la descripcion de un usuario
         $consultaModificarUsuario = <<<CONSULTA
-            UPDATE T01_Usuario SET T01_DescUsuario="{$descUsuario}" WHERE T01_CodUsuario="{$oUsuario->getCodUsuario()}";
+            UPDATE T01_Usuario SET T01_DescUsuario="{$descUsuario}", T01_ImagenUsuario="{$imagenUsuario}" WHERE T01_CodUsuario="{$oUsuario->getCodUsuario()}";
         CONSULTA;
             
-        $oUsuario->setDescUsuario($descUsuario);
-        
         if(DBPDO::ejecutarConsulta($consultaModificarUsuario)){
             return $oUsuario;
         }else{
