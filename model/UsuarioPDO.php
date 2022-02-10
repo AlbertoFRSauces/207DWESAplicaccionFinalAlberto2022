@@ -45,7 +45,7 @@ class UsuarioPDO implements UsuarioDB{
             $oUsuario = $resultado->fetchObject(); // Guardo en la variable el resultado de la consulta en forma de objeto
             
             if($oUsuario){ //Instancio un nuevo objeto usuario con todos sus datos
-                $oUsuario = new Usuario($oUsuario->T01_CodUsuario, $oUsuario->T01_Password, $oUsuario->T01_DescUsuario, $oUsuario->T01_NumConexiones, $oUsuario->T01_FechaHoraUltimaConexion, $oUsuario->T01_FechaHoraUltimaConexionAnterior, $oUsuario->T01_ImagenUsuario, $oUsuario->T01_Perfil);
+                $oUsuario = new Usuario($oUsuario->T01_CodUsuario, $oUsuario->T01_Password, $oUsuario->T01_DescUsuario, $oUsuario->T01_NumConexiones, $oUsuario->T01_FechaHoraUltimaConexion, $oUsuario->T01_FechaHoraUltimaConexionAnterior, $oUsuario->T01_Perfil, $oUsuario->T01_ImagenUsuario);
             }
         }
         return $oUsuario;
@@ -92,7 +92,7 @@ class UsuarioPDO implements UsuarioDB{
         CONSULTA;
         
         if(DBPDO::ejecutarConsulta($consultaCrearUsuario)){
-            return new Usuario($codUsuario, $password, $descUsuario, 1, time(), null, null, 'usuario');
+            return new Usuario($codUsuario, $password, $descUsuario, 1, time(), null, 'usuario', null);
         }else{
             return false;
         }
@@ -121,14 +121,15 @@ class UsuarioPDO implements UsuarioDB{
      * @param string $descUsuario La nueva descripcion
      * @return boolean|object Un objeto usuario si el usuario existe y se puede cambiar, de lo contrario un boolean a false
      */
-    public static function modificarUsuario($oUsuario, $descUsuario){
+    public static function modificarUsuario($oUsuario, $descUsuario, $imagenUsuario = ''){
+        $oUsuario->setDescUsuario($descUsuario);
+        $oUsuario->setImagenUsuario($imagenUsuario);
+
         //Consulta SQL para modificar la descripcion de un usuario
         $consultaModificarUsuario = <<<CONSULTA
-            UPDATE T01_Usuario SET T01_DescUsuario="{$descUsuario}" WHERE T01_CodUsuario="{$oUsuario->getCodUsuario()}";
+            UPDATE T01_Usuario SET T01_DescUsuario="{$descUsuario}", T01_ImagenUsuario="{$imagenUsuario}" WHERE T01_CodUsuario="{$oUsuario->getCodUsuario()}";
         CONSULTA;
             
-        $oUsuario->setDescUsuario($descUsuario);
-        
         if(DBPDO::ejecutarConsulta($consultaModificarUsuario)){
             return $oUsuario;
         }else{

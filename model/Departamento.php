@@ -48,7 +48,7 @@ class Departamento {
      * 
      * @var int 
      */
-    private $fechaBajaDepartamento = null;
+    private $fechaBajaDepartamento;
     /**
      * 
      * @param string $codDepartamento Codigo del departamento
@@ -72,7 +72,7 @@ class Departamento {
      * @return string Codigo del departamento
      */
     function getCodDepartamento(){
-        return $this->$codDepartamento;
+        return $this->codDepartamento;
     }
     /**
      * Metodo getDescDepartamento()
@@ -82,7 +82,7 @@ class Departamento {
      * @return string Descripcion del departamento
      */
     function getDescDepartamento(){
-        return $this->$descDepartamento;
+        return $this->descDepartamento;
     }
     /**
      * Metodo getFechaCreacionDepartamento()
@@ -92,7 +92,7 @@ class Departamento {
      * @return int Fecha de creacion del departamento
      */
     function getFechaCreacionDepartamento(){
-        return $this->$fechaCreacionDepartamento;
+        return $this->fechaCreacionDepartamento;
     }
     /**
      * Metodo getVolumenDeNegocio()
@@ -102,7 +102,7 @@ class Departamento {
      * @return int Volumen del negocio
      */
     function getVolumenDeNegocio(){
-        return $this->$volumenDeNegocio;
+        return $this->volumenDeNegocio;
     }
     /**
      * Metodo getFechaBajaDepartamento()
@@ -112,7 +112,7 @@ class Departamento {
      * @return int Fecha de baja del departamento
      */
     function getFechaBajaDepartamento(){
-        return $this->$fechaBajaDepartamento;
+        return $this->fechaBajaDepartamento;
     }
     /**
      * Metodo setCodDepartamento()

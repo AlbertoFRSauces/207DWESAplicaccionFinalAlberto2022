@@ -1,5 +1,8 @@
 <?php
 /*
+ * Controlador de InicioPublico
+ * 
+ * Controlador que permite controlar la accion que se realiza cuando se pulse el boton de iniciar sesion
  * 
  * @package: AppFinal
  * @author: Alberto Fernandez Ramirez

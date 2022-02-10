@@ -37,8 +37,8 @@
                 function crearImagen(numero) {
                     var img = document.createElement("img");
                     img.setAttribute("src",`../207DWESAplicaccionFinalAlberto2022/webroot/css/img/reloj/${numero}.png`);
-                    img.width="50";
-                    img.height="50";
+                    img.width="25";
+                    img.height="25";
                     img.alt = `${numero}`;
                     var src = document.getElementById("div1");
                     src.appendChild(img);
@@ -74,7 +74,7 @@
                     <img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/github.png" class="imagegithub" alt="IconoGitHub" title="Repositorio GitHub"/>
                 </a>
             </div>
-            <p><a class="miweb" href="http://daw207.ieslossauces.es/index.php">Alberto Fernández Ramírez</a><a>&nbsp;&copy;</a> 2022 &nbsp;&nbsp;Release 1.1 &nbsp;&nbsp;Ultima actualización: 03/02/2022</p>
+            <p><a class="miweb" href="http://daw207.ieslossauces.es/index.php">Alberto Fernández Ramírez</a><a>&nbsp;&copy;</a> 2022 &nbsp;&nbsp;Release 2.0 &nbsp;&nbsp;Ultima actualización: 10/02/2022</p>
         </footer>
     </body>
 </html>

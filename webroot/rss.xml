@@ -37,6 +37,43 @@
             <title>Configuracion de inicio publico</title>
             <link>https://daw207.ieslossauces.es/207DWESAplicaccionFinalAlberto2022/index.php</link>
             <description>Se ha realizado la configuracion de inicio publico con contenido para todos los clientes que entren a la web</description>
+            <pubDate>Wed, 2 Feb 2022</pubDate>
+        </item>
+        <item>
+            <title>Configuracion de inicio privado</title>
+            <link>https://daw207.ieslossauces.es/207DWESAplicaccionFinalAlberto2022/index.php</link>
+            <description>Se ha realizado la configuracion de inicio privado con contenido para todos los clientes que entren y inicien sesion en la web</description>
+            <pubDate>Wed, 2 Feb 2022</pubDate>
+        </item>
+        <item>
+            <title>Configuracion de API REST</title>
+            <link>https://daw207.ieslossauces.es/207DWESAplicaccionFinalAlberto2022/index.php</link>
+            <description>Se ha realizado la configuracion de dos APIs REST, una para conversor de divisa y otra para consultar el tiempo de una provincia</description>
+            <pubDate>Thu, 3 Feb 2022</pubDate>
+        </item>
+        <item>
+            <title>Configuracion de tecnologias</title>
+            <link>https://daw207.ieslossauces.es/207DWESAplicaccionFinalAlberto2022/index.php</link>
+            <description>Se ha realizado la configuracion de las tecnologias que se usan en la pagina web con el contenido de las que se estan usando</description>
+            <pubDate>Thu, 3 Feb 2022</pubDate>
+        </item>
+        <item>
+            <title>Creacion de API REST Propio</title>
+            <link>https://daw207.ieslossauces.es/207DWESAplicaccionFinalAlberto2022/index.php</link>
+            <description>Se ha realizado la creacion de un API REST propio que permite buscar departamentos por codigo de departamento</description>
+            <pubDate>Tue, 8 Feb 2022</pubDate>
+        </item>
+        <item>
+            <title>Uso de API REST Ajeno</title>
+            <link>https://daw207.ieslossauces.es/207DWESAplicaccionFinalAlberto2022/index.php</link>
+            <description>Se ha realizado el uso de un API REST ajeno que permite buscar departamentos por codigo de departamento</description>
+            <pubDate>Tue, 8 Feb 2022</pubDate>
+        </item>
+        <item>
+            <title>Configuracion de MtoDepartamentos</title>
+            <link>https://daw207.ieslossauces.es/207DWESAplicaccionFinalAlberto2022/index.php</link>
+            <description>Se ha realizado el campo que permite buscar departamentos por descripcion de departamento y tambien se ha realizado la muestra de todos los departamentos automaticamente</description>
+            <pubDate>Thu, 10 Feb 2022</pubDate>
         </item>
     </channel>
 </rss>

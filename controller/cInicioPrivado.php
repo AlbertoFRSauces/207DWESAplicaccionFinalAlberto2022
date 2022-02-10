@@ -1,5 +1,8 @@
 <?php
 /*
+ * Controlador de InicioPrivado
+ * 
+ * Controlador que permite controlar la accion que se realiza cuando se pulse el boton de cerrarsesion, editarperfil, mtodepartamentos, detalle, rest, mtocuestiones, mtousuarios y mtoopiniones
  * 
  * @package: AppFinal
  * @author: Alberto Fernandez Ramirez
@@ -21,10 +24,10 @@ if(isset($_REQUEST['editarperfil'])){ //Si el usuario pulsa el boton de editarpe
     exit;
 }
 
-if(isset($_REQUEST['mtodepartamentos'])){ //Si el usuario pulsa el boton de mtodepartamentos, mando al usuario a la pagina de WorkingProgress
-    $_SESSION['paginaAnterior'] = 'inicioprivado'; //Guardo la pagina actual en paginaAnterior para recordarla
-    $_SESSION['paginaEnCurso'] = 'wip'; //Asigno a la pagina en curso la pagina de working progress
-    header('Location: index.php'); //Redireciono de nuevo al login
+if(isset($_REQUEST['mtodepartamentos'])){ //Si el usuario pulsa el boton de mtodepartamentos, mando al usuario a la pagina de mtodepartamentos
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso']; //Guardo la pagina actual en paginaAnterior para recordarla
+    $_SESSION['paginaEnCurso'] = 'mtodepartamentos'; //Asigno a la pagina en curso la pagina de working progress
+    header('Location: index.php'); //Redireciono de nuevo al working progress
     exit;
 }
 
@@ -42,9 +45,32 @@ if(isset($_REQUEST['rest'])){ //Si el usuario pulsa el boton de rest, mando al u
     exit;
 }
 
-$sDescUsuario = $_SESSION['usuario207DWESLoginLogoutMulticapaPOO']->getDescUsuario(); //Variable que contiene la descripcion del usuario loggeado
-$iNumConexiones = $_SESSION['usuario207DWESLoginLogoutMulticapaPOO']->getNumConexiones(); //Variable que contiene el numero total de conexiones del usuario loggeado
-$sFechaHoraUltimaConexionAnterior = $_SESSION['usuario207DWESLoginLogoutMulticapaPOO']->getFechaHoraUltimaConexionAnterior(); //Variable que contiene la fecha de la ultima conexion del usuario loggeado
+if(isset($_REQUEST['mtocuestiones'])){ //Si el usuario pulsa el boton de mtocuestiones, mando al usuario a la pagina de WorkingProgress
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso']; //Guardo la pagina actual en paginaAnterior para recordarla
+    $_SESSION['paginaEnCurso'] = 'wip'; //Asigno a la pagina en curso la pagina de working progress
+    header('Location: index.php'); //Redireciono de nuevo al working progress
+    exit;
+}
+
+if(isset($_REQUEST['mtousuarios'])){ //Si el usuario pulsa el boton de mtousuarios, mando al usuario a la pagina de WorkingProgress
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso']; //Guardo la pagina actual en paginaAnterior para recordarla
+    $_SESSION['paginaEnCurso'] = 'wip'; //Asigno a la pagina en curso la pagina de working progress
+    header('Location: index.php'); //Redireciono de nuevo al working progress
+    exit;
+}
+
+if(isset($_REQUEST['mtoopiniones'])){ //Si el usuario pulsa el boton de mtoopiniones, mando al usuario a la pagina de WorkingProgress
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso']; //Guardo la pagina actual en paginaAnterior para recordarla
+    $_SESSION['paginaEnCurso'] = 'wip'; //Asigno a la pagina en curso la pagina de working progress
+    header('Location: index.php'); //Redireciono de nuevo al working progress
+    exit;
+}
+
+$sCodUsuario = $_SESSION['usuario207DWESAplicaccionFinalAlberto']->getCodUsuario(); //Variable que contiene el codigo del usuario loggeado
+$sDescUsuario = $_SESSION['usuario207DWESAplicaccionFinalAlberto']->getDescUsuario(); //Variable que contiene la descripcion del usuario loggeado
+$iNumConexiones = $_SESSION['usuario207DWESAplicaccionFinalAlberto']->getNumConexiones(); //Variable que contiene el numero total de conexiones del usuario loggeado
+$sFechaHoraUltimaConexionAnterior = $_SESSION['usuario207DWESAplicaccionFinalAlberto']->getFechaHoraUltimaConexionAnterior(); //Variable que contiene la fecha de la ultima conexion del usuario loggeado
+$sImagenUsuario = $_SESSION['usuario207DWESAplicaccionFinalAlberto']->getImagenUsuario(); //Variable que contiene la imagen del usuario loggeado
 
 require_once $vistas['layout']; //Cargo la pagina de inicio privado
 ?>

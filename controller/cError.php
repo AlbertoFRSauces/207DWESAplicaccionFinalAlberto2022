@@ -1,5 +1,8 @@
 <?php
 /*
+ * Controlador de Error
+ * 
+ * Controlador que permite controlar la accion que se realiza cuando se pulse el boton de volver y mostrar el contenido del error producido por la base de datos
  * 
  * @package: AppFinal
  * @author: Alberto Fernandez Ramirez

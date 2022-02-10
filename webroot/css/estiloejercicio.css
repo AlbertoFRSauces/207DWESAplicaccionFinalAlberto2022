@@ -107,6 +107,12 @@ body{
     margin:auto auto;
     display:block;
 }
+.imageperfil{
+    width: 110px;
+    height: 110px;
+    margin: auto;
+    display: block;
+}
 
 /* FOOTER */
 .piepagina{
@@ -236,10 +242,26 @@ body{
 .descripcioncaja:hover p{
     color: #ed4e3b;
 }
+#camporeloj{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 70px;
+}
 #div1{
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: black;
+    border-radius: 32px;
+    width: 210px;
+    height: 41px;
+    border: 3px solid black;
+}
+#div1:hover{
+    background-color: #fff;
+    transition: background-color 0.3s linear 0s;
 }
 
 /*CONTENIDO DEL LOGIN.PHP CON DOS BOTONES*/
@@ -898,8 +920,8 @@ td{
     width: 300px;
     font-size: 90%;
     padding: 10px;
-    background-color: #e7e7e7;
-    color: #3b3e43;
+    background-color: #888888;
+    color: #ffffff;
     margin-top: 10px;
     border-radius: 32px;
     border: none;
@@ -941,11 +963,35 @@ td{
     border: none;
     opacity: 0.92;
 }
-#ImagenUsuario2{
-    width: 254px;
+#imagenUsuario{
+    font-family: "Gotham-Medium";
+    width: 300px;
+    color: #D70000;
+    margin-bottom: 10px;
+}
+::-webkit-file-upload-button {
+    font-family: "Gotham-Medium";
+    width: 130px;
+    font-size: 90%;
+    padding: 10px;
+    text-align: center;
+    background-color: #ffffff;
+    color: #181b21;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 32px;
+    opacity: 0.92;
+    border-color: #181b21;
+    border-width: 3px;
+}
+::-webkit-file-upload-button:hover {
+    transition: background-color 0.3s linear 0s, color 0.3s linear 0s;
+    background-color: black;
+    color: #ffffff;
 }
 .tituloMiCuentaEliminar{
-    color: #181b21;
+    color: red;
     font-size: 170%;
     padding-left: 35px;
     padding-bottom: 15px;
@@ -1173,7 +1219,7 @@ td{
     color: white;
     text-transform: uppercase;
     cursor: pointer;
-    margin-top: 28px;
+    margin-top: 27px;
     border-radius: 32px;
     border: none;
     opacity: 0.92;
@@ -1270,4 +1316,293 @@ td{
     visibility: visible;
     opacity: 1;
     transition: visibility 0.2s, opacity 0.2s linear;
+}
+
+/*CONTENIDO DEL vREST.PHP para el codigo de departamento*/
+#formulariodepartamento{
+    padding-top: 10px;
+    width: 450px;
+    margin: auto;
+}
+#formulariodepartamento fieldset ul li{
+    list-style:none;
+    padding-left: 20px;
+    padding-right: 15px;
+}
+#formulariodepartamento fieldset ul{
+    display: flex;
+    flex-flow: row;
+}
+#CodDepartamento{
+    font-family: "Gotham-Medium";
+    width: 205px;
+    font-size: 90%;
+    padding: 10px;
+    background-color: #e7e7e7;
+    color: #3b3e43;
+    margin-top: 10px;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
+}
+.mostrarDepartamento{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+.buscarDepartamento{
+    font-family: "Gotham-Medium";
+    width: 160px;
+    font-size: 80%;
+    padding: 10px;
+    text-align: center;
+    background-color: #3d69e1;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 27px;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
+    margin-left: -10px;
+}
+.buscarDepartamento:hover{
+    transition: background-color 0.3s linear 0s;
+    background-color: #3457b2;
+}
+.botoninfoapi{
+    font-family: cursive;
+    font-weight: bold;
+    width: 19px;
+    height: 19px;
+    font-size: 70%;
+    text-align: center;
+    background-color: #3e6ae1;
+    color: white;
+    cursor: pointer;
+    border-radius: 32px;
+    border: none;
+    margin-left: 3px;
+}
+
+/*CONTENIDO DEL vREST.PHP para el codigo de departamento AJENO*/
+#formulariodepartamentoajeno{
+    padding-top: 10px;
+    width: 450px;
+    margin: auto;
+}
+#formulariodepartamentoajeno fieldset ul li{
+    list-style:none;
+    padding-left: 20px;
+    padding-right: 15px;
+}
+#formulariodepartamentoajeno fieldset ul{
+    display: flex;
+    flex-flow: row;
+}
+#CodDepartamento{
+    font-family: "Gotham-Medium";
+    width: 205px;
+    font-size: 90%;
+    padding: 10px;
+    background-color: #e7e7e7;
+    color: #3b3e43;
+    margin-top: 10px;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
+}
+.mostrarDepartamento{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+.buscarDepartamento{
+    font-family: "Gotham-Medium";
+    width: 160px;
+    font-size: 80%;
+    padding: 10px;
+    text-align: center;
+    background-color: #3d69e1;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 27px;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
+    margin-left: -10px;
+}
+.buscarDepartamento:hover{
+    transition: background-color 0.3s linear 0s;
+    background-color: #3457b2;
+}
+
+/*CONTENIDO DEL vInfoApiRest.PHP */
+.descripcionapipropia{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 70px;
+    margin-left: 30px;
+    margin-top: 60px;
+    margin-right: 30px;
+}
+.descripcionapipropia2{
+    min-width: 450px;
+    width: auto;
+    height: auto;
+}
+.textoapipropia{
+    background-color: #e8e8e8;
+    border-radius: 32px;
+    color: #717276;
+    padding: 20px;
+}
+.enlaceapi{
+    text-decoration: none;
+    color: #717276;
+}
+
+/*CONTENIDO DEL vMtoDepartamentos.PHP */
+.cajadepartamentos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fieldsetdepartamentos{
+    border-radius: 32px;
+    width: auto;
+    height: 450px;
+    margin: auto;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #e8e8e8;
+    padding: 10px;
+    max-width: 800px;
+}
+.tabladepartamentos{
+    border: 2px solid black;
+    border-radius: 32px;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-left: 85px;
+    margin-right: 85px;
+    width: auto;
+    max-width: 735px;
+    position: absolute;
+    top: 255px;
+}
+.tabladepartamentos tr th{
+    font-family: "Gotham-Medium";
+    border: 1px solid black;
+    padding: 5px;
+}
+.tabladepartamentos tr td{
+    font-family: "Gotham-Medium";
+    text-align: center;
+    width: 150px;
+}
+.tabladepartamentos tr:nth-child(2) td{
+    border-bottom: 1px solid black;
+}
+.tabladepartamentos tr:nth-child(3) td{
+    border-bottom: 1px solid black;
+}
+.tabladepartamentos tr:nth-child(4) td{
+    border-bottom: 1px solid black;
+}
+.tabladepartamentos tr:nth-child(5) td{
+    border-bottom: 1px solid black;
+}
+.botonestabla{
+    display: flex;
+    max-width: 120px;
+    cursor: pointer;
+    flex-direction: row;
+    border: 0px solid transparent;
+}
+.imagenboton{
+    width: 40px;
+    padding: 5px;
+}
+.botonesdepartamentos{
+    font-family: "Gotham-Medium";
+    width: 138px;
+    padding: 10px;
+    text-align: center;
+    background-color: #3d69e1;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
+}
+.botonesdepartamentos:hover{
+    transition: background-color 0.3s linear 0s;
+    background-color: #3457b2;
+}
+.pBuscarDepartamento{
+    font-family: "Gotham-Medium";
+    font-size: 15px;
+    color: #717276;
+    margin-left: 20px;
+}
+.fieldsetdepartamentos ul li{
+    list-style: none;
+}
+#descDepartamento{
+    font-family: "Gotham-Medium";
+    width: 256px;
+    font-size: 90%;
+    padding: 10px;
+    background-color: #fff;
+    color: #3b3e43;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
+    margin-left: 10px;
+}
+#buscar{
+    font-family: "Gotham-Medium";
+    width: 140px;
+    padding: 10px;
+    text-align: center;
+    background-color: #3d69e1;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-left: 15px;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
+}
+#buscar:hover{
+    transition: background-color 0.3s linear 0s;
+    background-color: #3457b2;
+}
+.titulometodepartamentos{
+    color: #181b21;
+    font-size: 210%;
+    padding-left: 19px;
+    padding-bottom: 15px;
+    padding-right: 20px;
+}
+.mensajeErrorDepartamento{
+    margin-top: 5px;
+    color: #D90000;
+    text-align: center;
+    font-size: 13px;
+    font-family: "Gotham-Medium";
+    max-width: 260px;
+    margin-right: 250px;
+    float: right;
 }

@@ -1,5 +1,8 @@
 <?php
 /*
+ * Controlador de Login
+ * 
+ * Controlador que permite controlar la accion que se realiza cuando se pulse el boton de volver, registrarse y entrar
  * 
  * @package: AppFinal
  * @author: Alberto Fernandez Ramirez
@@ -49,7 +52,7 @@ if (isset($_REQUEST['entrar'])) { //Si le ha dado al boton de enviar valido los 
 
 if($entradaOK){
     $oUsuarioValido = UsuarioPDO::registrarUltimaConexion($oUsuarioValido); //Registro la ultima conexion y actualizo el numero de conexiones con el metodo registrarUltimaConexion
-    $_SESSION['usuario207DWESLoginLogoutMulticapaPOO'] = $oUsuarioValido; //Guardo en la sesion el contenido del usuario valido
+    $_SESSION['usuario207DWESAplicaccionFinalAlberto'] = $oUsuarioValido; //Guardo en la sesion el contenido del usuario valido
     $_SESSION['paginaEnCurso'] = 'inicioprivado'; //Asigno a la pagina en curso la pagina de inicio privado
     header('Location: index.php'); //Redirecciono a inicio privado
     exit;
