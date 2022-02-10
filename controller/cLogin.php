@@ -1,5 +1,8 @@
 <?php
 /*
+ * Controlador de Login
+ * 
+ * Controlador que permite controlar la accion que se realiza cuando se pulse el boton de volver, registrarse y entrar
  * 
  * @package: AppFinal
  * @author: Alberto Fernandez Ramirez

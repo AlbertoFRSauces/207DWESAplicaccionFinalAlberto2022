@@ -963,8 +963,32 @@ td{
     border: none;
     opacity: 0.92;
 }
-#ImagenUsuario2{
-    width: 254px;
+#imagenUsuario{
+    font-family: "Gotham-Medium";
+    width: 300px;
+    color: #D70000;
+    margin-bottom: 10px;
+}
+::-webkit-file-upload-button {
+    font-family: "Gotham-Medium";
+    width: 130px;
+    font-size: 90%;
+    padding: 10px;
+    text-align: center;
+    background-color: #ffffff;
+    color: #181b21;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 32px;
+    opacity: 0.92;
+    border-color: #181b21;
+    border-width: 3px;
+}
+::-webkit-file-upload-button:hover {
+    transition: background-color 0.3s linear 0s, color 0.3s linear 0s;
+    background-color: black;
+    color: #ffffff;
 }
 .tituloMiCuentaEliminar{
     color: red;
@@ -1451,10 +1475,9 @@ td{
     justify-content: center;
 }
 .fieldsetdepartamentos{
-    border: 2px solid black;
     border-radius: 32px;
     width: auto;
-    height: 700px;
+    height: 450px;
     margin: auto;
     margin-left: 50px;
     margin-right: 50px;
@@ -1472,23 +1495,38 @@ td{
     margin-left: 85px;
     margin-right: 85px;
     width: auto;
-    max-width: 800px;
+    max-width: 735px;
     position: absolute;
     top: 255px;
 }
-.tabladepartamentos th{
+.tabladepartamentos tr th{
+    font-family: "Gotham-Medium";
     border: 1px solid black;
+    padding: 5px;
 }
 .tabladepartamentos tr td{
-    border: 1px solid black;
-}
-.tabladepartamentos tr td{
-    width: 150px;
+    font-family: "Gotham-Medium";
     text-align: center;
+    width: 150px;
+}
+.tabladepartamentos tr:nth-child(2) td{
+    border-bottom: 1px solid black;
+}
+.tabladepartamentos tr:nth-child(3) td{
+    border-bottom: 1px solid black;
+}
+.tabladepartamentos tr:nth-child(4) td{
+    border-bottom: 1px solid black;
+}
+.tabladepartamentos tr:nth-child(5) td{
+    border-bottom: 1px solid black;
 }
 .botonestabla{
-    max-width: 40px;
+    display: flex;
+    max-width: 120px;
     cursor: pointer;
+    flex-direction: row;
+    border: 0px solid transparent;
 }
 .imagenboton{
     width: 40px;
@@ -1496,7 +1534,7 @@ td{
 }
 .botonesdepartamentos{
     font-family: "Gotham-Medium";
-    width: 135px;
+    width: 138px;
     padding: 10px;
     text-align: center;
     background-color: #3d69e1;
@@ -1523,7 +1561,7 @@ td{
 }
 #descDepartamento{
     font-family: "Gotham-Medium";
-    width: 252px;
+    width: 256px;
     font-size: 90%;
     padding: 10px;
     background-color: #fff;
@@ -1533,9 +1571,9 @@ td{
     opacity: 0.92;
     margin-left: 10px;
 }
-.enviar{
+#buscar{
     font-family: "Gotham-Medium";
-    width: 134px;
+    width: 140px;
     padding: 10px;
     text-align: center;
     background-color: #3d69e1;
@@ -1547,14 +1585,14 @@ td{
     border: none;
     opacity: 0.92;
 }
-.enviar:hover{
+#buscar:hover{
     transition: background-color 0.3s linear 0s;
     background-color: #3457b2;
 }
 .titulometodepartamentos{
     color: #181b21;
     font-size: 210%;
-    padding-left: 20px;
+    padding-left: 19px;
     padding-bottom: 15px;
     padding-right: 20px;
 }

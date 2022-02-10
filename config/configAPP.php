@@ -32,6 +32,7 @@
     require_once 'model/DepartamentoPDO.php';
     
     define("OBLIGATORIO", 1);
+    define("OPCIONAL", 0);
     
     $controladores = [
         "login" => "controller/cLogin.php",

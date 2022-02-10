@@ -6,6 +6,11 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/default.html#constant_OBLIGATORIO"
         },                {
+            "fqsen": "\\OPCIONAL",
+            "name": "OPCIONAL",
+            "summary": "",
+            "url": "namespaces/default.html#constant_OPCIONAL"
+        },                {
             "fqsen": "\\HOST",
             "name": "HOST",
             "summary": "configDBPDO",
@@ -221,15 +226,15 @@ Search.appendIndex(
             "summary": "Metodo\u0020getFechaHoraUltimaConexionAnterior\u0028\u0029",
             "url": "classes/Usuario.html#method_getFechaHoraUltimaConexionAnterior"
         },                {
-            "fqsen": "\\Usuario\u003A\u003AgetImagenUsuario\u0028\u0029",
-            "name": "getImagenUsuario",
-            "summary": "Metodo\u0020getImagenUsuario\u0028\u0029",
-            "url": "classes/Usuario.html#method_getImagenUsuario"
-        },                {
             "fqsen": "\\Usuario\u003A\u003AgetPerfil\u0028\u0029",
             "name": "getPerfil",
             "summary": "Metodo\u0020getPerfil\u0028\u0029",
             "url": "classes/Usuario.html#method_getPerfil"
+        },                {
+            "fqsen": "\\Usuario\u003A\u003AgetImagenUsuario\u0028\u0029",
+            "name": "getImagenUsuario",
+            "summary": "Metodo\u0020getImagenUsuario\u0028\u0029",
+            "url": "classes/Usuario.html#method_getImagenUsuario"
         },                {
             "fqsen": "\\Usuario\u003A\u003AsetCodUsuario\u0028\u0029",
             "name": "setCodUsuario",
@@ -261,15 +266,15 @@ Search.appendIndex(
             "summary": "Metodo\u0020setFechaHoraUltimaConexionAnterior\u0028\u0029",
             "url": "classes/Usuario.html#method_setFechaHoraUltimaConexionAnterior"
         },                {
-            "fqsen": "\\Usuario\u003A\u003A\u0024imagenUsuario",
-            "name": "imagenUsuario",
-            "summary": "Imagen\u0020del\u0020usuario",
-            "url": "classes/Usuario.html#property_imagenUsuario"
-        },                {
             "fqsen": "\\Usuario\u003A\u003AsetPerfil\u0028\u0029",
             "name": "setPerfil",
             "summary": "Metodo\u0020setPerfil\u0028\u0029",
             "url": "classes/Usuario.html#method_setPerfil"
+        },                {
+            "fqsen": "\\Usuario\u003A\u003AsetImagenUsuario\u0028\u0029",
+            "name": "setImagenUsuario",
+            "summary": "Metodo\u0020setImagenUsuario\u0028\u0029",
+            "url": "classes/Usuario.html#method_setImagenUsuario"
         },                {
             "fqsen": "\\Usuario\u003A\u003A\u0024codUsuario",
             "name": "codUsuario",
@@ -305,6 +310,11 @@ Search.appendIndex(
             "name": "perfil",
             "summary": "Tipo\u0020de\u0020perfil\u0020del\u0020usuario",
             "url": "classes/Usuario.html#property_perfil"
+        },                {
+            "fqsen": "\\Usuario\u003A\u003A\u0024imagenUsuario",
+            "name": "imagenUsuario",
+            "summary": "Imagen\u0020del\u0020usuario",
+            "url": "classes/Usuario.html#property_imagenUsuario"
         },                {
             "fqsen": "\\UsuarioDB",
             "name": "UsuarioDB",
@@ -370,6 +380,16 @@ Search.appendIndex(
             "name": "provincia",
             "summary": "Metodo\u0020provincia\u0028\u0029",
             "url": "classes/REST.html#method_provincia"
+        },                {
+            "fqsen": "\\REST\u003A\u003AbuscarDepartamento\u0028\u0029",
+            "name": "buscarDepartamento",
+            "summary": "Metodo\u0020buscarDepartamento\u0028\u0029",
+            "url": "classes/REST.html#method_buscarDepartamento"
+        },                {
+            "fqsen": "\\REST\u003A\u003AbuscarDepartamentoAjeno\u0028\u0029",
+            "name": "buscarDepartamentoAjeno",
+            "summary": "Metodo\u0020buscarDepartamentoAjeno\u0028\u0029",
+            "url": "classes/REST.html#method_buscarDepartamentoAjeno"
         },                {
             "fqsen": "\\Departamento",
             "name": "Departamento",
@@ -463,43 +483,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\DepartamentoPDO\u003A\u003AbuscarDepartamentosPorCod\u0028\u0029",
             "name": "buscarDepartamentosPorCod",
-            "summary": "",
+            "summary": "Metodo\u0020buscarDepartamentosPorCod",
             "url": "classes/DepartamentoPDO.html#method_buscarDepartamentosPorCod"
         },                {
             "fqsen": "\\DepartamentoPDO\u003A\u003AbuscaDepartamentosPorDesc\u0028\u0029",
             "name": "buscaDepartamentosPorDesc",
-            "summary": "",
+            "summary": "Metodo\u0020buscarDepartamentosPorDesc\u0028\u0029",
             "url": "classes/DepartamentoPDO.html#method_buscaDepartamentosPorDesc"
-        },                {
-            "fqsen": "\\DepartamentoPDO\u003A\u003AaltaDepartamentos\u0028\u0029",
-            "name": "altaDepartamentos",
-            "summary": "",
-            "url": "classes/DepartamentoPDO.html#method_altaDepartamentos"
-        },                {
-            "fqsen": "\\DepartamentoPDO\u003A\u003AbajaFisicaDepartamento\u0028\u0029",
-            "name": "bajaFisicaDepartamento",
-            "summary": "",
-            "url": "classes/DepartamentoPDO.html#method_bajaFisicaDepartamento"
-        },                {
-            "fqsen": "\\DepartamentoPDO\u003A\u003AbajaLogicaDepartamento\u0028\u0029",
-            "name": "bajaLogicaDepartamento",
-            "summary": "",
-            "url": "classes/DepartamentoPDO.html#method_bajaLogicaDepartamento"
-        },                {
-            "fqsen": "\\DepartamentoPDO\u003A\u003AmodificaDepartamento\u0028\u0029",
-            "name": "modificaDepartamento",
-            "summary": "",
-            "url": "classes/DepartamentoPDO.html#method_modificaDepartamento"
-        },                {
-            "fqsen": "\\DepartamentoPDO\u003A\u003ArehabilitaDepartamento\u0028\u0029",
-            "name": "rehabilitaDepartamento",
-            "summary": "",
-            "url": "classes/DepartamentoPDO.html#method_rehabilitaDepartamento"
-        },                {
-            "fqsen": "\\DepartamentoPDO\u003A\u003AvalidaCodNoExiste\u0028\u0029",
-            "name": "validaCodNoExiste",
-            "summary": "",
-            "url": "classes/DepartamentoPDO.html#method_validaCodNoExiste"
         },                {
             "fqsen": "\\Provincia",
             "name": "Provincia",

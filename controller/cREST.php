@@ -1,5 +1,8 @@
 <?php
 /*
+ * Controlador de REST
+ * 
+ * Controlador que permite controlar la accion que se realiza cuando se pulse el boton de volver, infoapirest y los distintos botones de busqueda de cada API REST configurada
  * 
  * @package: AppFinal
  * @author: Alberto Fernandez Ramirez

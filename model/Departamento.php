@@ -48,7 +48,7 @@ class Departamento {
      * 
      * @var int 
      */
-    private $fechaBajaDepartamento = null;
+    private $fechaBajaDepartamento;
     /**
      * 
      * @param string $codDepartamento Codigo del departamento

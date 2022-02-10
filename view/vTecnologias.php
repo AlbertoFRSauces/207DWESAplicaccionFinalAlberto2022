@@ -71,5 +71,16 @@
             <a href="../207DWESAplicaccionFinalAlberto2022/webroot/css/pdf/EstudioTema2.pdf" target="_blank" class="ainicio"><p>Ver mas detalles</p></a>
         </div>
     </div>
+    <div class="cajapublica">
+        <div class="imagencaja">
+            <a href="../207DWESAplicaccionFinalAlberto2022/webroot/css/pdf/EstudioTema1.pdf" target="_blank"><img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/ejercicios.png" class="imagencajaimg" alt="IconoAtras" title="Ejercicios Tema 2"/></a>
+        </div>
+        <div class="descripcioncaja">
+            <a href="../207DWESAplicaccionFinalAlberto2022/webroot/css/pdf/EstudioTema1.pdf" target="_blank" class="ainicio"><p>Ejercicios Tema 1</p></a>
+        </div>
+        <div class="verdocumento">
+            <a href="../207DWESAplicaccionFinalAlberto2022/webroot/css/pdf/EstudioTema1.pdf" target="_blank" class="ainicio"><p>Ver mas detalles</p></a>
+        </div>
+    </div>
 </div>
 

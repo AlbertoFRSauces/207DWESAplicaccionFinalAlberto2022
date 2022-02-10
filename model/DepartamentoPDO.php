@@ -47,42 +47,37 @@ class DepartamentoPDO {
             return false;
         }
     }
-    public static function buscaDepartamentosPorDesc($descDepartamento){
+    /**
+     * Metodo buscarDepartamentosPorDesc()
+     * 
+     * Metodo que nos sirve para buscar un departamento mediante la descripcion del departamento en la base de datos
+     * 
+     * @param string $descDepartamento Descripcion del departamento
+     * @return boolean|\Departamento Si no ha sido correcta la consulta devuelvo false, si ha sido correcta devuelvo un nuevo Departamento
+     */
+    public static function buscaDepartamentosPorDesc($descDepartamento = ''){
+        $aRespuesta = [];
         //Consulta SQL para validar si la descripcion del departamento existe
         $consultaBuscarDepartamentoDesc = <<<CONSULTA
-            SELECT * FROM T02_Departamento WHERE T02_DescDepartamento='{$descDepartamento}';
+            SELECT * FROM T02_Departamento WHERE T02_DescDepartamento LIKE '%{$descDepartamento}%';
         CONSULTA;
         
         $oResultado = DBPDO::ejecutarConsulta($consultaBuscarDepartamentoDesc);
-        $oResultado = $oResultado->fetchObject();
+        $aDepartamentos = $oResultado->fetchAll();
                 
-        if($oResultado){
-            return new Departamento(
-                $oResultado->T02_CodDepartamento,
-                $oResultado->T02_DescDepartamento,
-                $oResultado->T02_FechaCreacionDepartamento,
-                $oResultado->T02_VolumenDeNegocio
-            );
+        if($aDepartamentos){
+            foreach ($aDepartamentos as $oDepartamento) {
+                $aRespuesta[$oDepartamento['T02_CodDepartamento']] = new Departamento(
+                    $oDepartamento['T02_CodDepartamento'],
+                    $oDepartamento['T02_DescDepartamento'],
+                    $oDepartamento['T02_FechaCreacionDepartamento'],
+                        $oDepartamento['T02_VolumenDeNegocio'],
+                    $oDepartamento['T02_FechaBajaDepartamento']
+                );
+            }
+            return $aRespuesta;
         }else{
             return false;
         }
-    }
-    public static function altaDepartamentos(){
-        
-    }
-    public static function bajaFisicaDepartamento(){
-        
-    }
-    public static function bajaLogicaDepartamento(){
-        
-    }
-    public static function modificaDepartamento(){
-        
-    }
-    public static function rehabilitaDepartamento(){
-        
-    }
-    public static function validaCodNoExiste(){
-        
     }
 }

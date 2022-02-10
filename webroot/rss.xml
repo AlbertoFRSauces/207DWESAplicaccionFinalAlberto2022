@@ -69,5 +69,11 @@
             <description>Se ha realizado el uso de un API REST ajeno que permite buscar departamentos por codigo de departamento</description>
             <pubDate>Tue, 8 Feb 2022</pubDate>
         </item>
+        <item>
+            <title>Configuracion de MtoDepartamentos</title>
+            <link>https://daw207.ieslossauces.es/207DWESAplicaccionFinalAlberto2022/index.php</link>
+            <description>Se ha realizado el campo que permite buscar departamentos por descripcion de departamento y tambien se ha realizado la muestra de todos los departamentos automaticamente</description>
+            <pubDate>Thu, 10 Feb 2022</pubDate>
+        </item>
     </channel>
 </rss>

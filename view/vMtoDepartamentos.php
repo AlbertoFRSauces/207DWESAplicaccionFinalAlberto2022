@@ -13,14 +13,13 @@
                 <input class="botonesdepartamentos" id="import" type="submit" name="import" value="Importar"/>
             </p>
             <ul>
-                <!--Campo Alfabetico DescDepartamento OBLIGATORIO para realizar la busqueda-->
+                <!--Campo Alfabetico DescDepartamento OPCIONAL para realizar la busqueda-->
                 <li>
                     <div>
                         <label for="descDepartamento"><a class="pBuscarDepartamento">Buscar por descripcion de departamento</a></label>
-                        <input name="descDepartamento" id="descDepartamento" type="text" value="<?php echo isset($_REQUEST['descDepartamento']) ? $_REQUEST['descDepartamento'] : '';  ?>" placeholder="Introduzca la descripcion">
-                        <!--Campo Boton Enviar-->
-                        <input class="enviar" id="enviar" type="submit" name="enviar" value="Buscar"/>
-                        <p class="mensajeErrorDepartamento"><?php echo $aErrores['descDepartamento'] ?></p>
+                        <input name="descDepartamento" id="descDepartamento" type="text" value="<?php echo $_SESSION['criterioBusquedaDepartamentos']['descripcionBuscada'] ?? ''; ?>" placeholder="Introduzca la descripcion">
+                        <input id="buscar" type="submit" name="buscar" value="Buscar"/>
+                        <p class="mensajeErrorDepartamento"><?php echo $aErrores['descBuscarDepartamento'] ?></p>
                     </div>
                 </li>
             </ul>
@@ -29,20 +28,39 @@
 </div>
 <div class="cajadepartamentos">
     <table class="tabladepartamentos">
+        <?php
+        if ($aErrores['descBuscarDepartamento'] == null){
+        ?>
         <tr>
-            <th>CodDepartamento</th>
-            <th>DescDepartamento</th>
-            <th>FechaBaja</th>
-            <th>VolumenNegocio</th>
+            <th>Código</th>
+            <th>Descripción</th>
+            <th>Fecha de alta</th>
+            <th>Volumen de negocio</th>
+            <th>Fecha de baja</th>
+            <th>Acciones</th>
         </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td class="botonestabla"><a><img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/lapiz.png" class="imagenboton" alt="Lapiz" /></a></td>
-            <td class="botonestabla"><img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/ojo.png" class="imagenboton" alt="Ojo" /></td>
-            <td class="botonestabla"><img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/papelera.png" class="imagenboton" alt="Papelera" /></td>
-        </tr>
+        <?php
+        }
+        ?>
+        <?php
+        if ($aDepartamentosVista && $aErrores['descBuscarDepartamento'] == null) {
+            foreach ($aDepartamentosVista as $aDepartamento) {
+                ?>
+                <tr>
+                    <td><?php echo $aDepartamento['codDepartamento'];?></td>
+                    <td><?php echo $aDepartamento['descDepartamento'];?></td>
+                    <td><?php echo $aDepartamento['fechaAlta'];?></td>
+                    <td><?php echo $aDepartamento['volumenNegocio'];?></td>
+                    <td><?php echo $aDepartamento['fechaBaja'];?></td>
+                    <td class="botonestabla">
+                        <img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/lapiz.png" class="imagenboton" alt="Lapiz" />
+                        <img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/ojo.png" class="imagenboton" alt="Ojo" />
+                        <img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/papelera.png" class="imagenboton" alt="Papelera" />
+                    </td>
+                </tr>
+                <?php
+            }
+        }
+        ?>
     </table>
 </div>

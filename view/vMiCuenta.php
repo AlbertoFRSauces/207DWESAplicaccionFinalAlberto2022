@@ -53,7 +53,7 @@
             <li>
                 <div>
                     <label for='imagenUsuario'><p class="pPassword">Imagen de usuario</p></label>
-                    <input id='imagenUsuario' type='file' name='imagenUsuario' />
+                    <input name='imagenUsuario' id='imagenUsuario' type='file' value="imagenUsuario"/>
                     <?php
                     if ($aUsuario['imagenUsuario']) {
                         ?>

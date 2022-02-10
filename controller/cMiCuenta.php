@@ -95,4 +95,3 @@ if($entradaOK){
 
 require_once $vistas['layout']; //Cargo la pagina de miCuenta
 ?>
-

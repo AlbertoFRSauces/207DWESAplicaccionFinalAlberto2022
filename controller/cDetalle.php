@@ -1,5 +1,8 @@
 <?php
 /*
+ * Controlador de Detalle
+ * 
+ * Controlador que permite controlar la accion que se realiza cuando se pulse el boton de volver
  * 
  * @package: AppFinal
  * @author: Alberto Fernandez Ramirez

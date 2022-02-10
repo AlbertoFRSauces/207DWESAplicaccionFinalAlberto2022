@@ -5,7 +5,7 @@ Desarrollo de la aplicación final del Curso.
 
 **Fecha Inicio Proyecto: 24/01/2022**
 
-**Ultima Actualización: 03/02/2022**
+**Ultima Actualización: 10/02/2022**
 
 ## Descripción 
 Desarrollo de la aplicación final del Curso.
@@ -24,6 +24,11 @@ Desarrollo de la aplicación final del Curso.
 - Gestionar errores con la base de datos con ventana de error
 - Uso de una API REST de conversor de moneda
 - Uso de una API REST de tiempo de provincia
+- Uso de una API REST Propia de buscar codigo de departamento
+- Uso de una API REST Ajena de buscar codigo de departamento
+- Ver departamentos disponibles y un campo de busqueda de departamento por descripcion del departamento
+- Ver tecnologias usadas en la web
+- Diferencia en la funcionalidad en el inicio privado de un usuario normal y el administrador
 
 ## Front end
 - HTML

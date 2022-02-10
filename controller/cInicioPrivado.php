@@ -1,5 +1,8 @@
 <?php
 /*
+ * Controlador de InicioPrivado
+ * 
+ * Controlador que permite controlar la accion que se realiza cuando se pulse el boton de cerrarsesion, editarperfil, mtodepartamentos, detalle, rest, mtocuestiones, mtousuarios y mtoopiniones
  * 
  * @package: AppFinal
  * @author: Alberto Fernandez Ramirez
@@ -63,7 +66,7 @@ if(isset($_REQUEST['mtoopiniones'])){ //Si el usuario pulsa el boton de mtoopini
     exit;
 }
 
-$sCodUsuario = $_SESSION['usuario207DWESAplicaccionFinalAlberto']->getCodUsuario();
+$sCodUsuario = $_SESSION['usuario207DWESAplicaccionFinalAlberto']->getCodUsuario(); //Variable que contiene el codigo del usuario loggeado
 $sDescUsuario = $_SESSION['usuario207DWESAplicaccionFinalAlberto']->getDescUsuario(); //Variable que contiene la descripcion del usuario loggeado
 $iNumConexiones = $_SESSION['usuario207DWESAplicaccionFinalAlberto']->getNumConexiones(); //Variable que contiene el numero total de conexiones del usuario loggeado
 $sFechaHoraUltimaConexionAnterior = $_SESSION['usuario207DWESAplicaccionFinalAlberto']->getFechaHoraUltimaConexionAnterior(); //Variable que contiene la fecha de la ultima conexion del usuario loggeado
