@@ -33,8 +33,8 @@ class DepartamentoPDO {
             SELECT * FROM T02_Departamento WHERE T02_CodDepartamento='{$codDepartamento}';
         CONSULTA;
         
-        $oResultado = DBPDO::ejecutarConsulta($consultaBuscarDepartamento);
-        $oResultado = $oResultado->fetchObject();
+        $resultadoConsulta = DBPDO::ejecutarConsulta($consultaBuscarDepartamento);
+        $oResultado = $resultadoConsulta->fetchObject();
                 
         if($oResultado){
             return new Departamento(
@@ -71,13 +71,61 @@ class DepartamentoPDO {
                     $oDepartamento['T02_CodDepartamento'],
                     $oDepartamento['T02_DescDepartamento'],
                     $oDepartamento['T02_FechaCreacionDepartamento'],
-                        $oDepartamento['T02_VolumenDeNegocio'],
+                    $oDepartamento['T02_VolumenDeNegocio'],
                     $oDepartamento['T02_FechaBajaDepartamento']
                 );
             }
             return $aRespuesta;
         }else{
             return false;
+        }
+    }
+    /**
+     * Metodo buscaDepartamentosPorEstado()
+     * 
+     * Metodo que nos sirve para buscar un departamento mediante la descripcion del departamento en la base de datos y filtrar su busqueda por todos, altas o bajas
+     * 
+     * @param string $descDepartamento Descripcion del departamento
+     * @param int $sEstado Estado del filtrado de la busqueda por altas o bajas
+     * @param int $iPagina Numero de pagina que ha solicitado el usuario
+     * @return boolean|\Departamento Si no ha sido correcta la consulta devuelvo false, si ha sido correcta devuelvo un nuevo Departamento
+     */
+    public static function buscaDepartamentosPorEstado($descDepartamento = '', $sEstado = 0, $iPagina = 0){
+        $iPagina = $iPagina*3; //Variable para obtener el resultado cada vez que se pasa una pagina y hay que hacer la consulta
+        switch ($sEstado){
+            case 0:
+                $sEstado = '';
+                break;
+            case 1: 
+                $sEstado = 'AND T02_FechaBajaDepartamento = 0';
+                break;
+            case 2:
+                $sEstado = 'AND T02_FechaBajaDepartamento != 0';
+                break;
+        }
+        
+        $aRespuesta = [];
+        //Consulta SQL para validar si la descripcion del departamento existe, filtrar por estado, y comprobar el numero de pagina
+        $consultaBuscarDepartamentoDesc = <<<CONSULTA
+            SELECT * FROM T02_Departamento WHERE T02_DescDepartamento LIKE '%{$descDepartamento}%' {$sEstado} LIMIT {$iPagina}, 3;
+        CONSULTA;
+        
+        $oResultado = DBPDO::ejecutarConsulta($consultaBuscarDepartamentoDesc); //Realizo la consulta con la consulta
+        $aDepartamentos = $oResultado->fetchAll(); //Guardo en un array el conjunto de resultados del objeto resultado
+                
+        if($aDepartamentos){ //Si el array no esta vacio, lo recorro y creo un nuevo departamento
+            foreach ($aDepartamentos as $oDepartamento) {
+                $aRespuesta[$oDepartamento['T02_CodDepartamento']] = new Departamento(
+                    $oDepartamento['T02_CodDepartamento'],
+                    $oDepartamento['T02_DescDepartamento'],
+                    $oDepartamento['T02_FechaCreacionDepartamento'],
+                    $oDepartamento['T02_VolumenDeNegocio'],
+                    $oDepartamento['T02_FechaBajaDepartamento']
+                );
+            }
+            return $aRespuesta; //Devuelvo el departamento
+        }else{
+            return false; //Devuelvo false
         }
     }
 }

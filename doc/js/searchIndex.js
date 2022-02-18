@@ -11,6 +11,21 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/default.html#constant_OPCIONAL"
         },                {
+            "fqsen": "\\ESTADO_TODOS",
+            "name": "ESTADO_TODOS",
+            "summary": "",
+            "url": "namespaces/default.html#constant_ESTADO_TODOS"
+        },                {
+            "fqsen": "\\ESTADO_ALTAS",
+            "name": "ESTADO_ALTAS",
+            "summary": "",
+            "url": "namespaces/default.html#constant_ESTADO_ALTAS"
+        },                {
+            "fqsen": "\\ESTADO_BAJAS",
+            "name": "ESTADO_BAJAS",
+            "summary": "",
+            "url": "namespaces/default.html#constant_ESTADO_BAJAS"
+        },                {
             "fqsen": "\\HOST",
             "name": "HOST",
             "summary": "configDBPDO",
@@ -366,6 +381,11 @@ Search.appendIndex(
             "summary": "Metodo\u0020borrarUsuario\u0028\u0029",
             "url": "classes/UsuarioPDO.html#method_borrarUsuario"
         },                {
+            "fqsen": "\\UsuarioPDO\u003A\u003AbuscaUsuariosPorDesc\u0028\u0029",
+            "name": "buscaUsuariosPorDesc",
+            "summary": "Metodo\u0020buscaUsuariosPorDesc",
+            "url": "classes/UsuarioPDO.html#method_buscaUsuariosPorDesc"
+        },                {
             "fqsen": "\\REST",
             "name": "REST",
             "summary": "Clase\u0020REST",
@@ -491,6 +511,11 @@ Search.appendIndex(
             "summary": "Metodo\u0020buscarDepartamentosPorDesc\u0028\u0029",
             "url": "classes/DepartamentoPDO.html#method_buscaDepartamentosPorDesc"
         },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AbuscaDepartamentosPorEstado\u0028\u0029",
+            "name": "buscaDepartamentosPorEstado",
+            "summary": "Metodo\u0020buscaDepartamentosPorEstado\u0028\u0029",
+            "url": "classes/DepartamentoPDO.html#method_buscaDepartamentosPorEstado"
+        },                {
             "fqsen": "\\Provincia",
             "name": "Provincia",
             "summary": "Clase\u0020Provincia",
@@ -498,67 +523,67 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Provincia\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Metodo\u0020magico\u0020__construct\u0028\u0029",
             "url": "classes/Provincia.html#method___construct"
         },                {
             "fqsen": "\\Provincia\u003A\u003AgetProvincia\u0028\u0029",
             "name": "getProvincia",
-            "summary": "",
+            "summary": "Metodo\u0020getProvincia\u0028\u0029",
             "url": "classes/Provincia.html#method_getProvincia"
         },                {
             "fqsen": "\\Provincia\u003A\u003AgetIdProvincia\u0028\u0029",
             "name": "getIdProvincia",
-            "summary": "",
+            "summary": "Metodo\u0020getIdProvincia\u0028\u0029",
             "url": "classes/Provincia.html#method_getIdProvincia"
         },                {
             "fqsen": "\\Provincia\u003A\u003AgetDescripcion\u0028\u0029",
             "name": "getDescripcion",
-            "summary": "",
+            "summary": "Metodo\u0020getDescripcion\u0028\u0029",
             "url": "classes/Provincia.html#method_getDescripcion"
         },                {
             "fqsen": "\\Provincia\u003A\u003AgetTiempo\u0028\u0029",
             "name": "getTiempo",
-            "summary": "",
+            "summary": "Metodo\u0020getTiempo\u0028\u0029",
             "url": "classes/Provincia.html#method_getTiempo"
         },                {
             "fqsen": "\\Provincia\u003A\u003AgetTemperaturaMax\u0028\u0029",
             "name": "getTemperaturaMax",
-            "summary": "",
+            "summary": "Metodo\u0020getTemperaturaMax\u0028\u0029",
             "url": "classes/Provincia.html#method_getTemperaturaMax"
         },                {
             "fqsen": "\\Provincia\u003A\u003AgetTemperaturaMin\u0028\u0029",
             "name": "getTemperaturaMin",
-            "summary": "",
+            "summary": "Metodo\u0020getTemperaturaMin\u0028\u0029",
             "url": "classes/Provincia.html#method_getTemperaturaMin"
         },                {
             "fqsen": "\\Provincia\u003A\u003A\u0024provincia",
             "name": "provincia",
-            "summary": "",
+            "summary": "Nombre\u0020de\u0020la\u0020provincia",
             "url": "classes/Provincia.html#property_provincia"
         },                {
             "fqsen": "\\Provincia\u003A\u003A\u0024idProvincia",
             "name": "idProvincia",
-            "summary": "",
+            "summary": "Id\u0020de\u0020la\u0020provincia",
             "url": "classes/Provincia.html#property_idProvincia"
         },                {
             "fqsen": "\\Provincia\u003A\u003A\u0024descripcion",
             "name": "descripcion",
-            "summary": "",
+            "summary": "Descripcion\u0020de\u0020la\u0020provincia",
             "url": "classes/Provincia.html#property_descripcion"
         },                {
             "fqsen": "\\Provincia\u003A\u003A\u0024tiempo",
             "name": "tiempo",
-            "summary": "",
+            "summary": "Tiempo\u0020de\u0020la\u0020provincia",
             "url": "classes/Provincia.html#property_tiempo"
         },                {
             "fqsen": "\\Provincia\u003A\u003A\u0024temperaturaMax",
             "name": "temperaturaMax",
-            "summary": "",
+            "summary": "Temperatura\u0020maxima\u0020de\u0020la\u0020provincia",
             "url": "classes/Provincia.html#property_temperaturaMax"
         },                {
             "fqsen": "\\Provincia\u003A\u003A\u0024temperaturaMin",
             "name": "temperaturaMin",
-            "summary": "",
+            "summary": "Temperatura\u0020maxima\u0020de\u0020la\u0020provincia",
             "url": "classes/Provincia.html#property_temperaturaMin"
         },                {
             "fqsen": "\\",

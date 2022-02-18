@@ -14,18 +14,48 @@
 
 if(isset($_REQUEST['volverdepartamentos'])){ //Si el usuario pulsa el boton de volver, mando al usuario a la pagina de inicio privado
     $_SESSION['criterioBusquedaDepartamentos']['descripcionBuscada'] = ""; //Si el usuario sale de MtoDepartamentos, elimino el valor que hay guardado del campo de busqueda por descripcion
+    $_SESSION['numPaginacionDepartamentos'] = 1; //Asigno la pagina de departamentos a 1
     $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior']; //Asigno a la pagina en curso la pagina de inicio privado
     header('Location: index.php'); //Redireciono de nuevo al inicio privado
     exit;
 }
 
+
+
+if(isset($_REQUEST['paginaPrimera'])){ //Si el usuario pulsa el boton de paginaPrimera
+    $_SESSION['numPaginacionDepartamentos'] = 1; //Le situo en la primera pagina
+    header('Location: index.php');
+    exit;
+}
+if(isset($_REQUEST['paginaAnterior']) && $_SESSION['numPaginacionDepartamentos'] >= 2){ //Si el usuario pulsa el boton de paginaAnterior
+    $_SESSION['numPaginacionDepartamentos']--; //Le situo una pagina mas atras
+    header('Location: index.php');
+    exit;
+}
+if(isset($_REQUEST['paginaSiguiente'])){ //Si el usuario pulsa el boton de paginaSiguiente
+    $_SESSION['numPaginacionDepartamentos']++; //Le situo una pagina mas adelante
+    header('Location: index.php');
+    exit;
+}
+if(isset($_REQUEST['paginaUltima'])){ //Si el usuario pulsa el boton de paginaUltima
+    header('Location: index.php');
+    exit;
+}
+
 $aErrores = [ //Array de errores
-    'descBuscarDepartamento' => null
+    'descBuscarDepartamento' => null,
+    'filtroDepartamentos' => null
+];
+$aLista = [ //Array de lista de opciones de filtrado
+    'todos',
+    'altas',
+    'bajas'
 ];
 
-if (isset($_REQUEST['buscar'])) {
+if (isset($_REQUEST['buscar'])) { //Si el usuario pulsa el boton de buscar
     $entradaOK = true; //Variable de entrada correcta inicializada a true
     $aErrores['descBuscarDepartamento'] = validacionFormularios::comprobarAlfabetico($_REQUEST['descDepartamento'], 255, 1, OPCIONAL); //Valido los datos pasados por teclado de la descripcion del departamento
+    $aErrores['filtroDepartamentos'] = validacionFormularios::validarElementoEnLista($_REQUEST['estado'], $aLista);
     
     //Comprobar si algun campo del array de errores ha sido rellenado
     foreach ($aErrores as $sCampo => $sError) {//recorro el array errores
@@ -40,10 +70,22 @@ if (isset($_REQUEST['buscar'])) {
 
 if ($entradaOK) {//Si la entrada ha sido correcta
     $_SESSION['criterioBusquedaDepartamentos']['descripcionBuscada'] = $_REQUEST['descDepartamento']; //Guardo en la session el contenido del campo de buscar departamento por descripcion
+    switch ($_REQUEST['estado']){ //Guardo el estado que ha seleccionado el usuario en el filtrado de la busqueda
+        case 'todos':
+            $sEstado = ESTADO_TODOS;
+            break;
+        case 'altas':
+            $sEstado = ESTADO_ALTAS;
+            break;
+        case 'bajas':
+            $sEstado = ESTADO_BAJAS;
+            break;
+    }
+    $_SESSION['criterioBusquedaDepartamentos']['estado'] = $sEstado; //Guardo el valor del estado en la session
 }
 
 $aDepartamentosVista = []; //Array para guardar el contenido de un departamento
-$oResultadoBuscar = DepartamentoPDO::buscaDepartamentosPorDesc($_SESSION['criterioBusquedaDepartamentos']['descripcionBuscada']??''); //Obtengo los datos del departamento con el metodo buscaDepartamentosPorDesc
+$oResultadoBuscar = DepartamentoPDO::buscaDepartamentosPorEstado($_SESSION['criterioBusquedaDepartamentos']['descripcionBuscada'] ?? '', $_SESSION['criterioBusquedaDepartamentos']['estado'] ?? ESTADO_TODOS, $_SESSION['numPaginacionDepartamentos']-1); //Obtengo los datos del departamento con el metodo buscaDepartamentosPorDesc
 if ($oResultadoBuscar){ //Si el resultado es correcto
     foreach($oResultadoBuscar as $aDepartamento){//Recorro el objeto del resultado que contiene un array
         array_push($aDepartamentosVista, [//Hago uso del metodo array push para meter los valores en el array $aDepartamentosVista
@@ -55,7 +97,7 @@ if ($oResultadoBuscar){ //Si el resultado es correcto
         ]); 
     }
 }else{
-    $aErrores['descBuscarDepartamento'] = 'El departamento no existe.'; //Si el departamento no existe muestro un error
+    $aErrores['descBuscarDepartamento'] = "No se encuentra el departamento";
 }
 
 require_once $vistas['layout']; //Cargo la pagina de MtoDepartamentos
