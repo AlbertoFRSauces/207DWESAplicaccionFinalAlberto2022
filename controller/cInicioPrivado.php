@@ -27,6 +27,7 @@ if(isset($_REQUEST['editarperfil'])){ //Si el usuario pulsa el boton de editarpe
 if(isset($_REQUEST['mtodepartamentos'])){ //Si el usuario pulsa el boton de mtodepartamentos, mando al usuario a la pagina de mtodepartamentos
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso']; //Guardo la pagina actual en paginaAnterior para recordarla
     $_SESSION['paginaEnCurso'] = 'mtodepartamentos'; //Asigno a la pagina en curso la pagina de working progress
+    $_SESSION['numPaginacionDepartamentos'] = 1; //Asigno la pagina de departamentos a 1 para que sea la primera
     header('Location: index.php'); //Redireciono de nuevo al working progress
     exit;
 }
@@ -52,10 +53,10 @@ if(isset($_REQUEST['mtocuestiones'])){ //Si el usuario pulsa el boton de mtocues
     exit;
 }
 
-if(isset($_REQUEST['mtousuarios'])){ //Si el usuario pulsa el boton de mtousuarios, mando al usuario a la pagina de WorkingProgress
+if(isset($_REQUEST['mtousuarios'])){ //Si el usuario pulsa el boton de mtousuarios, mando al usuario a la pagina de MtoUsuarios
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso']; //Guardo la pagina actual en paginaAnterior para recordarla
-    $_SESSION['paginaEnCurso'] = 'wip'; //Asigno a la pagina en curso la pagina de working progress
-    header('Location: index.php'); //Redireciono de nuevo al working progress
+    $_SESSION['paginaEnCurso'] = 'mtousuarios'; //Asigno a la pagina en curso la pagina de mtousuarios
+    header('Location: index.php'); //Redireciono de nuevo al mtousuarios
     exit;
 }
 

@@ -19,7 +19,6 @@
      * @version 1.0 Realizacion de configAPP
     */
     require_once 'core/libreriaValidacion.php';
-
     require_once 'model/DB.php';
     require_once 'model/UsuarioDB.php';
     require_once 'model/Usuario.php';
@@ -33,6 +32,10 @@
     
     define("OBLIGATORIO", 1);
     define("OPCIONAL", 0);
+    
+    define("ESTADO_TODOS", 0);
+    define("ESTADO_ALTAS", 1);
+    define("ESTADO_BAJAS", 2);
     
     $controladores = [
         "login" => "controller/cLogin.php",
@@ -51,7 +54,8 @@
         "eliminardepartamento" => "controller/cEliminarDepartamento.php",
         "mtodepartamentos" => "controller/cMtoDepartamentos.php",
         "consultarmodificardepartamento" => "controller/cConsultarModificarDepartamento.php",
-        "infoapirest" => "controller/cInfoApiRest.php"
+        "infoapirest" => "controller/cInfoApiRest.php",
+        "mtousuarios" => "controller/cMtoUsuarios.php"
     ];
     $vistas = [
         "layout" => "view/layout.php",
@@ -71,6 +75,7 @@
         "eliminardepartamento" => "view/vEliminarDepartamento.php",
         "mtodepartamentos" => "view/vMtoDepartamentos.php",
         "consultarmodificardepartamento" => "view/vConsultarModificarDepartamento.php",
-        "infoapirest" => "view/vInfoApiRest.php"
+        "infoapirest" => "view/vInfoApiRest.php",
+        "mtousuarios" => "view/vMtoUsuarios.php"
     ]
 ?>

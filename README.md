@@ -5,7 +5,7 @@ Desarrollo de la aplicación final del Curso.
 
 **Fecha Inicio Proyecto: 24/01/2022**
 
-**Ultima Actualización: 10/02/2022**
+**Ultima Actualización: 18/02/2022**
 
 ## Descripción 
 Desarrollo de la aplicación final del Curso.
@@ -29,6 +29,10 @@ Desarrollo de la aplicación final del Curso.
 - Ver departamentos disponibles y un campo de busqueda de departamento por descripcion del departamento
 - Ver tecnologias usadas en la web
 - Diferencia en la funcionalidad en el inicio privado de un usuario normal y el administrador
+- Filtrado de departamentos por bajas, altas y todos.
+- Paginado de departametos con limite de 3 por pagina.
+- Muestra de usuarios en el mtousuarios mediante AJAX y el uso de una API propia.
+- RSS con las nuevas funcionalidades de la web en cada fecha.
 
 ## Front end
 - HTML

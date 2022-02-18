@@ -175,5 +175,41 @@ class UsuarioPDO implements UsuarioDB{
         
         return DBPDO::ejecutarConsulta($consultaEliminarUsuario);
     }
+    /**
+     * Metodo buscaUsuariosPorDesc
+     * 
+     * Metodo que nos sirve para buscar un usuario mediante la descripcion del usuario en la base de datos
+     * 
+     * @param string $descUsuario Descripcion del usuario
+     * @return boolean|\Usuario Si no ha sido correcta devuelvo false, de lo contrario devuelvo un array con el usuario encontrado
+     */
+    public static function buscaUsuariosPorDesc($descUsuario){
+        $aRespuesta = [];
+        //Consulta SQL para buscar el usuario con limite de 3 usuarios
+        $consultaBuscarUsuarioPorDesc = <<<CONSULTA
+            SELECT * FROM T01_Usuario WHERE T01_DescUsuario LIKE '%{$descUsuario}%' LIMIT 3;
+        CONSULTA;
+        
+        $resultadoConsulta = DBPDO::ejecutarConsulta($consultaBuscarUsuarioPorDesc); //Ejecuto la consulta y guardo el resultado en una variable
+        $aUsuario = $resultadoConsulta->fetchAll(); //Guardo en un array el conjunto de resultados del objeto resultado
+        
+        if($aUsuario){ //Si el array tiene valores, lo recorro y creo el objeto usuario
+            foreach($aUsuario as $oUsuario){
+                $aRespuesta[$oUsuario['T01_DescUsuario']] = new Usuario(
+                    $oUsuario['T01_CodUsuario'], 
+                    $oUsuario['T01_Password'], 
+                    $oUsuario['T01_DescUsuario'], 
+                    $oUsuario['T01_NumConexiones'], 
+                    $oUsuario['T01_FechaHoraUltimaConexion'], 
+                    $oUsuario['T01_FechaHoraUltimaConexion'], 
+                    $oUsuario['T01_Perfil'], 
+                    $oUsuario['T01_ImagenUsuario']
+                );
+            }
+            return $aRespuesta; //Devuelvo el nuevo usuario
+        }else{
+            return false; //Devuelvo false
+        }
+    }
 }
 ?>
