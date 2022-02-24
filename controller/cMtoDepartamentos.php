@@ -15,12 +15,45 @@
 if(isset($_REQUEST['volverdepartamentos'])){ //Si el usuario pulsa el boton de volver, mando al usuario a la pagina de inicio privado
     $_SESSION['criterioBusquedaDepartamentos']['descripcionBuscada'] = ""; //Si el usuario sale de MtoDepartamentos, elimino el valor que hay guardado del campo de busqueda por descripcion
     $_SESSION['numPaginacionDepartamentos'] = 1; //Asigno la pagina de departamentos a 1
-    $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior']; //Asigno a la pagina en curso la pagina de inicio privado
+    $_SESSION['criterioBusquedaDepartamentos']['estado'] = ESTADO_TODOS;
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso']; //Asigno a la pagina en curso la pagina de inicio privado
+    $_SESSION['paginaEnCurso'] = 'inicioprivado';
     header('Location: index.php'); //Redireciono de nuevo al inicio privado
     exit;
 }
 
+if(isset($_REQUEST['add'])){ //Si el usuario pulsa el boton de anyadir, mando al usuario a la pagina de alta de departamento
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso']; //Asigno a la pagina en curso la pagina anterior
+    $_SESSION['paginaEnCurso'] = 'altadepartamento';
+    header('Location: index.php'); //Redireciono de nuevo a alta de departamento
+    exit;
+}
 
+if(isset($_REQUEST['dardebaja'])){ //Si el usuario pulsa el boton de dardebaja, mando al usuario a la pagina de baja logica departamento
+    $_SESSION['codDepartamentoEnCurso'] = $_REQUEST['dardebaja']; //Guardo en la variable de sesion el codigo de departamento en curso para usar dicho departamento en baja logica departamento
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso']; //Asigno a la pagina en curso la pagina anterior
+    $_SESSION['paginaEnCurso'] = 'bajalogicadepartamento'; 
+    header('Location: index.php'); //Redireciono de nuevo a baja logica departamento
+    exit;
+}
+
+if(isset($_REQUEST['eliminar'])){ //Si el usuario pulsa el boton de eliminar, mando al usuario a la pagina de baja fisica departamento
+    $_SESSION['codDepartamentoEnCurso'] = $_REQUEST['eliminar']; //Guardo en la variable de sesion el codigo de departamento en curso para usar dicho departamento en baja fisica departamento
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso']; //Asigno a la pagina en curso la pagina anterior
+    $_SESSION['paginaEnCurso'] = 'eliminardepartamento'; 
+    header('Location: index.php'); //Redireciono de nuevo a baja fisica departamento
+    exit;
+}
+
+if(isset($_REQUEST['modificar'])){ //Si el usuario pulsa el boton de modificar, mando al usuario a la pagina de consultar modificar departamento
+    $_SESSION['codDepartamentoEnCurso'] = $_REQUEST['modificar']; //Guardo en la variable de sesion el codigo de departamento en curso para usar dicho departamento en consultar modificar departamento
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso']; //Asigno a la pagina en curso la pagina anterior
+    $_SESSION['paginaEnCurso'] = 'consultarmodificardepartamento';
+    header('Location: index.php'); //Redireciono de nuevo a consultar modificar departamento
+    exit;
+}
+
+$iDepartamentosTotales = DepartamentoPDO::buscaDepartamentosTotales() / 3;
 
 if(isset($_REQUEST['paginaPrimera'])){ //Si el usuario pulsa el boton de paginaPrimera
     $_SESSION['numPaginacionDepartamentos'] = 1; //Le situo en la primera pagina
@@ -32,12 +65,13 @@ if(isset($_REQUEST['paginaAnterior']) && $_SESSION['numPaginacionDepartamentos']
     header('Location: index.php');
     exit;
 }
-if(isset($_REQUEST['paginaSiguiente'])){ //Si el usuario pulsa el boton de paginaSiguiente
+if(isset($_REQUEST['paginaSiguiente']) && $_SESSION['numPaginacionDepartamentos'] < $iDepartamentosTotales){ //Si el usuario pulsa el boton de paginaSiguiente
     $_SESSION['numPaginacionDepartamentos']++; //Le situo una pagina mas adelante
     header('Location: index.php');
     exit;
 }
 if(isset($_REQUEST['paginaUltima'])){ //Si el usuario pulsa el boton de paginaUltima
+    $_SESSION['numPaginacionDepartamentos'] = ceil($iDepartamentosTotales);
     header('Location: index.php');
     exit;
 }
@@ -102,4 +136,3 @@ if ($oResultadoBuscar){ //Si el resultado es correcto
 
 require_once $vistas['layout']; //Cargo la pagina de MtoDepartamentos
 ?>
-

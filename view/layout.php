@@ -45,6 +45,26 @@
                 }
                 setTimeout(moverReloj, 1000);
             }
+            
+            //Funcion para mostrar un mensaje de confirmacion antes de eliminar el departamento
+            function confirmarEliminar(){
+                var respuesta = confirm("¿Estas seguro que quieres eliminar el departamento?");
+                if(respuesta == true){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+            
+            //Funcion para mostrar un mensaje de confirmacion antes de dar de baja el departamento
+            function confirmarDarDeBaja(){
+                var respuesta = confirm("¿Estas seguro que quieres dar de baja el departamento?");
+                if(respuesta == true){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
         </script>
     </head>
     <body>
@@ -74,7 +94,7 @@
                     <img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/github.png" class="imagegithub" alt="IconoGitHub" title="Repositorio GitHub"/>
                 </a>
             </div>
-            <p><a class="miweb" href="http://daw207.ieslossauces.es/index.php">Alberto Fernández Ramírez</a><a>&nbsp;&copy;</a> 2022 &nbsp;&nbsp;Release 3.0 &nbsp;&nbsp;Ultima actualización: 17/02/2022</p>
+            <p><a class="miweb" href="http://daw207.ieslossauces.es/index.php">Alberto Fernández Ramírez</a><a>&nbsp;&copy;</a> 2022 &nbsp;&nbsp;Release 4.0 &nbsp;&nbsp;Ultima actualización: 24/02/2022</p>
         </footer>
     </body>
 </html>

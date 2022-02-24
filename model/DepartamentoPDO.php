@@ -97,10 +97,10 @@ class DepartamentoPDO {
                 $sEstado = '';
                 break;
             case 1: 
-                $sEstado = 'AND T02_FechaBajaDepartamento = 0';
+                $sEstado = 'AND T02_FechaBajaDepartamento IS NULL';
                 break;
             case 2:
-                $sEstado = 'AND T02_FechaBajaDepartamento != 0';
+                $sEstado = 'AND T02_FechaBajaDepartamento IS NOT NULL';
                 break;
         }
         
@@ -127,5 +127,112 @@ class DepartamentoPDO {
         }else{
             return false; //Devuelvo false
         }
+    }
+    /**
+     * Metodo buscaDepartamentosTotales()
+     * 
+     * Metodo que permite devolver el total de departamentos que existen en la base de datos
+     * 
+     * @return int El numero total de departamentos
+     */
+    public static function buscaDepartamentosTotales(){
+        //Consulta SQL para obtener el total de departamentos que hay en la base de datos
+        $consultaBuscarDepartamentoTotales = <<<CONSULTA
+            SELECT * FROM T02_Departamento;
+        CONSULTA;
+        
+        $resultadoConsulta = DBPDO::ejecutarConsulta($consultaBuscarDepartamentoTotales); //Ejecuto la consulta
+        $iDepartamentos = $resultadoConsulta->rowCount(); //Cuento el total de departamentos que tiene la consulta
+        
+        return $iDepartamentos; //Devuelvo el total de departamentos
+    }
+    /**
+     * Metodo altaDepartamento()
+     * 
+     * Metodo que permite dar de alta un nuevo departamento en la base de datos
+     * 
+     * @param string $codDepartamento codigo del departamento
+     * @param string $descDepartamento descripcion del departamento
+     * @param float $volumenNegocio volumen de negocio del departamento
+     */
+    public static function altaDepartamento($codDepartamento, $descDepartamento, $volumenNegocio){
+        $fechaCreacionDepartamento = time(); //Variable con la fecha actual en formato int
+        //Consulta SQL para dar de alta el nuevo departamento en la base de datos
+        $consultaAltaDepartamento = <<<CONSULTA
+            INSERT INTO T02_Departamento(T02_CodDepartamento, T02_DescDepartamento, T02_FechaCreacionDepartamento, T02_VolumenDeNegocio) 
+            VALUES ('{$codDepartamento}','{$descDepartamento}',{$fechaCreacionDepartamento},{$volumenNegocio});
+        CONSULTA;
+            
+        $resultadoConsulta = DBPDO::ejecutarConsulta($consultaAltaDepartamento); //Ejecuto la consulta
+    }
+    /**
+     * Metodo validaCodNoExiste()
+     * 
+     * Metodo que permite validar si existe un codigo de departamento en la base de datos
+     * 
+     * @param string $codDepartamento codigo del departamento
+     * @return object Si el codigo de departamento existe devuelve un objeto
+     */
+    public static function validaCodNoExiste($codDepartamento){
+        //Consulta SQL para comprobar si existe el codigo del departamento en la base de datos
+        $consultaValidarCodDepartamento = <<<CONSULTA
+            SELECT * FROM T02_Departamento WHERE T02_CodDepartamento = '{$codDepartamento}';
+        CONSULTA;
+        
+        return DBPDO::ejecutarConsulta($consultaValidarCodDepartamento)->fetchObject(); //Ejecuto la consulta y devuelve un objeto si existe el codigo de departamento
+    }
+    /**
+     * Metodo bajaFisicaDepartamento()
+     * 
+     * Metodo que permite eliminar un departamento de la base de datos
+     * 
+     * @param string $codDepartamento codigo del departamento
+     * @return PDOStatment El resultado de la consulta
+     */
+    public static function bajaFisicaDepartamento($codDepartamento){
+        //Consulta SQL para eliminar un departamento de la base de datos
+        $consultaEliminarCodDepartamento = <<<CONSULTA
+            DELETE FROM T02_Departamento WHERE T02_CodDepartamento = '{$codDepartamento}';
+        CONSULTA;
+            
+        return DBPDO::ejecutarConsulta($consultaEliminarCodDepartamento); //Ejecuto y devuelvo el resultado de la consulta
+    }
+    /**
+     * Metodo bajaLogicaDepartamento()
+     * 
+     * Metodo que permite dar de baja un departamento de la base de datos
+     * 
+     * @param string $codDepartamento codigo del departamento
+     * @return PDOStatment El resultado de la consulta
+     */
+    public static function bajaLogicaDepartamento($codDepartamento){
+        $fechaBajaDepartamento = time(); //Variable con la fecha actual en formato int
+        //Consulta SQL para dar de baja un departamento de la base de datos
+        $consultaBajaCodDepartamento = <<<CONSULTA
+            UPDATE T02_Departamento SET T02_FechaBajaDepartamento = {$fechaBajaDepartamento}
+            WHERE T02_CodDepartamento = '{$codDepartamento}';
+        CONSULTA;
+            
+        return DBPDO::ejecutarConsulta($consultaBajaCodDepartamento); //Ejecuto y devuelvo el resultado de la consulta
+    }
+    /**
+     * Metodo modificaDepartamento()
+     * 
+     * Metodo que permite modificar un departamento en la base de datos
+     * 
+     * @param string $codDepartamento codigo del departamento
+     * @param string $descDepartamento nueva descripcion del departamento
+     * @param float $volumenNegocio nuevo volumen del negocio
+     * @return PDOStatment El resultado de la consulta
+     */
+    public static function modificaDepartamento($codDepartamento, $descDepartamento, $volumenNegocio){
+        //Consulta SQL para actualizar la descripcion del departamento y el volumen de negocio
+        $consultaModificarDepartamento = <<<CONSULTA
+            UPDATE T02_Departamento SET T02_DescDepartamento = '{$descDepartamento}', 
+            T02_VolumenDeNegocio = {$volumenNegocio}
+            WHERE T02_CodDepartamento = '{$codDepartamento}';
+        CONSULTA;
+            
+        return DBPDO::ejecutarConsulta($consultaModificarDepartamento); //Ejecuto y devuelvo el resultado de la consulta    
     }
 }

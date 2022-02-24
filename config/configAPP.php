@@ -55,7 +55,8 @@
         "mtodepartamentos" => "controller/cMtoDepartamentos.php",
         "consultarmodificardepartamento" => "controller/cConsultarModificarDepartamento.php",
         "infoapirest" => "controller/cInfoApiRest.php",
-        "mtousuarios" => "controller/cMtoUsuarios.php"
+        "mtousuarios" => "controller/cMtoUsuarios.php",
+        "bajalogicadepartamento" => "controller/cBajaLogicaDepartamento.php"
     ];
     $vistas = [
         "layout" => "view/layout.php",
@@ -76,6 +77,7 @@
         "mtodepartamentos" => "view/vMtoDepartamentos.php",
         "consultarmodificardepartamento" => "view/vConsultarModificarDepartamento.php",
         "infoapirest" => "view/vInfoApiRest.php",
-        "mtousuarios" => "view/vMtoUsuarios.php"
+        "mtousuarios" => "view/vMtoUsuarios.php",
+        "bajalogicadepartamento" => "view/vBajaLogicaDepartamento.php"
     ]
 ?>

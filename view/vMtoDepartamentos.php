@@ -63,9 +63,15 @@
                     <td><?php echo $aDepartamento['volumenNegocio']; ?></td>
                     <td><?php echo $aDepartamento['fechaBaja']; ?></td>
                     <td class="botonestabla">
-                        <img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/lapiz.png" class="imagenboton" alt="Lapiz" />
-                        <img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/ojo.png" class="imagenboton" alt="Ojo" />
-                        <img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/papelera.png" class="imagenboton" alt="Papelera" />
+                        <button type="submit" form="departamentosFormulario" name="modificar" value="<?php echo $aDepartamento['codDepartamento']; ?>" class="modificardepartamento">
+                            <img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/lapiz.png" class="imagenboton" alt="Lapiz" />
+                        </button>
+                        <button type="submit" form="departamentosFormulario" name="dardebaja" value="<?php echo $aDepartamento['codDepartamento']; ?>" class="dardebajadepartamento">
+                            <img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/flechaabajo.png" class="imagenboton" alt="Dar de baja" />
+                        </button>
+                        <button type="submit" form="departamentosFormulario" name="eliminar" value="<?php echo $aDepartamento['codDepartamento']; ?>" class="eliminardepartamento">
+                            <img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/papelera.png" class="imagenboton" alt="Eliminar" />
+                        </button>
                     </td>
                 </tr>
                 <?php
@@ -81,7 +87,7 @@
     <button type="submit" form="departamentosFormulario" name="paginaAnterior" value="paginaAnterior" class="botonespaginado">
         <img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/paginaanterior.png" class="primerapagina" alt="página anterior">
     </button>
-    <div id="numPagina"><?php echo $_SESSION['numPaginacionDepartamentos']; ?></div>
+    <div id="numPagina"><?php echo $_SESSION['numPaginacionDepartamentos'];?> / <?php echo ceil($iDepartamentosTotales);?></div>
     <button type="submit" form="departamentosFormulario" name="paginaSiguiente" value="paginaSiguiente" class="botonespaginado">
         <img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/paginasiguiente.png" class="primerapagina" alt="página siguiente">
     </button>

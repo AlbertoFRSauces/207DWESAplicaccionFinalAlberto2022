@@ -1,8 +1,45 @@
-<?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+<header class="tituloaplicacion">
+    <p class="tituloh1"><img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/logotipo.png" class="imagelogo" alt="IconoWebImitada" /></p><p class="tituloh2">Alta departamento</p>
+</header>
+<main>
+    <form name="formulario" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="formRegistro">
+        <fieldset>
+            <p class="tituloRegistros">Alta de nuevo departamento<p>
+            <ul>
+                <!--Campo Codigo OBLIGATORIO -->
+                <li>
+                    <div>
+                        <label for="CodDepartamento"><p class="pUsuario">Código*</p></label>
+                        <input name="CodDepartamento" id="CodUsuarioReg" type="text" value="<?php echo isset($_REQUEST['CodDepartamento']) ? $_REQUEST['CodDepartamento'] : null; ?>" 
+                               placeholder="Introduzca el código">
+                        <p class="mensajeErrorAltaDep"><?php echo $aErrores['codDepartamento'] ?></p>
+                    </div>
+                </li>
+                <!--Campo Descripcion OBLIGATORIO -->
+                <li>
+                    <div>
+                        <label for="DescDepartamento"><p class="pUsuario">Descripción*</p></label>
+                        <input name="DescDepartamento" id="CodUsuarioReg" type="text" value="<?php echo isset($_REQUEST['DescDepartamento']) ? $_REQUEST['DescDepartamento'] : null; ?>" 
+                               placeholder="Introduzca la descripción">
+                        <p class="mensajeErrorAltaDep"><?php echo $aErrores['descDepartamento'] ?></p>
+                    </div>
+                </li>
+                <!--Campo Volumen de negocio OBLIGATORIO -->
+                <li>
+                    <div>
+                        <label for="VolumenNegocio"><p class="pUsuario">Volumen de negocio*</p></label>
+                        <input name="VolumenNegocio" id="CodUsuarioReg" type="text" value="<?php echo isset($_REQUEST['VolumenNegocio']) ? $_REQUEST['VolumenNegocio'] : null; ?>" 
+                               placeholder="Introduzca el volumen de negocio">
+                        <p class="mensajeErrorAltaDep"><?php echo $aErrores['volumenDeNegocio'] ?></p>
+                    </div>
+                </li>
+                <!--Campo Botones Crear y Cancelar-->
+                <li>
+                    <input type="submit" value="crear" name="crear" class="crear"/>
+                    <span class="linebreak">O</span>
+                    <input type="submit" value="CANCELAR" name="cancelar" class="cancelar"/>
+                </li>
+            </ul>
+        </fieldset>
+    </form>
+</main>
