@@ -516,6 +516,36 @@ Search.appendIndex(
             "summary": "Metodo\u0020buscaDepartamentosPorEstado\u0028\u0029",
             "url": "classes/DepartamentoPDO.html#method_buscaDepartamentosPorEstado"
         },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AbuscaDepartamentosTotales\u0028\u0029",
+            "name": "buscaDepartamentosTotales",
+            "summary": "Metodo\u0020buscaDepartamentosTotales\u0028\u0029",
+            "url": "classes/DepartamentoPDO.html#method_buscaDepartamentosTotales"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AaltaDepartamento\u0028\u0029",
+            "name": "altaDepartamento",
+            "summary": "Metodo\u0020altaDepartamento\u0028\u0029",
+            "url": "classes/DepartamentoPDO.html#method_altaDepartamento"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AvalidaCodNoExiste\u0028\u0029",
+            "name": "validaCodNoExiste",
+            "summary": "Metodo\u0020validaCodNoExiste\u0028\u0029",
+            "url": "classes/DepartamentoPDO.html#method_validaCodNoExiste"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AbajaFisicaDepartamento\u0028\u0029",
+            "name": "bajaFisicaDepartamento",
+            "summary": "Metodo\u0020bajaFisicaDepartamento\u0028\u0029",
+            "url": "classes/DepartamentoPDO.html#method_bajaFisicaDepartamento"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AbajaLogicaDepartamento\u0028\u0029",
+            "name": "bajaLogicaDepartamento",
+            "summary": "Metodo\u0020bajaLogicaDepartamento\u0028\u0029",
+            "url": "classes/DepartamentoPDO.html#method_bajaLogicaDepartamento"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AmodificaDepartamento\u0028\u0029",
+            "name": "modificaDepartamento",
+            "summary": "Metodo\u0020modificaDepartamento\u0028\u0029",
+            "url": "classes/DepartamentoPDO.html#method_modificaDepartamento"
+        },                {
             "fqsen": "\\Provincia",
             "name": "Provincia",
             "summary": "Clase\u0020Provincia",

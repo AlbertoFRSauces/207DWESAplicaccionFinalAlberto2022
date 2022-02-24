@@ -5,7 +5,7 @@ Desarrollo de la aplicación final del Curso.
 
 **Fecha Inicio Proyecto: 24/01/2022**
 
-**Ultima Actualización: 18/02/2022**
+**Ultima Actualización: 24/02/2022**
 
 ## Descripción 
 Desarrollo de la aplicación final del Curso.
@@ -33,6 +33,10 @@ Desarrollo de la aplicación final del Curso.
 - Paginado de departametos con limite de 3 por pagina.
 - Muestra de usuarios en el mtousuarios mediante AJAX y el uso de una API propia.
 - RSS con las nuevas funcionalidades de la web en cada fecha.
+- Añadir un nuevo departamento
+- Consultar y modificar un departamento
+- Dar de baja un departamento
+- Eliminar un departamento
 
 ## Front end
 - HTML
@@ -42,6 +46,20 @@ Desarrollo de la aplicación final del Curso.
 ## Back end
 - PHP 7.4
 - MySQL 8.0.26
+
+## Instrucciones de despliegue
+Hola como estas, gracias por la compra o descarga de esta aplicacion, a continuacion te escribo las instrucciones de instalacion:
+
+1.- Copiar y descomprimir el archivo en la carpeta \public_html, al final tendras una carpeta llamada “207DWESAplicaccionFinalAlberto2022”, a la cual accederas desde el navegador como -> http://127.0.0.1/207DWESAplicaccionFinalAlberto2022
+2.- En caso de ser necesario modificar el archivo configDBPDO en config/configDBPDO.php, para los datos asociados al acceso a la base de datos.
+3.- Buscar los archivos CreaDB207DWESProyectoTema5.sql, CargaInicialDB207DWESProyectoTema5, BorraDB207DWESProyectoTema5.sql en 207DWESAplicaccionFinalAlberto2022/scriptDB/nombreArchivo.sql, una vez localizado copiar y pegar el contenido en una ventana de MySQL, PHPMyAdmin o MySQL WorkBench
+
+Login :  home496960781.1and1-data.host
+Usuario: u74942863-daw207
+Password: daw2_Sauces
+
+Dudas y sugerencias a mi direccion email alberto.ferram@educa.jcyl.es
+Powered By https://daw207.ieslossauces.es/
 
 ## Entornos
 ### Desarrollo (local)

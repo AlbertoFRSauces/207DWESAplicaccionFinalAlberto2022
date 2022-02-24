@@ -1523,7 +1523,6 @@ td{
 .botonestabla{
     display: flex;
     max-width: 120px;
-    cursor: pointer;
     flex-direction: row;
     border: 0px solid transparent;
 }
@@ -1627,6 +1626,22 @@ td{
     font-size: 16px;
     font-family: "Gotham-Medium";
 }
+.dardebajadepartamento{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.eliminardepartamento{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.modificardepartamento{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
 
 /*CONTENIDO DEL vMtoUsuarios.PHP */
 .tablausuarios{
@@ -1654,7 +1669,7 @@ td{
 .fieldsetusuarios{
     border-radius: 32px;
     width: auto;
-    height: 300px;
+    height: 370px;
     margin: auto;
     margin-left: 50px;
     margin-right: 50px;
@@ -1678,4 +1693,54 @@ td{
     border: none;
     opacity: 0.92;
     margin-left: 10px;
+}
+
+/*CONTENIDO DEL vAltaDepartamento.PHP*/
+.mensajeErrorAltaDep{
+    width: 300px;
+    margin-top: 10px;
+    color: #D90000;
+    text-align: center;
+    font-size: 13px;
+    font-family: "Gotham-Medium";
+}
+
+/*CONTENIDO DE vBajaLogicaDepartamento*/
+.dardebaja{
+    font-family: "Gotham-Medium";
+    width: 300px;
+    font-size: 90%;
+    padding: 10px;
+    text-align: center;
+    background-color: red;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
+}
+.dardebaja:hover{
+    transition: background-color 0.3s linear 0s;
+    background-color: #851C00;
+}
+
+/*CONTENIDO DE vEliminarDepartamento*/
+.eliminar{
+    font-family: "Gotham-Medium";
+    width: 300px;
+    font-size: 90%;
+    padding: 10px;
+    text-align: center;
+    background-color: red;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 32px;
+    border: none;
+    opacity: 0.92;
+}
+.eliminar:hover{
+    transition: background-color 0.3s linear 0s;
+    background-color: #851C00;
 }

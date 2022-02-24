@@ -18,7 +18,7 @@
                     <div id="divBuscar">
                         <label for="descUsuario"><a class="pBuscarDepartamento">Buscar por descripcion de usuario</a></label>
                         <input name="descUsuario" id="descUsuario" class="descUsuarioBuscar" type="text" placeholder="Introduzca la descripcion">
-                        <input id="buscar" type="submit" value="Buscar"/>
+                        <input id="buscar" type="button" value="Buscar"/>
                     </div>
                 </li>
             </ul>
@@ -35,26 +35,46 @@
             <th>Perfil</th>
             <th>Imagen</th>
         </tr>
+        <tbody id="usuarios">
+            
+        </tbody>
+            
     </table>
+</div>
+<div class="cajadepartamentosdos">
+    <button type="button" form="departamentosFormulario" name="paginaPrimera" value="paginaPrimera" class="botonespaginado">
+        <img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/primerapagina.png" class="primerapagina" alt="primera página">
+    </button>
+    <button type="button" form="departamentosFormulario" name="paginaAnterior" value="paginaAnterior" class="botonespaginado">
+        <img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/paginaanterior.png" class="primerapagina" alt="página anterior">
+    </button>
+    <div id="numPagina"> / </div>
+    <button type="button" form="departamentosFormulario" name="paginaSiguiente" value="paginaSiguiente" class="botonespaginado">
+        <img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/paginasiguiente.png" class="primerapagina" alt="página siguiente">
+    </button>
+    <button type="button" form="departamentosFormulario" name="paginaUltima" value="paginaUltima" class="botonespaginado">
+        <img src="../207DWESAplicaccionFinalAlberto2022/webroot/css/img/ultimapagina.png" class="primerapagina" alt="última página">
+    </button>
 </div>
 <script>
     var botonBuscar = document.getElementById("buscar");
     
     loadJSONDoc();
     
-    botonBuscar.addEventListener("click", function(evento){
-        loadJSONDoc();
-    });
+    botonBuscar.addEventListener("click", function(){loadJSONDoc();});
     
     function loadJSONDoc() {
+        var paginasTotales = document.getElementById("numPagina");
         var descripcionUsuario = document.getElementById("descUsuario").value;
-        var filas = document.getElementById("tablausuarios");
+        var filas = document.getElementById("usuarios");
         var divErrorBuscar = document.getElementById("divBuscar");
         var xhttp = new XMLHttpRequest();
         xhttp.onload = function () {
             if (this.readyState == 4 && this.status == 200) {
                 objetoJSON = JSON.parse(xhttp.responseText);
                 var aUsuarios = objetoJSON.usuarios;
+                paginasTotales.innerHTML = ` / ` + (aUsuarios.length) / 3;
+                filas.innerHTML = "";
                 for(var i=0;i<aUsuarios.length;i++){
                     if(objetoJSON.usuarios[i].result == "unsuccessful"){
                         error = objetoJSON.usuarios[i].mensajeError;
@@ -67,6 +87,8 @@
                         descripcion = objetoJSON.usuarios[i].descUsuario;
                         conexiones = objetoJSON.usuarios[i].numconexiones;
                         ultimaconexion = objetoJSON.usuarios[i].fechaHoraUltimaConexion;
+                        let oFecha = new Date(ultimaconexion * 1000);
+                        ultimaConexionMostrar = `${oFecha.getDate()}/${oFecha.getMonth()+1}/${oFecha.getFullYear()} ${oFecha.getHours()}:${oFecha.getMinutes()}:${oFecha.getSeconds()}`;
                         perfil = objetoJSON.usuarios[i].perfil;
                         imagen = objetoJSON.usuarios[i].imagenUsuario;
                         nuevoElemento = document.createElement("tr");
@@ -76,10 +98,16 @@
                         nuevoElementoUltimaconexion = document.createElement("td");
                         nuevoElementoPerfil = document.createElement("td");
                         nuevoElementoImagen = document.createElement("td");
+                        nuevoElementoCodigo.setAttribute("id", "eliminar");
+                        nuevoElementoDescripcion.setAttribute("id", "eliminar");
+                        nuevoElementoConexiones.setAttribute("id", "eliminar");
+                        nuevoElementoUltimaconexion.setAttribute("id", "eliminar");
+                        nuevoElementoPerfil.setAttribute("id", "eliminar");
+                        nuevoElementoImagen.setAttribute("id", "eliminar");
                         nuevoElementoCodigo.innerHTML = codigo;
                         nuevoElementoDescripcion.innerHTML = descripcion;
                         nuevoElementoConexiones.innerHTML = conexiones;
-                        nuevoElementoUltimaconexion.innerHTML = ultimaconexion;
+                        nuevoElementoUltimaconexion.innerHTML = ultimaConexionMostrar;
                         nuevoElementoPerfil.innerHTML = perfil;
                         nuevoElementoImagen.innerHTML = imagen;
                         nuevoElemento.appendChild(nuevoElementoCodigo);
@@ -93,7 +121,12 @@
                 }
             }
         }
-        xhttp.open("GET", `https://daw207.ieslossauces.es/207DWESAplicaccionFinalAlberto2022/api/buscarUsuarioPorDesc.php?descUsuario=${descripcionUsuario}`, true);
+        //Clase
+        xhttp.open("GET", `http://daw207.sauces.local/207DWESAplicaccionFinalAlberto2022/api/buscarUsuarioPorDesc.php?descUsuario=${descripcionUsuario}`, true);
+        //1&1
+        //xhttp.open("GET", `https://daw207.ieslossauces.es/207DWESAplicaccionFinalAlberto2022/api/buscarUsuarioPorDesc.php?descUsuario=${descripcionUsuario}`, true);
+        //Casa
+        //xhttp.open("GET", `http://192.168.1.107/207DWESAplicaccionFinalAlberto2022/api/buscarUsuarioPorDesc.php?descUsuario=${descripcionUsuario}`, true);
         xhttp.send();
     }
 </script>

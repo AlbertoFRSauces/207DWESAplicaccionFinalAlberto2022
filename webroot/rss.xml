@@ -87,5 +87,29 @@
             <description>Se ha realizado el campo que permite buscar usuarios por descripcion de usuario y tambien se ha realizado la muestra de todos los usuarios automaticamente</description>
             <pubDate>Thu, 17 Feb 2022</pubDate>
         </item>
+        <item>
+            <title>Configuracion de alta de nuevo departamento</title>
+            <link>https://daw207.ieslossauces.es/207DWESAplicaccionFinalAlberto2022/index.php</link>
+            <description>Se ha realizado la configuracion para poder crear un alta de un nuevo departamento</description>
+            <pubDate>Wed, 23 Feb 2022</pubDate>
+        </item>
+        <item>
+            <title>Configuracion de baja logica de departamento</title>
+            <link>https://daw207.ieslossauces.es/207DWESAplicaccionFinalAlberto2022/index.php</link>
+            <description>Se ha realizado la vista que permite dar de baja logicamente a un departamento</description>
+            <pubDate>Thu, 24 Feb 2022</pubDate>
+        </item>
+        <item>
+            <title>Configuracion de baja fisica de departamento</title>
+            <link>https://daw207.ieslossauces.es/207DWESAplicaccionFinalAlberto2022/index.php</link>
+            <description>Se ha realizado la vista que permite dar de baja fisicamente a un departamento</description>
+            <pubDate>Thu, 24 Feb 2022</pubDate>
+        </item>
+        <item>
+            <title>Configuracion de consulta y modificaion de departamento</title>
+            <link>https://daw207.ieslossauces.es/207DWESAplicaccionFinalAlberto2022/index.php</link>
+            <description>Se ha realizado la vista que permite consultar y modificar un departamento</description>
+            <pubDate>Thu, 24 Feb 2022</pubDate>
+        </item>
     </channel>
 </rss>
