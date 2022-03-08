@@ -28,6 +28,7 @@ if(isset($_REQUEST['mtodepartamentos'])){ //Si el usuario pulsa el boton de mtod
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso']; //Guardo la pagina actual en paginaAnterior para recordarla
     $_SESSION['paginaEnCurso'] = 'mtodepartamentos'; //Asigno a la pagina en curso la pagina de working progress
     $_SESSION['numPaginacionDepartamentos'] = 1; //Asigno la pagina de departamentos a 1 para que sea la primera
+    $_SESSION['criterioBusquedaDepartamentos']['estado'] = ESTADO_TODOS; //Asigno la muestra de todos los departamentos al entrar en mtodepartamentos
     header('Location: index.php'); //Redireciono de nuevo al working progress
     exit;
 }

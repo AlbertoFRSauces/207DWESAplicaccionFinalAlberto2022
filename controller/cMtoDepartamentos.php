@@ -53,7 +53,7 @@ if(isset($_REQUEST['modificar'])){ //Si el usuario pulsa el boton de modificar, 
     exit;
 }
 
-$iDepartamentosTotales = DepartamentoPDO::buscaDepartamentosTotales() / 3;
+$iDepartamentosTotales = DepartamentoPDO::buscaDepartamentosTotales($_SESSION['criterioBusquedaDepartamentos']['descripcionBuscada'] ?? '', $_SESSION['criterioBusquedaDepartamentos']['estado']) / 3;
 
 if(isset($_REQUEST['paginaPrimera'])){ //Si el usuario pulsa el boton de paginaPrimera
     $_SESSION['numPaginacionDepartamentos'] = 1; //Le situo en la primera pagina
@@ -87,6 +87,7 @@ $aLista = [ //Array de lista de opciones de filtrado
 ];
 
 if (isset($_REQUEST['buscar'])) { //Si el usuario pulsa el boton de buscar
+    
     $entradaOK = true; //Variable de entrada correcta inicializada a true
     $aErrores['descBuscarDepartamento'] = validacionFormularios::comprobarAlfabetico($_REQUEST['descDepartamento'], 255, 1, OPCIONAL); //Valido los datos pasados por teclado de la descripcion del departamento
     $aErrores['filtroDepartamentos'] = validacionFormularios::validarElementoEnLista($_REQUEST['estado'], $aLista);
@@ -115,11 +116,15 @@ if ($entradaOK) {//Si la entrada ha sido correcta
             $sEstado = ESTADO_BAJAS;
             break;
     }
+    $_SESSION['numPaginacionDepartamentos'] = 1;
     $_SESSION['criterioBusquedaDepartamentos']['estado'] = $sEstado; //Guardo el valor del estado en la session
 }
 
+$iDepartamentosTotales = DepartamentoPDO::buscaDepartamentosTotales($_SESSION['criterioBusquedaDepartamentos']['descripcionBuscada'] ?? '', $_SESSION['criterioBusquedaDepartamentos']['estado']) / 3;
+
 $aDepartamentosVista = []; //Array para guardar el contenido de un departamento
 $oResultadoBuscar = DepartamentoPDO::buscaDepartamentosPorEstado($_SESSION['criterioBusquedaDepartamentos']['descripcionBuscada'] ?? '', $_SESSION['criterioBusquedaDepartamentos']['estado'] ?? ESTADO_TODOS, $_SESSION['numPaginacionDepartamentos']-1); //Obtengo los datos del departamento con el metodo buscaDepartamentosPorDesc
+
 if ($oResultadoBuscar){ //Si el resultado es correcto
     foreach($oResultadoBuscar as $aDepartamento){//Recorro el objeto del resultado que contiene un array
         array_push($aDepartamentosVista, [//Hago uso del metodo array push para meter los valores en el array $aDepartamentosVista

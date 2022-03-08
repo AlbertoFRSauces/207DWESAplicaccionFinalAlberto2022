@@ -30,7 +30,6 @@
     define('USER', 'User207DWESProyectoTema5');//Nombre del usuario de la base de datos
     define('PASSWORD', 'P@ssw0rd');//Contraseña del usuario de la base de datos
     */
-    
     //CONFIGURACION DE EXPLOTACION 1&1
     
     define('HOST', 'mysql:host=db5005797478.hosting-data.io;dbname=dbs4868800');//Direccion IP del host y nombre de la base de datos
