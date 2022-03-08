@@ -135,10 +135,21 @@ class DepartamentoPDO {
      * 
      * @return int El numero total de departamentos
      */
-    public static function buscaDepartamentosTotales(){
+    public static function buscaDepartamentosTotales($sBusqueda = '', $sEstado = 0){
+        switch ($sEstado){
+            case 0:
+                $sEstado = '';
+                break;
+            case 1: 
+                $sEstado = 'AND T02_FechaBajaDepartamento IS NULL';
+                break;
+            case 2:
+                $sEstado = 'AND T02_FechaBajaDepartamento IS NOT NULL';
+                break;
+        }
         //Consulta SQL para obtener el total de departamentos que hay en la base de datos
         $consultaBuscarDepartamentoTotales = <<<CONSULTA
-            SELECT * FROM T02_Departamento;
+            SELECT * FROM T02_Departamento WHERE T02_DescDepartamento LIKE '%{$sBusqueda}%' {$sEstado};
         CONSULTA;
         
         $resultadoConsulta = DBPDO::ejecutarConsulta($consultaBuscarDepartamentoTotales); //Ejecuto la consulta
@@ -206,10 +217,9 @@ class DepartamentoPDO {
      * @return PDOStatment El resultado de la consulta
      */
     public static function bajaLogicaDepartamento($codDepartamento){
-        $fechaBajaDepartamento = time(); //Variable con la fecha actual en formato int
         //Consulta SQL para dar de baja un departamento de la base de datos
         $consultaBajaCodDepartamento = <<<CONSULTA
-            UPDATE T02_Departamento SET T02_FechaBajaDepartamento = {$fechaBajaDepartamento}
+            UPDATE T02_Departamento SET T02_FechaBajaDepartamento = UNIX_TIMESTAMP()
             WHERE T02_CodDepartamento = '{$codDepartamento}';
         CONSULTA;
             

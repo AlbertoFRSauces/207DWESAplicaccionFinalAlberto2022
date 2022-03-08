@@ -187,7 +187,7 @@ class UsuarioPDO implements UsuarioDB{
         $aRespuesta = [];
         //Consulta SQL para buscar el usuario con limite de 3 usuarios
         $consultaBuscarUsuarioPorDesc = <<<CONSULTA
-            SELECT * FROM T01_Usuario WHERE T01_DescUsuario LIKE '%{$descUsuario}%' LIMIT 3;
+            SELECT * FROM T01_Usuario WHERE T01_DescUsuario LIKE '%{$descUsuario}%' LIMIT 18;
         CONSULTA;
         
         $resultadoConsulta = DBPDO::ejecutarConsulta($consultaBuscarUsuarioPorDesc); //Ejecuto la consulta y guardo el resultado en una variable
